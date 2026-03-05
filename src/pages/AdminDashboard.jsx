@@ -123,18 +123,28 @@ const AdminDashboard = () => {
         document.body.removeChild(link);
     };
 
+
+
     return (
         <div className="page-header">
             <div className="flex-between" style={{ marginBottom: '2rem' }}>
                 <div>
-                    <h1 className="page-title text-gradient">Administrator Dashboard</h1>
+                    <h1 className="page-title text-gradient">
+                        {user?.role === 'teacher' ? `${user?.subject?.toUpperCase()} Teacher Dashboard` :
+                            user?.role === 'coordinator' ? 'System Coordinator Dashboard' :
+                                'Administrator Dashboard'}
+                    </h1>
                     <p className="page-description">Overview of the entire student dataset and learning performance.</p>
                 </div>
-                <button className="btn-primary" onClick={handleExport}>
-                    <TrendingUp size={18} />
-                    <span>Export Batch Report</span>
-                </button>
+                <div style={{ display: 'flex', gap: '1rem' }}>
+
+                    <button className="btn-primary" onClick={handleExport}>
+                        <TrendingUp size={18} />
+                        <span>Export Batch Report</span>
+                    </button>
+                </div>
             </div>
+
 
             <div className="grid-dashboard" style={{ marginBottom: '2rem' }}>
                 <Link to="/admin/students" style={{ textDecoration: 'none', color: 'inherit', display: 'block', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseOver={e => e.currentTarget.style.transform = 'translateY(-4px)'} onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}>

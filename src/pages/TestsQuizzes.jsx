@@ -141,7 +141,18 @@ const TestsQuizzes = () => {
         if (validTests.length !== loadedTests.length) {
             localStorage.setItem('adminAssignedTests', JSON.stringify(validTests));
         }
-        setAssignedTests(validTests);
+
+        // Filter out tests the current user has already taken
+        const completed = JSON.parse(localStorage.getItem('studentCompletedTests') || '[]');
+        const myCompletedTestNames = completed
+            .filter(t => t.studentName === user.name)
+            .map(t => t.testName.toLowerCase()); // Store normalized name
+
+        const availableTests = validTests.filter(t => {
+            return !myCompletedTestNames.includes(t.topic.toLowerCase());
+        });
+
+        setAssignedTests(availableTests);
     }, [user]);
 
     // Timer Logic for Active Test
@@ -198,10 +209,9 @@ const TestsQuizzes = () => {
         const completed = JSON.parse(localStorage.getItem('studentCompletedTests') || '[]');
         localStorage.setItem('studentCompletedTests', JSON.stringify([resultRecord, ...completed]));
 
-        // Remove from assigned
-        const currentTests = JSON.parse(localStorage.getItem('adminAssignedTests') || '[]');
-        const updatedTests = currentTests.filter(t => t.id !== activeTest.id);
-        localStorage.setItem('adminAssignedTests', JSON.stringify(updatedTests));
+        // DO NOT remove from adminAssignedTests (so other students can still take it)
+        // Instead, just remove it from the local state view for this student
+        const updatedTests = assignedTests.filter(t => t.id !== activeTest.id);
 
         setAssignedTests(updatedTests);
         setTestResult(resultRecord);

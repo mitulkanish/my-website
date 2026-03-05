@@ -17,10 +17,9 @@ const AdminStudents = () => {
                 if (response.ok) {
                     const data = await response.json();
                     if (data.success) {
-                        // Dynamically update profile based on attendance
                         const processedStudents = data.students.map(student => {
                             let detailedProfile, type;
-                            const att = student.avg_att;
+                            const att = user?.role === 'teacher' ? student[`${user.subject}_att`] : student.avg_att;
 
                             if (att >= 90) { detailedProfile = "Elite Attendee"; type = "success"; }
                             else if (att >= 80) { detailedProfile = "Consistent Learner"; type = "good"; }
@@ -33,7 +32,7 @@ const AdminStudents = () => {
                             else if (att >= 10) { detailedProfile = "Critical Risk"; type = "critical"; }
                             else { detailedProfile = "Severe Disengagement"; type = "extreme"; }
 
-                            return { ...student, profile: detailedProfile, profileType: type };
+                            return { ...student, profile: detailedProfile, profileType: type, displayAtt: att };
                         });
                         setStudents(processedStudents);
                     }
@@ -45,12 +44,12 @@ const AdminStudents = () => {
             }
         };
 
-        if (user?.role === 'admin') {
+        if (user?.role === 'admin' || user?.role === 'teacher' || user?.role === 'coordinator') {
             fetchStudents();
         }
     }, [user]);
 
-    if (!user || user.role !== 'admin') {
+    if (!user || (user.role !== 'admin' && user.role !== 'teacher' && user.role !== 'coordinator')) {
         return <div style={{ color: 'var(--danger)', padding: '2rem' }}>Unauthorized access. Administrator privileges required.</div>;
     }
 
@@ -102,7 +101,9 @@ const AdminStudents = () => {
                                     <th style={{ padding: '1rem' }}>ID</th>
                                     <th style={{ padding: '1rem' }}>Student Name</th>
                                     <th style={{ padding: '1rem' }}>ML Profile</th>
-                                    <th style={{ padding: '1rem' }}>Avg Attendance</th>
+                                    <th style={{ padding: '1rem' }}>
+                                        {user?.role === 'teacher' ? `${user.subject.toUpperCase()} Attendance` : 'Avg Attendance'}
+                                    </th>
                                     <th style={{ padding: '1rem' }}></th>
                                 </tr>
                             </thead>
@@ -147,7 +148,7 @@ const AdminStudents = () => {
                                                 );
                                             })()}
                                         </td>
-                                        <td style={{ padding: '1rem', color: student.avg_att <= 75 ? 'var(--warning)' : 'var(--text-main)' }}>{student.avg_att}%</td>
+                                        <td style={{ padding: '1rem', color: student.displayAtt <= 75 ? 'var(--warning)' : 'var(--text-main)' }}>{student.displayAtt}%</td>
                                         <td style={{ padding: '1rem', textAlign: 'right', color: 'var(--text-muted)' }}>
                                             <ChevronRight size={18} />
                                         </td>

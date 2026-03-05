@@ -9,20 +9,27 @@ import {
   BrainCircuit,
   Bell,
   Search,
-  UserCircle
+  UserCircle,
+  Camera,
+  Table
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import CuroChatbot from './CuroChatbot';
 
 const Sidebar = () => {
   const { user } = useAuth();
 
+  const isAdminRole = user?.role === 'admin' || user?.role === 'coordinator' || user?.role === 'teacher';
+
   const navItems = [
     { path: '/', label: 'Overview Dashboard', icon: <BarChart3 size={20} /> },
-    { path: user?.role === 'admin' ? '/admin/students' : '/attendance', label: user?.role === 'admin' ? 'Class Attendance' : 'My Attendance', icon: <CalendarCheck size={20} /> },
-    { path: user?.role === 'admin' ? '/admin/subjects' : '/subjects', label: user?.role === 'admin' ? 'Class Subjects Analysis' : 'My Subjects Analysis', icon: <Library size={20} /> },
-    { path: user?.role === 'admin' ? '/admin/tests-quizzes' : '/tests-quizzes', label: user?.role === 'admin' ? 'Class Tests & Quizzes' : 'Tests & Quizzes', icon: <CheckSquare size={20} /> },
-    { path: user?.role === 'admin' ? '/admin/projects' : '/projects', label: user?.role === 'admin' ? 'Class Skill Projects' : 'Skill Projects', icon: <Lightbulb size={20} /> },
-    { path: user?.role === 'admin' ? '/admin/predictions' : '/predictions', label: user?.role === 'admin' ? 'Class Intelligence' : 'Success Intelligence', icon: <BrainCircuit size={20} /> },
+    { path: isAdminRole ? '/admin/students' : '/attendance', label: isAdminRole ? 'Class Attendance' : 'My Attendance', icon: <CalendarCheck size={20} /> },
+    ...(user?.role === 'teacher' ? [{ path: '/teacher/scanner', label: 'Start Webcam Tracker', icon: <Camera size={20} /> }] : []),
+    ...(isAdminRole ? [{ path: '/admin/daily-attendance', label: 'Daily Attendance Sheet', icon: <Table size={20} /> }] : []),
+    { path: isAdminRole ? '/admin/subjects' : '/subjects', label: isAdminRole ? 'Class Subjects Analysis' : 'My Subjects Analysis', icon: <Library size={20} /> },
+    { path: isAdminRole ? '/admin/tests-quizzes' : '/tests-quizzes', label: isAdminRole ? 'Class Tests & Quizzes' : 'Tests & Quizzes', icon: <CheckSquare size={20} /> },
+    { path: isAdminRole ? '/admin/projects' : '/projects', label: isAdminRole ? 'Class Skill Projects' : 'Skill Projects', icon: <Lightbulb size={20} /> },
+    { path: isAdminRole ? '/admin/predictions' : '/predictions', label: isAdminRole ? 'Class Intelligence' : 'Success Intelligence', icon: <BrainCircuit size={20} /> },
   ];
 
   return (
@@ -50,7 +57,7 @@ const Sidebar = () => {
         ))}
       </nav>
 
-      {user?.role !== 'admin' && (
+      {(!isAdminRole) && (
         <div style={{ marginTop: 'auto', paddingTop: '2rem', borderTop: '1px solid var(--border-glass)' }}>
           <div className="glass-panel" style={{ padding: '1rem', textAlign: 'center' }}>
             <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>Current Academic Health</p>
@@ -81,7 +88,7 @@ export const Header = () => {
   const [notifications, setNotifications] = useState([]);
 
   useEffect(() => {
-    if (user?.role === 'admin') return;
+    if (user?.role === 'admin' || user?.role === 'coordinator' || user?.role === 'teacher') return;
 
     const fetchNotifications = () => {
       const tests = JSON.parse(localStorage.getItem('adminAssignedTests') || '[]');
@@ -225,6 +232,7 @@ const Layout = () => {
           <Outlet />
         </main>
       </div>
+      <CuroChatbot />
     </div>
   );
 };

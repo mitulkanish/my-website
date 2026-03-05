@@ -26,12 +26,12 @@ const AdminSubjects = () => {
             }
         };
 
-        if (user?.role === 'admin') {
+        if (user?.role === 'admin' || user?.role === 'teacher' || user?.role === 'coordinator') {
             fetchStudents();
         }
     }, [user]);
 
-    if (!user || user.role !== 'admin') {
+    if (!user || (user.role !== 'admin' && user.role !== 'teacher' && user.role !== 'coordinator')) {
         return <div style={{ color: 'var(--danger)', padding: '2rem' }}>Unauthorized access. Administrator privileges required.</div>;
     }
 
@@ -81,10 +81,12 @@ const AdminSubjects = () => {
                                 <tr style={{ borderBottom: '1px solid var(--border-glass)', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
                                     <th style={{ padding: '1rem' }}>Rank (Overall)</th>
                                     <th style={{ padding: '1rem' }}>Student Name</th>
-                                    <th style={{ padding: '1rem' }}>Mathematics</th>
-                                    <th style={{ padding: '1rem', borderLeft: '1px solid rgba(255,255,255,0.02)' }}>Computer Theory</th>
-                                    <th style={{ padding: '1rem', borderLeft: '1px solid rgba(255,255,255,0.02)' }}>Design Eng.</th>
-                                    <th style={{ padding: '1rem', borderLeft: '1px solid rgba(255,255,255,0.02)' }}>C++ Prog.</th>
+
+                                    {(!user?.subject || user.subject === 'maths') && <th style={{ padding: '1rem' }}>Mathematics</th>}
+                                    {(!user?.subject || user.subject === 'ct') && <th style={{ padding: '1rem', borderLeft: '1px solid rgba(255,255,255,0.02)' }}>Computer Theory</th>}
+                                    {(!user?.subject || user.subject === 'de') && <th style={{ padding: '1rem', borderLeft: '1px solid rgba(255,255,255,0.02)' }}>Design Eng.</th>}
+                                    {(!user?.subject || user.subject === 'cpp') && <th style={{ padding: '1rem', borderLeft: '1px solid rgba(255,255,255,0.02)' }}>C++ Prog.</th>}
+
                                     <th style={{ padding: '1rem', borderLeft: '1px solid rgba(255,255,255,0.02)' }}>Composite</th>
                                 </tr>
                             </thead>
@@ -101,10 +103,29 @@ const AdminSubjects = () => {
                                         >
                                             <td style={{ padding: '1rem', color: 'var(--text-muted)' }}>#{idx + 1}</td>
                                             <td style={{ padding: '1rem', fontWeight: 500 }}>{student.name}</td>
-                                            <td style={{ padding: '1rem', color: student.maths_score <= 55 ? 'var(--danger)' : 'var(--text-main)' }}>{student.maths_score}%</td>
-                                            <td style={{ padding: '1rem', borderLeft: '1px solid rgba(255,255,255,0.02)', color: student.ct_score <= 55 ? 'var(--danger)' : 'var(--text-main)' }}>{student.ct_score}%</td>
-                                            <td style={{ padding: '1rem', borderLeft: '1px solid rgba(255,255,255,0.02)', color: student.de_score <= 55 ? 'var(--danger)' : 'var(--text-main)' }}>{student.de_score}%</td>
-                                            <td style={{ padding: '1rem', borderLeft: '1px solid rgba(255,255,255,0.02)', color: student.cpp_score <= 55 ? 'var(--danger)' : 'var(--text-main)' }}>{student.cpp_score}%</td>
+
+                                            {/* Mathematics Column */}
+                                            {(!user?.subject || user.subject === 'maths') && (
+                                                <td style={{ padding: '1rem', color: student.maths_score <= 55 ? 'var(--danger)' : 'var(--text-main)' }}>{student.maths_score}%</td>
+                                            )}
+
+                                            {/* Computer Theory Column */}
+                                            {(!user?.subject || user.subject === 'ct') && (
+                                                <td style={{ padding: '1rem', borderLeft: '1px solid rgba(255,255,255,0.02)', color: student.ct_score <= 55 ? 'var(--danger)' : 'var(--text-main)' }}>{student.ct_score}%</td>
+                                            )}
+
+                                            {/* Design Engineering Column */}
+                                            {(!user?.subject || user.subject === 'de') && (
+                                                <td style={{ padding: '1rem', borderLeft: '1px solid rgba(255,255,255,0.02)', color: student.de_score <= 55 ? 'var(--danger)' : 'var(--text-main)' }}>{student.de_score}%</td>
+                                            )}
+
+                                            {/* C++ Programming Column */}
+                                            {(!user?.subject || user.subject === 'cpp') && (
+                                                <td style={{ padding: '1rem', borderLeft: '1px solid rgba(255,255,255,0.02)', color: student.cpp_score <= 55 ? 'var(--danger)' : 'var(--text-main)' }}>{student.cpp_score}%</td>
+                                            )}
+
+                                            {/* COE Column - Although it's not a score in the same way, we can add it if they are a COE teacher or leave overall average */}
+
                                             <td style={{ padding: '1rem', borderLeft: '1px solid rgba(255,255,255,0.02)' }}>
                                                 <span style={{ color: student.avg_score >= 80 ? 'var(--success)' : student.avg_score <= 55 ? 'var(--danger)' : 'var(--text-muted)', fontWeight: 600 }}>
                                                     {student.avg_score}%

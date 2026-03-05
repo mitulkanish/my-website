@@ -165,7 +165,10 @@ const Login = () => {
                 </form>
 
                 <div style={{ marginTop: '2rem', textAlign: 'center', fontSize: '0.875rem', color: 'var(--text-muted)' }}>
-                    <p>For MVP: Enter any username/password to login.</p>
+                    <p style={{ marginBottom: '0.5rem' }}><strong>Admin:</strong> admin / admin123</p>
+                    <p style={{ marginBottom: '0.5rem' }}><strong>Coordinator:</strong> coordinator / coord123</p>
+                    <p style={{ marginBottom: '0.5rem' }}><strong>Teacher (Maths):</strong> teacher_maths / teacher123</p>
+                    <p><strong>Student:</strong> Any Name / 1234</p>
                 </div>
             </div>
         </div>

@@ -1,0 +1,15 @@
+--- Schema for webcam_attendance.db ---
+Table: Webcam_Attendance
+  id (INTEGER)
+  user_id (TEXT)
+  student_name (TEXT)
+  date (TEXT)
+  time_marked (DATETIME)
+  teacher_id (TEXT)
+  subject (TEXT)
+Table: sqlite_sequence
+  name ()
+  seq ()
+
+--- Schema for platform_data.db ---
+

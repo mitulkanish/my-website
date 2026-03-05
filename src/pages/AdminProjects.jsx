@@ -27,20 +27,34 @@ const AdminProjects = () => {
                             { title: 'Digital Circuit Simulator', url: 'https://github.com/student/de-simulator', date: new Date().toLocaleDateString(), subject: 'Electronic Devices', status: 'In Review' },
                             { title: 'Sorting Vislualizer', url: 'https://github.com/student/algo-visualizer', date: new Date().toLocaleDateString(), subject: 'Circuit Theory', status: 'Verified' },
                             { title: 'Library Management System', url: 'https://github.com/student/cpp-library', date: new Date().toLocaleDateString(), subject: 'C Programming', status: 'Needs Revision' },
-                            { title: 'Facial Attendance Model', url: 'https://github.com/student/smart-attendance', date: new Date().toLocaleDateString(), subject: 'AI/ML', status: 'In Review' },
-                            { title: 'E-Commerce Backend API', url: 'https://github.com/student/ecommerce-api', date: new Date().toLocaleDateString(), subject: 'Web Dev', status: 'Verified' },
+                            { title: 'Facial Attendance Model', url: 'https://github.com/student/smart-attendance', date: new Date().toLocaleDateString(), subject: 'Center of Excellence', status: 'In Review' },
+                            { title: 'E-Commerce Backend API', url: 'https://github.com/student/ecommerce-api', date: new Date().toLocaleDateString(), subject: 'C Programming', status: 'Verified' },
                             { title: 'Pathfinding Visualizer', url: 'https://github.com/student/pathfinding', date: new Date().toLocaleDateString(), subject: 'Circuit Theory', status: 'Verified' },
-                            { title: 'Stock Price Predictor', url: 'https://github.com/student/stock-predictor', date: new Date().toLocaleDateString(), subject: 'Data Science', status: 'Pending' }
+                            { title: 'Stock Price Predictor', url: 'https://github.com/student/stock-predictor', date: new Date().toLocaleDateString(), subject: 'Matrices and Calculus', status: 'Pending' }
                         ];
+
+                        const subjectMap = {
+                            'maths': 'Matrices and Calculus',
+                            'cpp': 'C Programming',
+                            'de': 'Electronic Devices',
+                            'ct': 'Circuit Theory',
+                            'coe': 'Center of Excellence'
+                        };
+
+                        const shouldFilter = (proj) => {
+                            if (user?.role === 'teacher') return proj.subject === subjectMap[user.subject];
+                            return true;
+                        };
 
                         data.students.forEach((student, index) => {
                             const savedProjects = localStorage.getItem(`uploaded_projects_${student.id}`);
                             if (savedProjects) {
                                 // Add default status for backward compatibility
-                                const parsed = JSON.parse(savedProjects).map(p => ({
+                                let parsed = JSON.parse(savedProjects).map(p => ({
                                     ...p,
                                     status: p.status || 'Pending'
                                 }));
+                                parsed = parsed.filter(shouldFilter);
                                 projectData[student.id] = parsed;
                             } else {
                                 // Provide fake projects for demo if local storage is empty
@@ -48,13 +62,14 @@ const AdminProjects = () => {
                                 const numId = parseInt(String(student.id).replace(/\D/g, '') || '0', 10);
                                 const projCount = (index % 4) === 0 ? 1 : ((index % 3) === 0 ? 3 : 2);
 
-                                const stProjects = [];
+                                let stProjects = [];
                                 for (let i = 0; i < projCount; i++) {
                                     stProjects.push({
                                         ...defaultProjectsPool[(numId + i) % defaultProjectsPool.length],
                                         id: `demo-${student.id}-${i}`
                                     });
                                 }
+                                stProjects = stProjects.filter(shouldFilter);
                                 projectData[student.id] = stProjects;
                             }
                         });
@@ -68,7 +83,9 @@ const AdminProjects = () => {
                             if (!projectData[studentId]) {
                                 const savedProjects = localStorage.getItem(`uploaded_projects_${studentId}`);
                                 if (savedProjects) {
-                                    projectData[studentId] = JSON.parse(savedProjects);
+                                    let parsed = JSON.parse(savedProjects);
+                                    parsed = parsed.filter(shouldFilter);
+                                    projectData[studentId] = parsed;
 
                                     // Optionally append this student to the standard list if they are totally new (MVP behavior)
                                     if (!data.students.find(s => String(s.id) === String(studentId))) {
@@ -95,12 +112,12 @@ const AdminProjects = () => {
             }
         };
 
-        if (user?.role === 'admin') {
+        if (user?.role === 'admin' || user?.role === 'teacher' || user?.role === 'coordinator') {
             fetchStudents();
         }
     }, [user]);
 
-    if (!user || user.role !== 'admin') {
+    if (!user || (user.role !== 'admin' && user.role !== 'teacher' && user.role !== 'coordinator')) {
         return <div style={{ color: 'var(--danger)', padding: '2rem' }}>Unauthorized access. Administrator privileges required.</div>;
     }
 

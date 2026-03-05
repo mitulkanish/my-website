@@ -18,8 +18,17 @@ const AdminPredictions = () => {
                     const data = await response.json();
                     if (data.success) {
                         const processedStudents = data.students.map(student => {
-                            let detailedProfile, type;
-                            const health = (student.avg_score * 0.6) + (student.avg_att * 0.4);
+                            let detailedProfile, type, health, displayScore;
+
+                            if (user?.role === 'teacher') {
+                                const subjectScore = student[`${user.subject}_score`] || 0;
+                                const subjectAtt = student[`${user.subject}_att`] || 0;
+                                health = (subjectScore * 0.6) + (subjectAtt * 0.4);
+                                displayScore = subjectScore;
+                            } else {
+                                health = (student.avg_score * 0.6) + (student.avg_att * 0.4);
+                                displayScore = student.avg_score;
+                            }
 
                             if (health >= 90) { detailedProfile = "Exceptional Potential"; type = "success"; }
                             else if (health >= 80) { detailedProfile = "High Achiever"; type = "good"; }
@@ -32,7 +41,7 @@ const AdminPredictions = () => {
                             else if (health >= 10) { detailedProfile = "Critical Risk"; type = "critical"; }
                             else { detailedProfile = "Severe Intervention Needed"; type = "extreme"; }
 
-                            return { ...student, predictedProfile: detailedProfile, profileType: type, healthScore: health };
+                            return { ...student, predictedProfile: detailedProfile, profileType: type, healthScore: health, displayScore: displayScore };
                         });
                         setStudents(processedStudents);
                     }
@@ -44,12 +53,12 @@ const AdminPredictions = () => {
             }
         };
 
-        if (user?.role === 'admin') {
+        if (user?.role === 'admin' || user?.role === 'teacher' || user?.role === 'coordinator') {
             fetchStudents();
         }
     }, [user]);
 
-    if (!user || user.role !== 'admin') {
+    if (!user || (user.role !== 'admin' && user.role !== 'teacher' && user.role !== 'coordinator')) {
         return <div style={{ color: 'var(--danger)', padding: '2rem' }}>Unauthorized access. Administrator privileges required.</div>;
     }
 
@@ -100,7 +109,7 @@ const AdminPredictions = () => {
                                     <th style={{ padding: '1rem' }}>ID</th>
                                     <th style={{ padding: '1rem' }}>Student Name</th>
                                     <th style={{ padding: '1rem' }}>Predicted Profile</th>
-                                    <th style={{ padding: '1rem' }}>Overall Health</th>
+                                    <th style={{ padding: '1rem' }}>{user?.role === 'teacher' ? `${user.subject.toUpperCase()} Health` : 'Overall Health'}</th>
                                     <th style={{ padding: '1rem' }}></th>
                                 </tr>
                             </thead>
@@ -145,7 +154,7 @@ const AdminPredictions = () => {
                                                 );
                                             })()}
                                         </td>
-                                        <td style={{ padding: '1rem', color: student.avg_score <= 55 ? 'var(--danger)' : 'inherit' }}>
+                                        <td style={{ padding: '1rem', color: student.displayScore <= 55 ? 'var(--danger)' : 'inherit' }}>
                                             {student.healthScore.toFixed(1)}/100
                                         </td>
                                         <td style={{ padding: '1rem', textAlign: 'right', color: 'var(--text-muted)' }}>

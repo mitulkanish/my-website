@@ -78,14 +78,29 @@ const AdminTestsQuizzes = () => {
             }
         };
 
-        if (user?.role === 'admin') {
+        if (user?.role === 'admin' || user?.role === 'teacher' || user?.role === 'coordinator') {
             fetchStudents();
         }
     }, [user]);
 
-    if (!user || user.role !== 'admin') {
+    if (!user || (user.role !== 'admin' && user.role !== 'teacher' && user.role !== 'coordinator')) {
         return <div style={{ color: 'var(--danger)', padding: '2rem' }}>Unauthorized access. Administrator privileges required.</div>;
     }
+
+    const subjectMap = {
+        'maths': 'Matrices and Calculus',
+        'cpp': 'C Programming',
+        'de': 'Electronic Devices',
+        'ct': 'Circuit Theory',
+        'coe': 'Center of Excellence'
+    };
+
+    const filteredSubjectsTopics = Object.entries(subjectsTopics).filter(([subject, topics]) => {
+        if (user?.role === 'teacher') {
+            return subject === subjectMap[user.subject];
+        }
+        return true;
+    });
 
     const filteredStudents = students.filter(student =>
         student.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -251,7 +266,7 @@ const AdminTestsQuizzes = () => {
 
             {activeTab === 'generate' && (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                    {Object.entries(subjectsTopics).map(([subject, topics]) => (
+                    {filteredSubjectsTopics.map(([subject, topics]) => (
                         <div key={subject} className="glass-panel" style={{ padding: '1.5rem' }}>
                             <div className="flex-between" style={{ marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '1px solid var(--border-glass)' }}>
                                 <h2 style={{ fontSize: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>

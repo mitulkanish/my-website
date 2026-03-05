@@ -22,6 +22,10 @@ import AdminProjects from './pages/AdminProjects';
 import AdminPredictions from './pages/AdminPredictions';
 import AdminPredictionDetail from './pages/AdminPredictionDetail';
 
+// Webcam Attendance Views
+import TeacherAttendanceScanner from './pages/TeacherAttendanceScanner';
+import AttendanceSpreadsheet from './pages/AttendanceSpreadsheet';
+
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
   const { user } = useAuth();
@@ -37,7 +41,7 @@ const ProtectedRoute = ({ children }) => {
 const HomeDashboard = () => {
   const { user } = useAuth();
 
-  if (user?.role === 'admin') {
+  if (user?.role === 'admin' || user?.role === 'teacher' || user?.role === 'coordinator') {
     return <AdminDashboard />;
   }
 
@@ -69,6 +73,10 @@ function AppRoutes() {
         <Route path="admin/projects" element={<AdminProjects />} />
         <Route path="admin/predictions" element={<AdminPredictions />} />
         <Route path="admin/prediction/:id" element={<AdminPredictionDetail />} />
+
+        {/* Webcam Attendance Routes */}
+        <Route path="teacher/scanner" element={<TeacherAttendanceScanner />} />
+        <Route path="admin/daily-attendance" element={<AttendanceSpreadsheet />} />
       </Route>
     </Routes>
   );

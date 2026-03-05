@@ -8,12 +8,31 @@ import re
 import random
 import PyPDF2
 import os
+import sqlite3
+import datetime
+import base64
+import numpy as np
+import cv2
+try:
+    from deepface import DeepFace
+    DEEPFACE_AVAILABLE = True
+except ImportError:
+    DEEPFACE_AVAILABLE = False
+
+# SQLite Setup
+def get_db():
+    db_path = os.path.join(BASE_DIR, 'webcam_attendance.db')
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+    return conn
 
 app = FastAPI(title="Academic Intelligence ML API")
 
 # Define the path to the dataset dynamically
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATASET_PATH = os.path.join(os.path.dirname(BASE_DIR), "student dataset.csv")
+FACES_DIR = os.path.join(BASE_DIR, "reference_faces")
+os.makedirs(FACES_DIR, exist_ok=True)
 
 app.add_middleware(
     CORSMiddleware,
@@ -22,6 +41,21 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.on_event('startup')
+def startup_db():
+    conn = get_db()
+    conn.execute('''CREATE TABLE IF NOT EXISTS Webcam_Attendance (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        user_id TEXT,
+                        student_name TEXT,
+                        date TEXT,
+                        time_marked DATETIME,
+                        teacher_id TEXT,
+                        subject TEXT
+                    )''')
+    conn.commit()
+    conn.close()
 
 try:
     model = joblib.load("knowledge_model.pkl")
@@ -44,6 +78,279 @@ class LoginRequest(BaseModel):
     student_id: str
     password: str
 
+class StartSessionRequest(BaseModel):
+    teacher_id: str
+    password: str
+
+class MarkAttendanceRequest(BaseModel):
+    student_id: str
+    student_name: str
+    teacher_id: str
+    subject: str
+
+class RecognizeFrameRequest(BaseModel):
+    teacher_id: str
+    subject: str
+    frame_base64: str
+
+class ChatRequest(BaseModel):
+    message: str
+    user_role: str
+
+@app.post("/attendance/secure_start")
+def secure_start_session(request: StartSessionRequest):
+    teachers = {
+        "teacher_maths": "maths",
+        "teacher_ct": "ct",
+        "teacher_de": "de",
+        "teacher_cpp": "cpp",
+        "teacher_coe": "coe",
+    }
+    
+    if request.teacher_id.lower() in teachers:
+        if request.password == "teacher123":
+            return {
+                "success": True, 
+                "session_token": f"token_{request.teacher_id}_{datetime.datetime.now().timestamp()}",
+                "subject": teachers[request.teacher_id.lower()]
+            }
+        return {"error": "Invalid password for this teacher account."}
+        
+    return {"error": "Invalid teacher ID."}
+
+@app.post("/attendance/mark")
+def mark_attendance(request: MarkAttendanceRequest):
+    conn = get_db()
+    now = datetime.datetime.now()
+    today_str = now.strftime("%Y-%m-%d")
+    
+    existing = conn.execute("""
+        SELECT * FROM Webcam_Attendance 
+        WHERE user_id = ? AND date = ? AND subject = ?
+    """, (request.student_id, today_str, request.subject)).fetchone()
+    
+    if existing:
+        conn.close()
+        return {"success": False, "message": f"{request.student_name} is already marked present for {request.subject} today."}
+        
+    conn.execute("""
+        INSERT INTO Webcam_Attendance (user_id, student_name, date, time_marked, teacher_id, subject)
+        VALUES (?, ?, ?, ?, ?, ?)
+    """, (request.student_id, request.student_name, today_str, now, request.teacher_id, request.subject))
+    
+    conn.commit()
+    conn.close()
+    
+    return {"success": True, "attendance": formatted}
+
+@app.post("/chat")
+def curo_chat(request: ChatRequest):
+    msg = request.message.lower()
+    role = request.user_role.lower()
+    
+    # 1. NLP Database Interception phase
+    # Check if the user is asking for specific student details
+    if any(keyword in msg for keyword in ["fetch", "details of", "attendance of", "account of", "score of", "marks for"]):
+        # Extract potential names (words with a mix of letters and numbers like 'Balkies32' or just names)
+        # Assuming names are capitalised in strings or user inputs exact username.
+        words = request.message.split()
+        target_name = None
+        for word in words:
+            # Strip punctuation
+            clean_word = re.sub(r'[^\w\s]', '', word)
+            # Find words that are likely usernames (e.g., Mitul50, Ajay23, Balkies32, Pennesh1)
+            # or just look for matches against known accounts.
+            if len(clean_word) > 3 and clean_word.lower() not in ["fetch", "details", "attendance", "account", "score", "marks", "what", "is", "the", "of", "for", "student"]:
+                target_name = clean_word
+                break
+                
+        if target_name:
+            # Query Database
+            try:
+                # 1. Fetch Attendance from Webcam DB
+                conn = sqlite3.connect(os.path.join(BASE_DIR, 'webcam_attendance.db'))
+                c = conn.cursor()
+                # Use LIKE to be case insensitive
+                c.execute("SELECT * FROM Webcam_Attendance WHERE student_name LIKE ?", (f'%{target_name}%',))
+                att_rows = c.fetchall()
+                conn.close()
+                
+                # 2. Fetch Grades from the CSV dataset
+                grade_rows = []
+                try:
+                    df = pd.read_csv(DATASET_PATH)
+                    # Filter for rows containing the target name
+                    # Case insensitive match
+                    student_data = df[df['NAME'].str.contains(target_name, case=False, na=False)]
+                    if not student_data.empty:
+                        # Extract the first matching row
+                        row = student_data.iloc[0]
+                        grade_rows = [
+                            ("Maths", row.get("MATHS_SCORE", "N/A")),
+                            ("CT", row.get("CT_SCORE", "N/A")),
+                            ("DE", row.get("DE_SCORE", "N/A")),
+                            ("CPP", row.get("CPP_SCORE", "N/A")),
+                            ("Profile", row.get("STUDENT_PROFILE", "Unknown"))
+                        ]
+                except Exception as ex:
+                    print(f"CSV read error: {ex}")
+                
+                if att_rows or grade_rows:
+                    response_parts = [f"**Data fetched for {target_name.capitalize()}!**\n"]
+                    
+                    if att_rows:
+                        total_present = len(att_rows)
+                        last_seen = att_rows[-1][2]
+                        response_parts.append(f"📌 **Attendance:** Present for {total_present} session(s). Last seen: {last_seen}")
+                    else:
+                        response_parts.append("📌 **Attendance:** No recent automated webcam records found.")
+                        
+                    if grade_rows:
+                        response_parts.append("\n🎓 **Recent Assessment Scores:**")
+                        for row in grade_rows:
+                            response_parts.append(f"- {row[0]}: **{row[1]}%**")
+                            
+                    response_parts.append("\n*Note: This data is securely and dynamically pulled from the live databases.*")
+                    response = "\n".join(response_parts)
+                    return {"success": True, "response": response, "sender": "curo"}
+                else:
+                    response = f"I searched the databases for '{target_name}' but couldn't find any recent attendance or assessment records."
+                    return {"success": True, "response": response, "sender": "curo"}
+            except Exception as e:
+                print(f"DB Error: {e}")
+                
+    # 2. General Fallback generic navigation rules
+    response = "I am Curo, your INTERVENIX Academic AI! How can I help you today?"
+    
+    # Keyword detection and context routing
+    if any(word in msg for word in ["hello", "hi", "hey"]):
+        response = "Hello there! I'm Curo, the INTERVENIX AI. I can guide you to your classes, check your attendance, or analyze your predictions. What do you need?"
+    elif any(word in msg for word in ["attendance", "present", "absent"]):
+        if role in ["admin", "coordinator", "teacher"]:
+            response = "As an instructor, you can mark live attendance using the **Start Webcam Tracker** or view records in the **Daily Attendance Sheet** from the sidebar. You can also see overall metrics in **Class Attendance**."
+        else:
+            response = "You can view your current attendance metrics by clicking on **My Attendance** in the left sidebar."
+    elif any(word in msg for word in ["predict", "intelligence", "success", "future"]):
+        if role in ["admin", "coordinator", "teacher"]:
+            response = "To see the success predictions for your entire class, navigate to **Class Intelligence** in the sidebar."
+        else:
+            response = "Want to know how you're tracking? Check out your personalized forecast under **Success Intelligence** on the left."
+    elif any(word in msg for word in ["test", "quiz", "exam", "marks", "score"]):
+        if role in ["admin", "coordinator", "teacher"]:
+            response = "You can manage, assign, and review class assessments in the **Class Tests & Quizzes** section."
+        else:
+            response = "You can view your scores and upcoming assessments in the **Tests & Quizzes** tab located in the sidebar."
+    elif any(word in msg for word in ["project", "skill", "assignment"]):
+        response = "Skill projects and assignments are located in the **Skill Projects** area on the sidebar. Keep building those practical skills!"
+    elif any(word in msg for word in ["subject", "course", "syllabus"]):
+        response = "Detailed subject analysis is available in the **Subjects Analysis** section. You can find it right below Attendance in the menu."
+    elif "who are you" in msg or "what are you" in msg or "name" in msg:
+        response = "I am Curo, a custom-built AI designed specifically for the INTERVENIX platform! I'm here to ensure you get the most out of your academic experience."
+    elif "help" in msg or "guide" in msg:
+        response = "I can guide you! Try asking me about ' attendance', 'tests', 'projects', or 'predictions'. For example: *'Where do I find my recent quiz marks?'*"
+    else:
+        response = "I'm still learning! While I might not understand that specific question yet, you can always ask me about navigating Attendance, Tests, Projects, or AI Predictions."
+        
+    return {"success": True, "response": response, "sender": "curo"}
+
+@app.post("/attendance/recognize_frame")
+def recognize_frame(request: RecognizeFrameRequest):
+    if not DEEPFACE_AVAILABLE:
+        return {"success": False, "message": "ML Face Engine is not installed on the server."}
+        
+    try:
+        # Decode base64 frame from React webcam
+        # Format: "data:image/jpeg;base64,/9j/4AAQ..."
+        encoded_data = request.frame_base64.split(',')[1] if ',' in request.frame_base64 else request.frame_base64
+        nparr = np.frombuffer(base64.b64decode(encoded_data), np.uint8)
+        img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+        
+        # Save temporary frame to disk for DeepFace
+        # (DeepFace works best with filepaths in its current iteration)
+        temp_path = os.path.join(BASE_DIR, "temp_frame.jpg")
+        cv2.imwrite(temp_path, img)
+        
+        # Look for the faces folder
+        if not os.path.exists(FACES_DIR) or not os.listdir(FACES_DIR):
+            return {"success": False, "message": "No reference faces uploaded."}
+            
+        # Run recognition
+        # Find matches from temp_path against all images in FACES_DIR
+        dfs = DeepFace.find(img_path=temp_path, db_path=FACES_DIR, enforce_detection=False, silent=True)
+        
+        if len(dfs) > 0 and len(dfs[0]) > 0:
+            # We found a match
+            matched_row = dfs[0].iloc[0]
+            # matched_row['identity'] will be the absolute path to the reference image, e.g. "C:/.../Mitul50.jpg"
+            matched_file_path = matched_row['identity']
+            matched_filename = os.path.basename(matched_file_path) # e.g. "Mitul50.jpg"
+            student_name = os.path.splitext(matched_filename)[0] # e.g. "Mitul50"
+            
+            # Map name back to an ID if possible, otherwise use name as ID
+            student_id = f"ID_{student_name}" 
+            
+            # Record attendance in DB
+            conn = get_db()
+            now = datetime.datetime.now()
+            today_str = now.strftime("%Y-%m-%d")
+            
+            existing = conn.execute("""
+                SELECT * FROM Webcam_Attendance 
+                WHERE user_id = ? AND date = ? AND subject = ?
+            """, (student_id, today_str, request.subject)).fetchone()
+            
+            if not existing:
+                conn.execute("""
+                    INSERT INTO Webcam_Attendance (user_id, student_name, date, time_marked, teacher_id, subject)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                """, (student_id, student_name, today_str, now, request.teacher_id, request.subject))
+                conn.commit()
+                conn.close()
+                return {"success": True, "message": f"Facial Match: {student_name} marked present."}
+            else:
+                conn.close()
+                return {"success": True, "message": f"{student_name} is already marked for today."}
+                
+        return {"success": False, "message": "No recognized students found in frame."}
+        
+    except Exception as e:
+        print(f"Face recognition error: {e}")
+        return {"success": False, "message": "Frame processing failed.", "error": str(e)}
+
+@app.get("/attendance/daily")
+def get_daily_attendance(date: str = None, subject: str = None):
+    conn = get_db()
+    
+    query = "SELECT * FROM Webcam_Attendance WHERE 1=1"
+    params = []
+    
+    if date:
+        query += " AND date = ?"
+        params.append(date)
+        
+    if subject and subject.lower() != 'all':
+        query += " AND subject = ?"
+        params.append(subject)
+        
+    query += " ORDER BY time_marked DESC"
+    
+    records = conn.execute(query, params).fetchall()
+    conn.close()
+    
+    history = []
+    for r in records:
+        history.append({
+            "id": r["id"],
+            "user_id": r["user_id"],
+            "student_name": r["student_name"],
+            "date": r["date"],
+            "time_marked": r["time_marked"],
+            "teacher_id": r["teacher_id"],
+            "subject": r["subject"]
+        })
+        
+    return {"success": True, "records": history}
+
 @app.post("/login")
 def login(request: LoginRequest):
     # Admin Override
@@ -58,6 +365,42 @@ def login(request: LoginRequest):
                 }
             }
         return {"error": "Invalid admin password."}
+        
+    # Coordinator Role
+    if request.student_id.lower() == "coordinator":
+        if request.password == "coord123":
+            return {
+                "success": True,
+                "user": {
+                    "id": "coord-001",
+                    "name": "System Coordinator",
+                    "role": "coordinator",
+                }
+            }
+        return {"error": "Invalid coordinator password."}
+
+    # Teacher Roles (mapped to subjects)
+    teachers = {
+        "teacher_maths": {"name": "Maths Teacher", "subject": "maths"},
+        "teacher_ct": {"name": "CT Teacher", "subject": "ct"},
+        "teacher_de": {"name": "DE Teacher", "subject": "de"},
+        "teacher_cpp": {"name": "C++ Teacher", "subject": "cpp"},
+        "teacher_coe": {"name": "COE Teacher", "subject": "coe"},
+    }
+    
+    if request.student_id.lower() in teachers:
+        if request.password == "teacher123":
+            teacher_info = teachers[request.student_id.lower()]
+            return {
+                "success": True,
+                "user": {
+                    "id": request.student_id.lower(),
+                    "name": teacher_info["name"],
+                    "role": "teacher",
+                    "subject": teacher_info["subject"]
+                }
+            }
+        return {"error": f"Invalid password for {request.student_id}."}
 
     if request.password != "1234":
         return {"error": "Invalid password. The default password is 1234."}
@@ -259,7 +602,12 @@ def get_all_students():
             "maths_score": row['MATHS_SCORE'],
             "ct_score": row['CT_SCORE'],
             "de_score": row['DE_SCORE'],
-            "cpp_score": row['CPP_SCORE']
+            "cpp_score": row['CPP_SCORE'],
+            "maths_att": row['MATHS_ATT'],
+            "ct_att": row['CT_ATT'],
+            "de_att": row['DE_ATT'],
+            "cpp_att": row['CPP_ATT'],
+            "coe_att": row['COE_ATT']
         })
         
     return {
