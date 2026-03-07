@@ -96,7 +96,7 @@ const Login = () => {
                 <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                     <div>
                         <label style={{ display: 'block', fontSize: '0.875rem', marginBottom: '0.5rem', color: 'var(--text-muted)' }}>
-                            Student ID or Username
+                            Student ID or Username or Parent ID
                         </label>
                         <input
                             type="text"
@@ -168,7 +168,8 @@ const Login = () => {
                     <p style={{ marginBottom: '0.5rem' }}><strong>Admin:</strong> admin / admin123</p>
                     <p style={{ marginBottom: '0.5rem' }}><strong>Coordinator:</strong> coordinator / coord123</p>
                     <p style={{ marginBottom: '0.5rem' }}><strong>Teacher (Maths):</strong> teacher_maths / teacher123</p>
-                    <p><strong>Student:</strong> Any Name / 1234</p>
+                    <p style={{ marginBottom: '0.5rem' }}><strong>Student:</strong> Any Name / 1234</p>
+                    <p><strong>Parent:</strong> Enter Parent ID / Parent Password</p>
                 </div>
             </div>
         </div>

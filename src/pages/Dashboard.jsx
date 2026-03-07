@@ -6,25 +6,20 @@ import {
     BookOpen,
     Award,
     AlertTriangle,
-    CheckCircle2
+    CheckCircle2,
+    BrainCircuit
 } from 'lucide-react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
 
-const mockHealthData = [
-    { week: 'W1', score: 72 },
-    { week: 'W2', score: 75 },
-    { week: 'W3', score: 74 },
-    { week: 'W4', score: 78 },
-    { week: 'W5', score: 81 },
-    { week: 'W6', score: 84 },
+const mockRadarData = [
+    { subject: 'Attendance', A: 85, fullMark: 100 },
+    { subject: 'Test Performance', A: 78, fullMark: 100 },
+    { subject: 'Skills', A: 92, fullMark: 100 },
+    { subject: 'Practical Knowledge', A: 88, fullMark: 100 },
+    { subject: 'Consistency', A: 70, fullMark: 100 },
 ];
 
-const mockAttendanceData = [
-    { subject: 'Math', rate: 92 },
-    { subject: 'Physics', rate: 85 },
-    { subject: 'CS', rate: 98 },
-    { subject: 'English', rate: 70 },
-];
+
 
 const StatCard = ({ title, value, icon, trend, type }) => (
     <div className="glass-panel" style={{ padding: '1.5rem' }}>
@@ -92,8 +87,16 @@ const Dashboard = () => {
         <div className="page-header">
             <div className="flex-between" style={{ marginBottom: '2rem' }}>
                 <div>
-                    <h1 className="page-title text-gradient">Welcome back, {user.name}</h1>
-                    <p className="page-description">Your real-time Success Intelligence dashboard.</p>
+                    <h1 className="page-title text-gradient" style={{ marginBottom: '0.5rem' }}>Welcome back, {user.name}</h1>
+                    <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', marginBottom: '0.5rem' }}>
+                        <span className="glass-pill" style={{ background: 'rgba(14, 165, 233, 0.1)', color: 'var(--primary)', border: '1px solid rgba(14, 165, 233, 0.2)' }}>
+                            {user.data.DEPARTMENT || 'Engineering'}
+                        </span>
+                        <span className="glass-pill" style={{ background: 'rgba(255, 255, 255, 0.05)', color: 'var(--text-muted)' }}>
+                            Year 1
+                        </span>
+                    </div>
+                    <p className="page-description" style={{ marginTop: '0.5rem' }}>Your real-time Success Intelligence dashboard.</p>
                 </div>
                 <button className="btn-primary">
                     <TrendingUp size={18} />
@@ -101,35 +104,25 @@ const Dashboard = () => {
                 </button>
             </div>
 
-            <div className="grid-dashboard" style={{ marginBottom: '2rem' }}>
-                <StatCard
-                    title="Avg Test Score"
-                    value={`${avgScore}%`}
-                    icon={<Award color="var(--primary)" />}
-                    trend={avgScore >= 75 ? "Good" : "Needs Work"}
-                    type={avgScore >= 75 ? "positive" : "negative"}
-                />
-                <StatCard
-                    title="Theory Attendance"
-                    value={`${avgAtt}%`}
-                    icon={<Users color="var(--accent)" />}
-                    trend={avgAtt >= 75 ? "On Track" : "Low"}
-                    type={avgAtt >= 75 ? "positive" : "negative"}
-                />
-                <StatCard
-                    title="COE Attendance"
-                    value={`${user.data.COE_ATT}%`}
-                    icon={<BookOpen color="var(--secondary)" />}
-                    trend={user.data.COE_ATT >= 75 ? "Excellent" : "Action Needed"}
-                    type={user.data.COE_ATT >= 75 ? "positive" : "negative"}
-                />
-                <StatCard
-                    title="Profile Classification"
-                    value={loading ? "..." : (insights?.profile || "Unknown")}
-                    icon={<AlertTriangle color="var(--warning)" />}
-                    trend="AI Prediction"
-                    type="neutral"
-                />
+            {/* Radar Chart for Academic Health Components */}
+            <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', marginBottom: '2rem' }}>
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <BrainCircuit color="var(--primary)" />
+                    Academic Dimension Analysis
+                </h3>
+                <div style={{ height: '300px', width: '100%' }}>
+                    <ResponsiveContainer width="100%" height="100%">
+                        <RadarChart cx="50%" cy="50%" outerRadius="70%" data={mockRadarData}>
+                            <PolarGrid stroke="rgba(255,255,255,0.1)" />
+                            <PolarAngleAxis dataKey="subject" tick={{ fill: 'var(--text-muted)', fontSize: 12 }} />
+                            <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
+                            <Radar name="Student" dataKey="A" stroke="var(--primary)" fill="var(--primary)" fillOpacity={0.5} />
+                        </RadarChart>
+                    </ResponsiveContainer>
+                </div>
+                <p style={{ textAlign: 'center', fontSize: '0.875rem', color: 'var(--text-muted)', marginTop: '1rem' }}>
+                    Strong practical skills detected. Consider attending more consistently.
+                </p>
             </div>
 
             <div className="grid-cols-1-2" style={{ marginBottom: '2rem' }}>
@@ -202,42 +195,43 @@ const Dashboard = () => {
                         </div>
                     </div>
 
-                    <div className="glass-panel" style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                        <div className="flex-between" style={{ marginBottom: '1.5rem' }}>
-                            <h3 style={{ fontSize: '1.25rem' }}>Academic Health Growth</h3>
-                            <select style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--border-glass)', color: 'white', padding: '0.5rem', borderRadius: '8px', outline: 'none' }}>
-                                <option value="6w">Last 6 Weeks</option>
-                                <option value="3m">Last 3 Months</option>
-                            </select>
-                        </div>
-                        <div style={{ height: '250px', width: '100%' }}>
-                            <ResponsiveContainer width="100%" height="100%">
-                                <AreaChart
-                                    data={[
-                                        ...mockHealthData.slice(0, 5),
-                                        { week: 'Current', score: Math.round((parseFloat(avgScore) + parseFloat(avgAtt)) / 2) }
-                                    ]}
-                                    margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
-                                >
-                                    <defs>
-                                        <linearGradient id="colorScore" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="var(--primary)" stopOpacity={0.8} />
-                                            <stop offset="95%" stopColor="var(--primary)" stopOpacity={0} />
-                                        </linearGradient>
-                                    </defs>
-                                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
-                                    <XAxis dataKey="week" stroke="var(--text-muted)" tick={{ fontSize: 12 }} axisLine={false} tickLine={false} />
-                                    <YAxis stroke="var(--text-muted)" tick={{ fontSize: 12 }} axisLine={false} tickLine={false} domain={['dataMin - 5', 'dataMax + 5']} />
-                                    <Tooltip
-                                        contentStyle={{ background: 'rgba(15, 17, 26, 0.9)', border: '1px solid var(--border-glass)', borderRadius: '8px' }}
-                                        itemStyle={{ color: 'var(--text-main)' }}
-                                    />
-                                    <Area type="monotone" dataKey="score" stroke="var(--primary)" strokeWidth={3} fillOpacity={1} fill="url(#colorScore)" />
-                                </AreaChart>
-                            </ResponsiveContainer>
-                        </div>
+                    <div className="glass-panel" style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                         <p style={{ color: 'var(--text-muted)', textAlign: 'center' }}>
+                             Keep up the good work! Consistent attendance and practice will continue to improve your health score.
+                         </p>
                     </div>
                 </div>
+            </div>
+
+            <div className="grid-dashboard" style={{ marginBottom: '2rem' }}>
+                <StatCard
+                    title="Avg Test Score"
+                    value={`${avgScore}%`}
+                    icon={<Award color="var(--primary)" />}
+                    trend={avgScore >= 75 ? "Good" : "Needs Work"}
+                    type={avgScore >= 75 ? "positive" : "negative"}
+                />
+                <StatCard
+                    title="Theory Attendance"
+                    value={`${avgAtt}%`}
+                    icon={<Users color="var(--accent)" />}
+                    trend={avgAtt >= 75 ? "On Track" : "Low"}
+                    type={avgAtt >= 75 ? "positive" : "negative"}
+                />
+                <StatCard
+                    title="COE Attendance"
+                    value={`${user.data.COE_ATT}%`}
+                    icon={<BookOpen color="var(--secondary)" />}
+                    trend={user.data.COE_ATT >= 75 ? "Excellent" : "Action Needed"}
+                    type={user.data.COE_ATT >= 75 ? "positive" : "negative"}
+                />
+                <StatCard
+                    title="Profile Classification"
+                    value={loading ? "..." : (insights?.profile || "Unknown")}
+                    icon={<AlertTriangle color="var(--warning)" />}
+                    trend="AI Prediction"
+                    type="neutral"
+                />
             </div>
         </div>
     );

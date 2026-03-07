@@ -54,6 +54,17 @@ def startup_db():
                         teacher_id TEXT,
                         subject TEXT
                     )''')
+                    
+    conn.execute('''CREATE TABLE IF NOT EXISTS Student_Voice_Logs (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        student_email TEXT NOT NULL,
+                        student_name TEXT NOT NULL,
+                        subject TEXT NOT NULL,
+                        raw_text TEXT NOT NULL,
+                        ai_mindset TEXT NOT NULL,
+                        ai_response TEXT NOT NULL,
+                        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )''')
     conn.commit()
     conn.close()
 
@@ -96,6 +107,39 @@ class RecognizeFrameRequest(BaseModel):
 class ChatRequest(BaseModel):
     message: str
     user_role: str
+
+class StudentVoiceRequest(BaseModel):
+    student_email: str
+    student_name: str
+    subject: str
+    text: str
+
+class CreateStudentRequest(BaseModel):
+    name: str
+    department: str
+    maths_att: int
+    ct_att: int
+    de_att: int
+    cpp_att: int
+    coe_att: int
+    maths_score: int
+    ct_score: int
+    de_score: int
+    cpp_score: int
+
+class UpdateStudentRequest(BaseModel):
+    name: str | None = None
+    department: str | None = None
+    maths_att: int | None = None
+    ct_att: int | None = None
+    de_att: int | None = None
+    cpp_att: int | None = None
+    coe_att: int | None = None
+    maths_score: int | None = None
+    ct_score: int | None = None
+    de_score: int | None = None
+    cpp_score: int | None = None
+
 
 @app.post("/attendance/secure_start")
 def secure_start_session(request: StartSessionRequest):
@@ -148,78 +192,6 @@ def curo_chat(request: ChatRequest):
     msg = request.message.lower()
     role = request.user_role.lower()
     
-    # 1. NLP Database Interception phase
-    # Check if the user is asking for specific student details
-    if any(keyword in msg for keyword in ["fetch", "details of", "attendance of", "account of", "score of", "marks for"]):
-        # Extract potential names (words with a mix of letters and numbers like 'Balkies32' or just names)
-        # Assuming names are capitalised in strings or user inputs exact username.
-        words = request.message.split()
-        target_name = None
-        for word in words:
-            # Strip punctuation
-            clean_word = re.sub(r'[^\w\s]', '', word)
-            # Find words that are likely usernames (e.g., Mitul50, Ajay23, Balkies32, Pennesh1)
-            # or just look for matches against known accounts.
-            if len(clean_word) > 3 and clean_word.lower() not in ["fetch", "details", "attendance", "account", "score", "marks", "what", "is", "the", "of", "for", "student"]:
-                target_name = clean_word
-                break
-                
-        if target_name:
-            # Query Database
-            try:
-                # 1. Fetch Attendance from Webcam DB
-                conn = sqlite3.connect(os.path.join(BASE_DIR, 'webcam_attendance.db'))
-                c = conn.cursor()
-                # Use LIKE to be case insensitive
-                c.execute("SELECT * FROM Webcam_Attendance WHERE student_name LIKE ?", (f'%{target_name}%',))
-                att_rows = c.fetchall()
-                conn.close()
-                
-                # 2. Fetch Grades from the CSV dataset
-                grade_rows = []
-                try:
-                    df = pd.read_csv(DATASET_PATH)
-                    # Filter for rows containing the target name
-                    # Case insensitive match
-                    student_data = df[df['NAME'].str.contains(target_name, case=False, na=False)]
-                    if not student_data.empty:
-                        # Extract the first matching row
-                        row = student_data.iloc[0]
-                        grade_rows = [
-                            ("Maths", row.get("MATHS_SCORE", "N/A")),
-                            ("CT", row.get("CT_SCORE", "N/A")),
-                            ("DE", row.get("DE_SCORE", "N/A")),
-                            ("CPP", row.get("CPP_SCORE", "N/A")),
-                            ("Profile", row.get("STUDENT_PROFILE", "Unknown"))
-                        ]
-                except Exception as ex:
-                    print(f"CSV read error: {ex}")
-                
-                if att_rows or grade_rows:
-                    response_parts = [f"**Data fetched for {target_name.capitalize()}!**\n"]
-                    
-                    if att_rows:
-                        total_present = len(att_rows)
-                        last_seen = att_rows[-1][2]
-                        response_parts.append(f"📌 **Attendance:** Present for {total_present} session(s). Last seen: {last_seen}")
-                    else:
-                        response_parts.append("📌 **Attendance:** No recent automated webcam records found.")
-                        
-                    if grade_rows:
-                        response_parts.append("\n🎓 **Recent Assessment Scores:**")
-                        for row in grade_rows:
-                            response_parts.append(f"- {row[0]}: **{row[1]}%**")
-                            
-                    response_parts.append("\n*Note: This data is securely and dynamically pulled from the live databases.*")
-                    response = "\n".join(response_parts)
-                    return {"success": True, "response": response, "sender": "curo"}
-                else:
-                    response = f"I searched the databases for '{target_name}' but couldn't find any recent attendance or assessment records."
-                    return {"success": True, "response": response, "sender": "curo"}
-            except Exception as e:
-                print(f"DB Error: {e}")
-                
-    # 2. General Fallback generic navigation rules
     response = "I am Curo, your INTERVENIX Academic AI! How can I help you today?"
     
     # Keyword detection and context routing
@@ -402,8 +374,7 @@ def login(request: LoginRequest):
             }
         return {"error": f"Invalid password for {request.student_id}."}
 
-    if request.password != "1234":
-        return {"error": "Invalid password. The default password is 1234."}
+
         
     try:
         df = pd.read_csv(DATASET_PATH)
@@ -412,37 +383,52 @@ def login(request: LoginRequest):
 
     # Clean the input
     search_id = str(request.student_id).strip().lower()
+    search_pass = str(request.password).strip()
     
     # Handle potential nulls and match by S_NO or NAME
     df['NAME_CLEAN'] = df['NAME'].fillna('').astype(str).str.strip().str.lower()
+    df['PARENT_ID_CLEAN'] = df['PARENT_ID'].fillna('').astype(str).str.strip().str.lower()
     
     student_row = pd.DataFrame()
+    is_parent = False
     
-    # Try to match by S_NO if it's numeric
-    if search_id.isdigit():
+    # 1. First check if it's a Parent Login
+    parent_match = df[df['PARENT_ID_CLEAN'] == search_id]
+    if not parent_match.empty:
+        if str(parent_match.iloc[0]['PARENT_PASSWORD']).strip() == search_pass:
+            student_row = parent_match
+            is_parent = True
+        else:
+            return {"error": "Invalid parent password."}
+            
+    # 2. If not a parent, try matching as a Student by S_NO
+    elif search_id.isdigit():
         student_row = df[df['S_NO'] == int(search_id)]
         
-    # If not found, try to match by exact NAME
-    if student_row.empty:
+    # 3. If not found by S_NO, try matching exact Student Name
+    if student_row.empty and not is_parent:
         student_row = df[df['NAME_CLEAN'] == search_id]
         
-    # For MVP: If name is still not found or user types 'any', fallback to the first student 
-    # so they can successfully login and fetch an account as promised by the UI.
-    if student_row.empty:
+    # 4. If name is still not found or user types 'any' for MVP
+    if student_row.empty and not is_parent:
         student_row = df.head(1)
 
-    
+    # 5. Verify Student Password (if it's not a parent login)
+    if not is_parent:
+        if search_pass != "1234":
+            return {"error": "Invalid password. The default password is 1234."}
+
     student = student_row.iloc[0].to_dict()
     
     # Structure the response for the frontend
     return {
         "success": True,
         "user": {
-            "id": str(student['S_NO']),
-            "name": student['NAME'],
-            "course": "Electronics and Communication Engg.", # Defaulting for now
-            "year": "1st year", # Defaulting for now
-            "role": "student",
+            "id": str(student.get('PARENT_ID')) if is_parent else str(student.get('S_NO')),
+            "name": f"Parent of {student['NAME']}" if is_parent else student['NAME'],
+            "course": student.get('DEPARTMENT', "Engineering"),
+            "year": "1st year", 
+            "role": "parent" if is_parent else "student",
             "data": student
         }
     }
@@ -598,6 +584,7 @@ def get_all_students():
             "avg_score": round(row['CompositeScore'], 1),
             "avg_att": round(row['CompositeAtt'], 1),
             "profile": row['STUDENT_PROFILE'],
+            "department": row.get('DEPARTMENT', 'Unknown'),
             # Including detailed scores for the subjects view
             "maths_score": row['MATHS_SCORE'],
             "ct_score": row['CT_SCORE'],
@@ -655,6 +642,116 @@ def get_student_detail(student_id: int):
             "prediction": prediction_result
         }
     }
+
+@app.post("/admin/student")
+def create_student(request: CreateStudentRequest):
+    try:
+        df = pd.read_csv(DATASET_PATH)
+    except Exception as e:
+        return {"error": "Could not read dataset."}
+        
+    new_id = int(df['S_NO'].max()) + 1 if not df.empty else 1
+    parent_id = f"p_{request.name.lower().replace(' ', '')}"
+    parent_pass = f"pass_{random.randint(1000, 9999)}"
+    
+    # Calculate Profile
+    data_for_pred = StudentData(
+        maths_att=float(request.maths_att),
+        ct_att=float(request.ct_att),
+        de_att=float(request.de_att),
+        cpp_att=float(request.cpp_att),
+        coe_att=float(request.coe_att),
+        maths_score=float(request.maths_score),
+        ct_score=float(request.ct_score),
+        de_score=float(request.de_score),
+        cpp_score=float(request.cpp_score)
+    )
+    
+    try:
+        prediction_result = predict_knowledge(data_for_pred)
+        profile = prediction_result.get('profile', 'Unknown Learner')
+    except:
+        profile = 'Unknown Learner'
+        
+    new_row = pd.DataFrame([{
+        "S_NO": new_id,
+        "NAME": request.name,
+        "DEPARTMENT": request.department,
+        "MATHS_ATT": request.maths_att,
+        "CT_ATT": request.ct_att,
+        "DE_ATT": request.de_att,
+        "CPP_ATT": request.cpp_att,
+        "COE_ATT": request.coe_att,
+        "MATHS_SCORE": request.maths_score,
+        "CT_SCORE": request.ct_score,
+        "DE_SCORE": request.de_score,
+        "CPP_SCORE": request.cpp_score,
+        "STUDENT_PROFILE": profile,
+        "PARENT_ID": parent_id,
+        "PARENT_PASSWORD": parent_pass
+    }])
+    
+    df = pd.concat([df, new_row], ignore_index=True)
+    df.to_csv(DATASET_PATH, index=False)
+    
+    return {"success": True, "message": f"Student {request.name} created successfully.", "id": new_id}
+
+@app.put("/admin/student/{student_id}")
+def update_student(student_id: int, request: UpdateStudentRequest):
+    try:
+        df = pd.read_csv(DATASET_PATH)
+    except Exception as e:
+        return {"error": "Could not read dataset."}
+        
+    if student_id not in df['S_NO'].values:
+        return {"error": f"Student with ID {student_id} not found."}
+        
+    idx = df[df['S_NO'] == student_id].index[0]
+    
+    update_data = request.dict(exclude_unset=True)
+    for key, value in update_data.items():
+        if value is not None:
+            col_name = key.upper()
+            if col_name in df.columns:
+                df.at[idx, col_name] = value
+                
+    # Recalculate Profile
+    student = df.loc[idx]
+    data_for_pred = StudentData(
+        maths_att=float(student['MATHS_ATT']),
+        ct_att=float(student['CT_ATT']),
+        de_att=float(student['DE_ATT']),
+        cpp_att=float(student['CPP_ATT']),
+        coe_att=float(student['COE_ATT']),
+        maths_score=float(student['MATHS_SCORE']),
+        ct_score=float(student['CT_SCORE']),
+        de_score=float(student['DE_SCORE']),
+        cpp_score=float(student['CPP_SCORE'])
+    )
+    
+    try:
+        prediction_result = predict_knowledge(data_for_pred)
+        df.at[idx, 'STUDENT_PROFILE'] = prediction_result.get('profile', 'Unknown Learner')
+    except:
+        pass
+                
+    df.to_csv(DATASET_PATH, index=False)
+    return {"success": True, "message": f"Student {student_id} updated successfully."}
+
+@app.delete("/admin/student/{student_id}")
+def delete_student(student_id: int):
+    try:
+        df = pd.read_csv(DATASET_PATH)
+    except Exception as e:
+        return {"error": "Could not read dataset."}
+        
+    if student_id not in df['S_NO'].values:
+        return {"error": f"Student with ID {student_id} not found."}
+        
+    df = df[df['S_NO'] != student_id]
+    df.to_csv(DATASET_PATH, index=False)
+    
+    return {"success": True, "message": f"Student {student_id} deleted successfully."}
 
 @app.post("/upload-pdf")
 async def extract_pdf_questions(file: UploadFile = File(...)):
@@ -727,3 +824,79 @@ async def extract_pdf_questions(file: UploadFile = File(...)):
 @app.get("/")
 def read_root():
     return {"message": "Academic Health ML API is running v2!"}
+
+# Mock AI Sentiment Engine Context rules
+MINDSET_RULES = {
+    "optimistic": ["optimistic", "hopeful", "better", "improving", "bright", "positive", "future", "looking forward"],
+    "stressed": ["stress", "anxious", "pressure", "overwhelmed", "backlog", "exams", "worried", "tense"],
+    "curious": ["curious", "interested", "tell me more", "how", "why", "want to know", "explore", "discover"],
+    "depressed": ["depressed", "sad", "hopeless", "failing", "give up", "tired", "exhausted", "bad", "struggle"],
+    "confused": ["confused", "don't understand", "hard", "lost", "difficult", "stuck", "help", "complex", "unclear"],
+    "motivated": ["motivated", "great", "easy", "love", "excited", "happy", "good", "interesting", "confident", "fun", "enjoy"]
+}
+
+@app.post("/student-voice")
+def submit_student_voice(request: StudentVoiceRequest):
+    text_lower = request.text.lower()
+    
+    # Simple Keyword-Based Mock AI Sentiment Analysis
+    mindset = "Neutral"
+    advice = f"AI Insight: {request.student_name} has provided standard feedback. Review their notes for any subtle context."
+    
+    for category, keywords in MINDSET_RULES.items():
+        if any(keyword in text_lower for keyword in keywords):
+            mindset = category.capitalize()
+            break
+            
+    if mindset == "Depressed":
+        advice = f"AI Insight: {request.student_name} is expressing signs of exhaustion or depression regarding {request.subject}. It is highly recommended that you reach out to them personally or schedule a 1-on-1 session to offer support and discuss their workload."
+    elif mindset == "Confused":
+        advice = f"AI Insight: {request.student_name} is struggling with the recent material in {request.subject}. You should review their recent quiz scores and consider providing additional resources or practice problems to help them bridge their knowledge gap."
+    elif mindset == "Motivated":
+        advice = f"AI Insight: {request.student_name} is highly engaged and confident in {request.subject}. Consider challenging them with advanced {request.subject} skill projects or interactive assignments to keep their momentum going!"
+    elif mindset == "Optimistic":
+        advice = f"AI Insight: {request.student_name} is feeling optimistic and positive about their progress! This is a great time to encourage them to mentor others or lead a group discussion to reinforce their positive mindset."
+    elif mindset == "Stressed":
+        advice = f"AI Insight: {request.student_name} is feeling overwhelmed or stressed. Check their recent workload and see if any deadlines can be adjusted or if they need stress-management resources from the counseling department."
+    elif mindset == "Curious":
+        advice = f"AI Insight: {request.student_name} is showing a high level of curiosity. Provide them with extra-curricular reading material or advanced research topics to satisfy their intellectual hunger!"
+
+    conn = get_db()
+    conn.execute('''
+        INSERT INTO Student_Voice_Logs (student_email, student_name, subject, raw_text, ai_mindset, ai_response)
+        VALUES (?, ?, ?, ?, ?, ?)
+    ''', (request.student_email, request.student_name, request.subject, request.text, mindset, advice))
+    conn.commit()
+    conn.close()
+    
+    return {"success": True, "message": "Your voice has been recorded and submitted for review. Thank you!"}
+
+@app.get("/admin/student-voices")
+def get_student_voices():
+    conn = get_db()
+    
+    records = conn.execute('''
+        SELECT id, student_email, student_name, subject, raw_text, ai_mindset, ai_response, timestamp
+        FROM Student_Voice_Logs
+        ORDER BY timestamp DESC
+    ''').fetchall()
+    conn.close()
+    
+    voices = []
+    for r in records:
+        voices.append({
+            "id": r["id"],
+            "student_email": r["student_email"],
+            "student_name": r["student_name"],
+            "subject": r["subject"],
+            "raw_text": r["raw_text"],
+            "ai_mindset": r["ai_mindset"],
+            "ai_response": r["ai_response"],
+            "timestamp": r["timestamp"]
+        })
+        
+    return {"success": True, "data": voices}
+
+if __name__ == '__main__':
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)

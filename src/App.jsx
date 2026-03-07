@@ -12,6 +12,8 @@ import Subjects from './pages/Subjects';
 import TestsQuizzes from './pages/TestsQuizzes';
 import Projects from './pages/Projects';
 import Predictions from './pages/Predictions';
+import StudentVoice from './pages/StudentVoice';
+import ParentDashboard from './pages/ParentDashboard';
 
 // Admin Expand Views
 import AdminStudents from './pages/AdminStudents';
@@ -21,6 +23,7 @@ import AdminTestsQuizzes from './pages/AdminTestsQuizzes';
 import AdminProjects from './pages/AdminProjects';
 import AdminPredictions from './pages/AdminPredictions';
 import AdminPredictionDetail from './pages/AdminPredictionDetail';
+import AdminStudentVoice from './pages/AdminStudentVoice';
 
 // Webcam Attendance Views
 import TeacherAttendanceScanner from './pages/TeacherAttendanceScanner';
@@ -44,6 +47,10 @@ const HomeDashboard = () => {
   if (user?.role === 'admin' || user?.role === 'teacher' || user?.role === 'coordinator') {
     return <AdminDashboard />;
   }
+  
+  if (user?.role === 'parent') {
+    return <ParentDashboard />;
+  }
 
   return <Dashboard />;
 };
@@ -64,6 +71,7 @@ function AppRoutes() {
         <Route path="tests-quizzes" element={<TestsQuizzes />} />
         <Route path="projects" element={<Projects />} />
         <Route path="predictions" element={<Predictions />} />
+        <Route path="student-voice" element={<StudentVoice />} />
 
         {/* Admin Specific Routes */}
         <Route path="admin/students" element={<AdminStudents />} />
@@ -73,6 +81,7 @@ function AppRoutes() {
         <Route path="admin/projects" element={<AdminProjects />} />
         <Route path="admin/predictions" element={<AdminPredictions />} />
         <Route path="admin/prediction/:id" element={<AdminPredictionDetail />} />
+        <Route path="admin/student-voice" element={<AdminStudentVoice />} />
 
         {/* Webcam Attendance Routes */}
         <Route path="teacher/scanner" element={<TeacherAttendanceScanner />} />

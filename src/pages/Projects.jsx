@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Target, Code, Cpu, Plus, ExternalLink, CheckCircle } from 'lucide-react';
+import { Target, Code, Cpu, Plus, ExternalLink, CheckCircle, Upload } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const ProjectCard = ({ title, category, description, match, icon }) => (
@@ -35,10 +35,16 @@ const UploadedProjectCard = ({ title, url, date, subject }) => (
             </div>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.75rem', margin: 0 }}>Submitted on {date}</p>
         </div>
-        <a href={url} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: '0.5rem 1rem', textDecoration: 'none' }}>
-            <ExternalLink size={16} />
-            <span>View</span>
-        </a>
+        <div style={{ display: 'flex', gap: '0.75rem' }}>
+            <a href={url} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: '0.5rem 1rem', textDecoration: 'none', background: 'rgba(255, 255, 255, 0.05)', color: 'var(--text-main)', border: '1px solid var(--border-glass)', boxShadow: 'none' }}>
+                <ExternalLink size={16} />
+                <span>URL</span>
+            </a>
+            <button className="btn-primary" style={{ padding: '0.5rem 1rem' }} onClick={() => alert('File downloaded (Simulation)')}>
+                <Upload size={16} style={{ transform: 'rotate(180deg)' }} />
+                <span>File</span>
+            </button>
+        </div>
     </div>
 );
 
@@ -46,7 +52,7 @@ const Projects = () => {
     const { user } = useAuth();
     const [uploadedProjects, setUploadedProjects] = useState([]);
     const [isUploading, setIsUploading] = useState(false);
-    const [newProject, setNewProject] = useState({ title: '', url: '' });
+    const [newProject, setNewProject] = useState({ title: '', url: '', file: null });
 
     // Load projects from local storage on component mount
     useEffect(() => {
@@ -111,8 +117,14 @@ const Projects = () => {
             localStorage.setItem(userIndexKey, JSON.stringify(globalIndex));
         }
 
-        setNewProject({ title: '', url: '', subject: '' });
+        setNewProject({ title: '', url: '', subject: '', file: null });
         setIsUploading(false);
+    };
+
+    const handleFileChange = (e) => {
+        if (e.target.files && e.target.files[0]) {
+            setNewProject({ ...newProject, file: e.target.files[0] });
+        }
     };
 
     return (
@@ -155,7 +167,7 @@ const Projects = () => {
                             />
                         </div>
                         <div>
-                            <label style={{ display: 'block', fontSize: '0.875rem', marginBottom: '0.5rem', color: 'var(--text-muted)' }}>Subject (Optional)</label>
+                            <label style={{ display: 'block', fontSize: '0.875rem', marginBottom: '0.5rem', color: 'var(--text-muted)' }}>Related Subject</label>
                             <input
                                 type="text"
                                 value={newProject.subject || ''}
@@ -164,8 +176,37 @@ const Projects = () => {
                                 style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--border-glass)', color: 'white', outline: 'none' }}
                             />
                         </div>
-                        <button type="submit" className="btn-primary" style={{ padding: '0.75rem 1.5rem', height: '42px', gridColumn: '1 / -1' }}>
-                            Submit
+                        <div style={{ gridColumn: '1 / -1' }}>
+                            <label style={{ display: 'block', fontSize: '0.875rem', marginBottom: '0.5rem', color: 'var(--text-muted)' }}>Project Files (ZIP/PDF)</label>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                <label style={{ 
+                                    padding: '0.75rem 1.5rem', 
+                                    background: 'rgba(255,255,255,0.05)', 
+                                    border: '1px dashed var(--primary)', 
+                                    borderRadius: '8px', 
+                                    cursor: 'pointer',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem',
+                                    color: 'var(--primary)',
+                                    transition: 'background 0.2s'
+                                }}
+                                onMouseOver={(e) => e.currentTarget.style.background = 'rgba(14, 165, 233, 0.1)'}
+                                onMouseOut={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'}
+                                >
+                                    <Upload size={18} />
+                                    <span>Choose File</span>
+                                    <input type="file" style={{ display: 'none' }} onChange={handleFileChange} />
+                                </label>
+                                {newProject.file && (
+                                    <span style={{ fontSize: '0.875rem', color: 'var(--text-main)' }}>
+                                        {newProject.file.name}
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+                        <button type="submit" className="btn-primary" style={{ padding: '0.75rem 1.5rem', height: '42px', gridColumn: '1 / -1', marginTop: '1rem' }}>
+                            Submit Project
                         </button>
                     </form>
                 </div>

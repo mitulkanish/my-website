@@ -11,10 +11,10 @@ import {
   Search,
   UserCircle,
   Camera,
-  Table
+  Table,
+  Mic
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
-import CuroChatbot from './CuroChatbot';
 
 const Sidebar = () => {
   const { user } = useAuth();
@@ -27,6 +27,7 @@ const Sidebar = () => {
     ...(user?.role === 'teacher' ? [{ path: '/teacher/scanner', label: 'Start Webcam Tracker', icon: <Camera size={20} /> }] : []),
     ...(isAdminRole ? [{ path: '/admin/daily-attendance', label: 'Daily Attendance Sheet', icon: <Table size={20} /> }] : []),
     { path: isAdminRole ? '/admin/subjects' : '/subjects', label: isAdminRole ? 'Class Subjects Analysis' : 'My Subjects Analysis', icon: <Library size={20} /> },
+    { path: isAdminRole ? '/admin/student-voice' : '/student-voice', label: isAdminRole ? 'Student Emotion Insights' : 'Student Voice', icon: <Mic size={20} /> },
     { path: isAdminRole ? '/admin/tests-quizzes' : '/tests-quizzes', label: isAdminRole ? 'Class Tests & Quizzes' : 'Tests & Quizzes', icon: <CheckSquare size={20} /> },
     { path: isAdminRole ? '/admin/projects' : '/projects', label: isAdminRole ? 'Class Skill Projects' : 'Skill Projects', icon: <Lightbulb size={20} /> },
     { path: isAdminRole ? '/admin/predictions' : '/predictions', label: isAdminRole ? 'Class Intelligence' : 'Success Intelligence', icon: <BrainCircuit size={20} /> },
@@ -223,16 +224,17 @@ export const Header = () => {
 };
 
 const Layout = () => {
+  const { user } = useAuth();
+  
   return (
     <div className="app-layout">
-      <Sidebar />
+      {user?.role !== 'parent' && <Sidebar />}
       <div className="main-content">
         <Header />
         <main className="page-content">
           <Outlet />
         </main>
       </div>
-      <CuroChatbot />
     </div>
   );
 };

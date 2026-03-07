@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import random
 
-def generate_synthetic_data(num_samples=1000):
+def generate_synthetic_data(num_samples=900):
     first_names = ["Rahul", "Priya", "Amit", "Sneha", "Karan", "Pooja", "Vikram", "Riya", "Arjun", "Neha", 
                    "Mitul", "Sabereesh", "Ajay", "Pennesh", "Pradhik", "Kavinaya", "Balkies", "Siva", "Vijay", "Ajith"]
     
@@ -10,6 +10,16 @@ def generate_synthetic_data(num_samples=1000):
     
     for i in range(1, num_samples + 1):
         name = random.choice(first_names) + str(random.randint(1, 99))
+        
+        # Determine Department
+        if i <= 500:
+            department = "Computer Science Engineering"
+        elif i <= 750:
+            department = "Electronics and Communication Engineering"
+        elif i <= 850:
+            department = "Mechanical and Mechatronics Engineering"
+        else:
+            department = "Biomedical Engineering"
         
         # Subject-wise attendance (classwise)
         maths_att = np.random.randint(40, 100)
@@ -44,24 +54,28 @@ def generate_synthetic_data(num_samples=1000):
         else:
             profile = "Inconsistent Learner"
             
+        # Parent Credentials
+        parent_id = f"p_{name.lower()}"
+        parent_pass = f"pass_{random.randint(1000, 9999)}"
+            
         data.append([
-            i, name, 
+            i, name, department,
             maths_att, ct_att, de_att, cpp_att, coe_att,
             maths_score, ct_score, de_score, cpp_score, 
-            profile
+            profile, parent_id, parent_pass
         ])
         
     columns = [
-        "S_NO", "NAME", 
+        "S_NO", "NAME", "DEPARTMENT",
         "MATHS_ATT", "CT_ATT", "DE_ATT", "CPP_ATT", "COE_ATT",
         "MATHS_SCORE", "CT_SCORE", "DE_SCORE", "CPP_SCORE", 
-        "STUDENT_PROFILE"
+        "STUDENT_PROFILE", "PARENT_ID", "PARENT_PASSWORD"
     ]
     df = pd.DataFrame(data, columns=columns)
     
     filepath = "../student dataset.csv"
     df.to_csv(filepath, index=False)
-    print(f"✅ Successfully generated {num_samples} records globally with subject-wise features.")
+    print(f"Successfully generated {num_samples} records globally with subject-wise features.")
 
 if __name__ == "__main__":
-    generate_synthetic_data(1000)
+    generate_synthetic_data(900)
