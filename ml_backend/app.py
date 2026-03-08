@@ -496,6 +496,24 @@ def predict_knowledge(data: StudentData):
         }
     }
 
+@app.get("/admin/debug")
+def debug_paths():
+    import os
+    try:
+        parent_dir = os.path.dirname(BASE_DIR)
+        parent_files = os.listdir(parent_dir)
+        base_files = os.listdir(BASE_DIR)
+        return {
+            "BASE_DIR": BASE_DIR,
+            "parent_dir": parent_dir,
+            "DATASET_PATH": DATASET_PATH,
+            "DATASET_EXISTS": os.path.exists(DATASET_PATH),
+            "parent_contents": parent_files,
+            "base_contents": base_files
+        }
+    except Exception as e:
+        return {"error": str(e)}
+
 @app.get("/admin/stats")
 def get_admin_stats():
     try:
