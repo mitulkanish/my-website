@@ -1,0 +1,900 @@
+S_NO,NAME,DEPARTMENT,MATHS_ATT,CT_ATT,DE_ATT,CPP_ATT,COE_ATT,MATHS_SCORE,CT_SCORE,DE_SCORE,CPP_SCORE,STUDENT_PROFILE,PARENT_ID,PARENT_PASSWORD
+2,Balkies53,Computer Science Engineering,97,72,55,96,65,85,52,57,42,Struggling Academically,p_balkies53,pass_9109
+3,Arjun51,Computer Science Engineering,43,89,91,63,49,93,49,79,54,Inconsistent Learner,p_arjun51,pass_5994
+4,Siva53,Computer Science Engineering,71,84,40,72,46,85,50,72,68,Inconsistent Learner,p_siva53,pass_7419
+5,Vikram11,Computer Science Engineering,93,66,51,40,75,62,61,58,53,Inconsistent Learner,p_vikram11,pass_2803
+6,Pradhik24,Computer Science Engineering,76,81,55,41,55,55,94,51,79,Inconsistent Learner,p_pradhik24,pass_3851
+7,Siva47,Computer Science Engineering,68,58,78,95,90,96,92,37,43,Practical Learner,p_siva47,pass_1085
+8,Balkies76,Computer Science Engineering,72,43,71,91,44,52,87,71,86,Inconsistent Learner,p_balkies76,pass_7811
+9,Pennesh29,Computer Science Engineering,55,86,85,90,63,43,90,45,88,Inconsistent Learner,p_pennesh29,pass_6540
+10,Riya49,Computer Science Engineering,45,64,85,75,40,38,36,34,42,Inconsistent Learner,p_riya49,pass_3641
+11,Vijay55,Computer Science Engineering,70,64,58,84,30,97,51,31,93,Inconsistent Learner,p_vijay55,pass_5687
+12,Sneha38,Computer Science Engineering,56,89,89,69,32,52,97,59,97,Inconsistent Learner,p_sneha38,pass_9324
+13,Rahul18,Computer Science Engineering,94,60,78,73,68,63,62,91,77,Inconsistent Learner,p_rahul18,pass_2163
+14,Siva73,Computer Science Engineering,42,54,45,45,51,74,34,88,87,Inconsistent Learner,p_siva73,pass_4972
+15,Ajith91,Computer Science Engineering,68,68,79,56,35,30,93,78,54,Inconsistent Learner,p_ajith91,pass_3721
+16,Pooja42,Computer Science Engineering,75,53,52,55,49,64,44,44,78,Needs Motivation,p_pooja42,pass_2604
+18,Arjun79,Computer Science Engineering,56,48,56,64,73,34,87,71,68,Inconsistent Learner,p_arjun79,pass_9432
+19,Pradhik94,Computer Science Engineering,58,69,67,79,48,32,53,58,68,Inconsistent Learner,p_pradhik94,pass_6669
+20,Pennesh38,Computer Science Engineering,85,64,63,90,98,82,76,85,62,Inconsistent Learner,p_pennesh38,pass_8018
+21,Sabereesh82,Computer Science Engineering,75,52,98,77,74,80,83,85,49,Inconsistent Learner,p_sabereesh82,pass_8001
+22,Vikram99,Computer Science Engineering,47,56,84,40,73,94,94,61,31,Inconsistent Learner,p_vikram99,pass_6884
+23,Mitul2,Computer Science Engineering,94,83,70,71,30,91,66,38,34,Inconsistent Learner,p_mitul2,pass_6876
+24,Sabereesh19,Computer Science Engineering,63,83,41,96,85,36,74,53,38,Practical Learner,p_sabereesh19,pass_2786
+25,Sneha15,Computer Science Engineering,45,73,88,86,93,98,41,80,36,Practical Learner,p_sneha15,pass_1507
+26,Vikram91,Computer Science Engineering,41,71,87,62,62,97,80,39,94,Inconsistent Learner,p_vikram91,pass_2456
+27,Sabereesh51,Computer Science Engineering,94,43,64,72,60,57,75,62,72,Inconsistent Learner,p_sabereesh51,pass_7286
+28,Rahul68,Computer Science Engineering,96,97,86,77,37,91,77,44,46,Inconsistent Learner,p_rahul68,pass_3661
+29,Siva43,Computer Science Engineering,70,81,64,95,95,89,98,52,82,Inconsistent Learner,p_siva43,pass_1360
+30,Mitul45,Computer Science Engineering,97,45,71,52,82,71,46,76,58,Practical Learner,p_mitul45,pass_6816
+31,Arjun58,Computer Science Engineering,44,44,99,97,98,84,41,61,63,Practical Learner,p_arjun58,pass_7008
+32,Riya63,Computer Science Engineering,82,68,61,91,36,74,38,38,47,Inconsistent Learner,p_riya63,pass_3323
+33,Priya19,Computer Science Engineering,81,72,42,79,58,96,96,93,85,Theoretical Learner,p_priya19,pass_7665
+34,Mitul53,Computer Science Engineering,72,60,46,90,73,48,60,87,90,Inconsistent Learner,p_mitul53,pass_5738
+35,Vijay25,Computer Science Engineering,74,83,79,41,68,93,40,71,58,Inconsistent Learner,p_vijay25,pass_4591
+36,Ajay66,Computer Science Engineering,83,86,96,86,82,57,53,99,99,Inconsistent Learner,p_ajay66,pass_3341
+37,Rahul63,Computer Science Engineering,59,59,49,48,95,38,73,41,46,Practical Learner,p_rahul63,pass_4314
+38,Priya39,Computer Science Engineering,46,74,69,84,69,84,98,92,51,Inconsistent Learner,p_priya39,pass_7507
+39,Karan55,Computer Science Engineering,96,65,76,63,40,64,44,83,85,Inconsistent Learner,p_karan55,pass_2117
+40,Arjun5,Computer Science Engineering,45,65,62,43,67,33,33,44,54,Inconsistent Learner,p_arjun5,pass_4160
+41,Neha1,Computer Science Engineering,66,73,67,70,97,85,94,80,95,Inconsistent Learner,p_neha1,pass_1317
+42,Ajay2,Computer Science Engineering,84,48,87,76,48,91,77,72,83,Theoretical Learner,p_ajay2,pass_1819
+43,Balkies82,Computer Science Engineering,65,99,78,45,59,45,48,33,68,Inconsistent Learner,p_balkies82,pass_3311
+44,Neha93,Computer Science Engineering,57,65,83,96,47,57,35,32,97,Inconsistent Learner,p_neha93,pass_7224
+45,Balkies96,Computer Science Engineering,69,83,83,89,78,89,53,93,54,Inconsistent Learner,p_balkies96,pass_6851
+46,Mitul37,Computer Science Engineering,73,41,60,97,36,43,86,49,95,Inconsistent Learner,p_mitul37,pass_4906
+47,Neha71,Computer Science Engineering,64,82,67,55,61,81,57,64,76,Inconsistent Learner,p_neha71,pass_3737
+48,Arjun30,Computer Science Engineering,91,97,75,89,66,75,62,79,95,Inconsistent Learner,p_arjun30,pass_9947
+49,Pennesh63,Computer Science Engineering,69,97,92,88,79,57,40,56,97,Inconsistent Learner,p_pennesh63,pass_2450
+50,Neha31,Computer Science Engineering,84,81,68,61,54,32,75,40,45,Inconsistent Learner,p_neha31,pass_9005
+51,Sneha53,Computer Science Engineering,94,96,54,64,73,53,40,30,82,Inconsistent Learner,p_sneha53,pass_7307
+52,Arjun8,Computer Science Engineering,51,41,65,78,63,76,84,88,39,Inconsistent Learner,p_arjun8,pass_5133
+53,Sneha41,Computer Science Engineering,66,51,62,99,40,51,34,89,53,Inconsistent Learner,p_sneha41,pass_6574
+54,Sneha95,Computer Science Engineering,88,72,59,81,52,63,66,60,45,Inconsistent Learner,p_sneha95,pass_6287
+55,Balkies28,Computer Science Engineering,46,86,84,51,52,34,37,92,73,Inconsistent Learner,p_balkies28,pass_1960
+56,Sneha61,Computer Science Engineering,49,60,89,63,78,93,43,87,48,Inconsistent Learner,p_sneha61,pass_5585
+57,Siva10,Computer Science Engineering,76,48,49,63,89,51,30,40,93,Practical Learner,p_siva10,pass_9629
+58,Vijay96,Computer Science Engineering,43,81,68,69,69,83,76,60,87,Inconsistent Learner,p_vijay96,pass_1088
+59,Ajith61,Computer Science Engineering,58,61,65,81,55,58,88,70,81,Inconsistent Learner,p_ajith61,pass_2831
+60,Arjun20,Computer Science Engineering,87,79,91,68,61,36,76,93,36,Inconsistent Learner,p_arjun20,pass_1833
+61,Sneha44,Computer Science Engineering,43,76,66,76,58,86,66,87,89,Theoretical Learner,p_sneha44,pass_5817
+62,Rahul45,Computer Science Engineering,53,62,72,83,34,93,96,46,39,Inconsistent Learner,p_rahul45,pass_6357
+63,Vijay87,Computer Science Engineering,78,84,78,49,99,62,60,69,54,Practical Learner,p_vijay87,pass_7305
+64,Ajay97,Computer Science Engineering,70,43,44,52,96,84,38,72,55,Practical Learner,p_ajay97,pass_5187
+65,Sabereesh98,Computer Science Engineering,49,64,99,99,71,51,79,88,68,Inconsistent Learner,p_sabereesh98,pass_6275
+66,Karan81,Computer Science Engineering,76,72,50,73,88,93,56,33,49,Practical Learner,p_karan81,pass_3157
+67,Pooja69,Computer Science Engineering,52,95,49,81,88,33,37,75,78,Practical Learner,p_pooja69,pass_5098
+68,Amit88,Computer Science Engineering,74,46,49,45,40,82,31,84,52,Inconsistent Learner,p_amit88,pass_7606
+69,Vijay51,Computer Science Engineering,74,97,94,41,72,83,48,51,48,Inconsistent Learner,p_vijay51,pass_1756
+70,Pooja31,Computer Science Engineering,53,57,91,51,74,51,62,76,31,Inconsistent Learner,p_pooja31,pass_2892
+71,Balkies59,Computer Science Engineering,78,53,87,68,62,43,81,40,46,Inconsistent Learner,p_balkies59,pass_7428
+72,Vikram85,Computer Science Engineering,73,67,44,92,80,95,86,34,91,Inconsistent Learner,p_vikram85,pass_8682
+73,Arjun16,Computer Science Engineering,40,95,55,76,69,52,88,68,98,Inconsistent Learner,p_arjun16,pass_3056
+74,Neha62,Computer Science Engineering,64,59,94,87,69,59,66,74,49,Inconsistent Learner,p_neha62,pass_9576
+75,Siva58,Computer Science Engineering,78,87,49,86,46,79,98,54,65,Inconsistent Learner,p_siva58,pass_3627
+76,Vikram23,Computer Science Engineering,62,90,46,95,81,57,49,93,87,Inconsistent Learner,p_vikram23,pass_3015
+77,Rahul44,Computer Science Engineering,74,45,89,50,50,86,73,64,89,Inconsistent Learner,p_rahul44,pass_8583
+78,Ajay21,Computer Science Engineering,45,49,44,67,37,49,94,87,42,Inconsistent Learner,p_ajay21,pass_4852
+79,Amit21,Computer Science Engineering,53,86,72,85,72,63,86,75,31,Inconsistent Learner,p_amit21,pass_3140
+80,Mitul58,Computer Science Engineering,74,69,40,60,68,65,62,42,57,Inconsistent Learner,p_mitul58,pass_1976
+81,Pennesh45,Computer Science Engineering,99,47,95,78,31,85,48,91,43,Inconsistent Learner,p_pennesh45,pass_8793
+82,Rahul88,Computer Science Engineering,64,72,46,59,48,61,31,78,94,Inconsistent Learner,p_rahul88,pass_1237
+83,Riya20,Computer Science Engineering,77,86,61,74,30,52,33,91,96,Inconsistent Learner,p_riya20,pass_6064
+84,Rahul17,Computer Science Engineering,79,46,69,53,87,47,43,42,55,Practical Learner,p_rahul17,pass_2085
+85,Amit99,Computer Science Engineering,60,76,55,58,64,33,85,99,92,Inconsistent Learner,p_amit99,pass_5232
+86,Arjun36,Computer Science Engineering,55,95,97,76,99,81,50,44,51,Struggling Academically,p_arjun36,pass_9441
+87,Ajay46,Computer Science Engineering,47,83,80,54,91,35,82,81,93,Inconsistent Learner,p_ajay46,pass_4567
+88,Amit63,Computer Science Engineering,83,64,73,77,47,49,99,75,85,Inconsistent Learner,p_amit63,pass_3999
+89,Ajay72,Computer Science Engineering,68,95,91,77,77,49,78,54,31,Struggling Academically,p_ajay72,pass_6579
+90,Amit51,Computer Science Engineering,73,78,55,95,82,44,82,56,67,Inconsistent Learner,p_amit51,pass_7525
+91,Pennesh26,Computer Science Engineering,64,70,43,47,57,90,36,59,55,Inconsistent Learner,p_pennesh26,pass_2356
+92,Neha92,Computer Science Engineering,52,60,94,77,74,89,79,77,36,Inconsistent Learner,p_neha92,pass_4522
+93,Kavinaya4,Computer Science Engineering,64,64,74,43,58,66,34,93,95,Inconsistent Learner,p_kavinaya4,pass_9434
+94,Karan85,Computer Science Engineering,80,73,62,92,82,77,54,94,99,Inconsistent Learner,p_karan85,pass_2029
+95,Sabereesh81,Computer Science Engineering,94,88,58,61,84,47,36,92,66,Inconsistent Learner,p_sabereesh81,pass_1141
+96,Pennesh30,Computer Science Engineering,52,62,91,87,94,99,86,98,66,Inconsistent Learner,p_pennesh30,pass_6904
+97,Sabereesh25,Computer Science Engineering,96,90,80,46,76,82,58,45,40,Inconsistent Learner,p_sabereesh25,pass_2778
+98,Ajith96,Computer Science Engineering,50,88,97,58,74,89,96,78,42,Inconsistent Learner,p_ajith96,pass_3844
+99,Neha15,Computer Science Engineering,70,80,97,47,72,46,58,34,80,Inconsistent Learner,p_neha15,pass_7951
+100,Mitul81,Computer Science Engineering,81,71,81,85,84,35,87,89,64,Inconsistent Learner,p_mitul81,pass_4389
+101,Vikram20,Computer Science Engineering,47,67,88,70,66,61,97,97,88,Inconsistent Learner,p_vikram20,pass_5028
+102,Karan73,Computer Science Engineering,91,69,89,88,69,43,94,96,86,Inconsistent Learner,p_karan73,pass_3802
+103,Sabereesh63,Computer Science Engineering,71,90,54,40,71,41,93,36,30,Inconsistent Learner,p_sabereesh63,pass_7199
+104,Pooja35,Computer Science Engineering,98,71,57,62,35,40,73,50,37,Inconsistent Learner,p_pooja35,pass_2613
+105,Pradhik63,Computer Science Engineering,55,61,86,51,49,88,73,36,58,Inconsistent Learner,p_pradhik63,pass_5553
+106,Pennesh94,Computer Science Engineering,55,73,78,43,59,94,62,93,93,Theoretical Learner,p_pennesh94,pass_8597
+107,Rahul26,Computer Science Engineering,52,93,85,88,37,72,71,62,37,Inconsistent Learner,p_rahul26,pass_8132
+108,Sabereesh69,Computer Science Engineering,68,73,91,97,33,64,60,92,88,Inconsistent Learner,p_sabereesh69,pass_5190
+109,Arjun32,Computer Science Engineering,63,62,47,96,61,47,80,86,39,Inconsistent Learner,p_arjun32,pass_9419
+110,Arjun45,Computer Science Engineering,99,53,80,74,86,35,74,52,60,Inconsistent Learner,p_arjun45,pass_1241
+111,Pennesh32,Computer Science Engineering,45,86,40,66,49,54,33,39,57,Needs Motivation,p_pennesh32,pass_7950
+112,Amit34,Computer Science Engineering,52,70,69,46,99,32,78,31,90,Practical Learner,p_amit34,pass_3901
+113,Pradhik26,Computer Science Engineering,43,51,54,59,96,50,97,88,30,Practical Learner,p_pradhik26,pass_3853
+114,Neha16,Computer Science Engineering,72,70,83,76,35,33,73,72,56,Inconsistent Learner,p_neha16,pass_4762
+115,Arjun85,Computer Science Engineering,96,96,68,97,64,86,65,36,46,Struggling Academically,p_arjun85,pass_7647
+116,Sabereesh87,Computer Science Engineering,69,87,80,79,42,33,90,30,53,Inconsistent Learner,p_sabereesh87,pass_4964
+117,Mitul97,Computer Science Engineering,51,96,47,40,50,47,42,42,92,Needs Motivation,p_mitul97,pass_2629
+118,Priya39,Computer Science Engineering,87,75,42,92,91,78,31,75,48,Practical Learner,p_priya39,pass_5559
+119,Pradhik61,Computer Science Engineering,43,83,89,80,37,73,39,54,62,Inconsistent Learner,p_pradhik61,pass_8701
+120,Siva95,Computer Science Engineering,45,78,62,40,91,53,40,99,47,Practical Learner,p_siva95,pass_4469
+121,Ajith97,Computer Science Engineering,84,80,90,64,35,90,62,78,59,Inconsistent Learner,p_ajith97,pass_6368
+122,Ajay85,Computer Science Engineering,52,66,99,88,86,96,59,60,70,Inconsistent Learner,p_ajay85,pass_5851
+123,Priya65,Computer Science Engineering,59,69,71,77,70,82,45,30,33,Inconsistent Learner,p_priya65,pass_3470
+124,Pooja4,Computer Science Engineering,95,81,76,47,77,56,53,91,39,Inconsistent Learner,p_pooja4,pass_1669
+125,Pradhik19,Computer Science Engineering,65,68,45,85,97,41,52,65,59,Practical Learner,p_pradhik19,pass_3533
+126,Kavinaya70,Computer Science Engineering,55,86,73,41,84,87,62,58,57,Practical Learner,p_kavinaya70,pass_7566
+127,Kavinaya58,Computer Science Engineering,93,70,74,48,51,67,34,48,60,Inconsistent Learner,p_kavinaya58,pass_3016
+128,Vijay74,Computer Science Engineering,53,69,60,69,33,95,92,82,68,Theoretical Learner,p_vijay74,pass_4455
+129,Pennesh86,Computer Science Engineering,98,95,97,48,31,73,61,58,37,Struggling Academically,p_pennesh86,pass_2310
+130,Pooja47,Computer Science Engineering,90,99,72,96,82,54,47,32,81,Struggling Academically,p_pooja47,pass_4550
+131,Pooja44,Computer Science Engineering,85,84,68,62,89,30,38,81,61,Practical Learner,p_pooja44,pass_4138
+132,Vikram36,Computer Science Engineering,76,80,92,68,69,63,90,98,87,Inconsistent Learner,p_vikram36,pass_4854
+133,Neha56,Computer Science Engineering,59,79,53,62,57,45,54,41,53,Inconsistent Learner,p_neha56,pass_5361
+134,Pradhik28,Computer Science Engineering,49,85,40,53,54,89,30,63,61,Inconsistent Learner,p_pradhik28,pass_9240
+135,Riya12,Computer Science Engineering,56,49,92,44,93,85,74,48,81,Inconsistent Learner,p_riya12,pass_7679
+136,Ajith81,Computer Science Engineering,78,59,59,82,60,76,54,43,87,Inconsistent Learner,p_ajith81,pass_3004
+137,Priya43,Computer Science Engineering,54,45,95,69,83,35,34,44,74,Practical Learner,p_priya43,pass_9882
+138,Pooja6,Computer Science Engineering,80,56,40,85,70,46,49,36,62,Inconsistent Learner,p_pooja6,pass_4446
+139,Amit12,Computer Science Engineering,59,58,50,60,35,80,36,38,31,Needs Motivation,p_amit12,pass_3645
+140,Amit91,Computer Science Engineering,45,90,81,90,49,42,67,94,67,Inconsistent Learner,p_amit91,pass_5031
+141,Rahul30,Computer Science Engineering,89,64,57,49,99,44,71,41,77,Practical Learner,p_rahul30,pass_6749
+142,Pennesh1,Computer Science Engineering,80,40,72,53,65,48,55,74,30,Inconsistent Learner,p_pennesh1,pass_9116
+143,Vijay1,Computer Science Engineering,54,84,58,62,52,35,54,40,98,Inconsistent Learner,p_vijay1,pass_2558
+144,Siva98,Computer Science Engineering,48,96,50,49,84,80,31,39,52,Practical Learner,p_siva98,pass_5451
+145,Pradhik93,Computer Science Engineering,50,61,60,73,40,66,41,47,95,Inconsistent Learner,p_pradhik93,pass_1199
+146,Mitul77,Computer Science Engineering,56,67,78,49,83,41,34,55,59,Practical Learner,p_mitul77,pass_8549
+147,Priya95,Computer Science Engineering,61,95,69,44,45,33,80,31,71,Inconsistent Learner,p_priya95,pass_5291
+148,Mitul22,Computer Science Engineering,59,68,78,97,52,42,58,39,44,Inconsistent Learner,p_mitul22,pass_5654
+149,Riya79,Computer Science Engineering,85,99,97,71,99,88,46,51,52,Struggling Academically,p_riya79,pass_5327
+150,Siva36,Computer Science Engineering,90,93,92,85,50,44,82,83,62,Inconsistent Learner,p_siva36,pass_4676
+151,Priya64,Computer Science Engineering,78,40,81,64,69,75,61,78,95,Inconsistent Learner,p_priya64,pass_7861
+152,Vikram4,Computer Science Engineering,59,51,45,92,58,78,40,71,61,Inconsistent Learner,p_vikram4,pass_6130
+153,Mitul96,Computer Science Engineering,50,58,55,48,67,41,32,98,96,Inconsistent Learner,p_mitul96,pass_5951
+154,Siva76,Computer Science Engineering,68,66,48,86,83,84,74,57,91,Inconsistent Learner,p_siva76,pass_8756
+155,Sneha32,Computer Science Engineering,74,74,52,91,72,31,93,93,90,Inconsistent Learner,p_sneha32,pass_9308
+156,Mitul95,Computer Science Engineering,58,59,90,72,72,55,70,69,68,Inconsistent Learner,p_mitul95,pass_4956
+157,Vikram12,Computer Science Engineering,72,64,92,60,89,79,36,81,46,Practical Learner,p_vikram12,pass_8450
+158,Riya45,Computer Science Engineering,46,84,54,44,55,34,67,38,79,Needs Motivation,p_riya45,pass_3902
+159,Rahul87,Computer Science Engineering,75,66,56,47,74,76,65,90,50,Inconsistent Learner,p_rahul87,pass_4995
+160,Vijay3,Computer Science Engineering,89,73,47,93,36,66,90,60,86,Inconsistent Learner,p_vijay3,pass_4853
+161,Pooja55,Computer Science Engineering,59,42,84,64,85,80,92,43,90,Inconsistent Learner,p_pooja55,pass_7341
+162,Kavinaya28,Computer Science Engineering,77,49,59,46,33,30,66,77,70,Inconsistent Learner,p_kavinaya28,pass_7806
+163,Neha40,Computer Science Engineering,75,99,96,74,99,67,98,58,81,Inconsistent Learner,p_neha40,pass_4954
+164,Balkies27,Computer Science Engineering,48,47,52,74,61,46,57,97,93,Inconsistent Learner,p_balkies27,pass_3052
+165,Vijay88,Computer Science Engineering,79,45,50,42,92,90,66,98,36,Inconsistent Learner,p_vijay88,pass_3215
+166,Pradhik55,Computer Science Engineering,45,96,80,62,77,64,88,47,38,Inconsistent Learner,p_pradhik55,pass_5936
+167,Rahul94,Computer Science Engineering,78,70,64,98,38,67,56,88,35,Inconsistent Learner,p_rahul94,pass_6448
+168,Pooja23,Computer Science Engineering,83,63,84,83,34,98,79,32,65,Inconsistent Learner,p_pooja23,pass_5882
+169,Rahul62,Computer Science Engineering,41,83,49,93,33,90,59,54,77,Inconsistent Learner,p_rahul62,pass_8819
+170,Vikram56,Computer Science Engineering,69,95,59,80,58,36,46,73,99,Inconsistent Learner,p_vikram56,pass_1575
+171,Riya9,Computer Science Engineering,71,54,41,52,33,92,73,92,49,Inconsistent Learner,p_riya9,pass_6152
+172,Arjun29,Computer Science Engineering,83,79,60,62,68,54,47,85,48,Inconsistent Learner,p_arjun29,pass_1253
+173,Ajith47,Computer Science Engineering,83,75,70,90,42,30,78,56,94,Inconsistent Learner,p_ajith47,pass_6774
+174,Rahul41,Computer Science Engineering,74,75,76,51,56,39,69,90,55,Inconsistent Learner,p_rahul41,pass_3382
+175,Vikram95,Computer Science Engineering,95,58,54,90,89,44,53,42,76,Practical Learner,p_vikram95,pass_2462
+176,Amit33,Computer Science Engineering,59,83,65,77,74,35,60,79,81,Inconsistent Learner,p_amit33,pass_4995
+177,Mitul44,Computer Science Engineering,52,61,59,84,70,37,91,99,88,Inconsistent Learner,p_mitul44,pass_9149
+178,Pradhik35,Computer Science Engineering,83,96,88,62,34,64,78,54,68,Inconsistent Learner,p_pradhik35,pass_6151
+179,Siva54,Computer Science Engineering,91,48,97,87,94,76,49,77,38,Inconsistent Learner,p_siva54,pass_8309
+180,Pennesh15,Computer Science Engineering,77,64,88,61,92,69,95,46,73,Inconsistent Learner,p_pennesh15,pass_9340
+181,Neha62,Computer Science Engineering,64,42,86,51,70,87,84,69,99,Inconsistent Learner,p_neha62,pass_9427
+182,Ajith48,Computer Science Engineering,95,50,81,52,81,75,31,43,82,Practical Learner,p_ajith48,pass_8503
+183,Vikram43,Computer Science Engineering,40,96,50,88,41,57,71,83,86,Inconsistent Learner,p_vikram43,pass_1862
+184,Rahul90,Computer Science Engineering,87,80,55,72,55,98,75,65,83,Theoretical Learner,p_rahul90,pass_9986
+185,Rahul20,Computer Science Engineering,88,65,50,53,99,47,88,45,52,Practical Learner,p_rahul20,pass_3142
+186,Pooja43,Computer Science Engineering,46,44,81,83,49,74,63,93,75,Inconsistent Learner,p_pooja43,pass_4331
+187,Priya45,Computer Science Engineering,46,96,61,51,74,91,43,39,48,Inconsistent Learner,p_priya45,pass_1076
+188,Neha87,Computer Science Engineering,44,49,74,48,72,67,90,82,73,Inconsistent Learner,p_neha87,pass_3157
+189,Vikram92,Computer Science Engineering,66,89,85,97,82,42,70,68,45,Struggling Academically,p_vikram92,pass_7784
+190,Riya89,Computer Science Engineering,40,52,69,40,48,47,98,43,38,Needs Motivation,p_riya89,pass_9306
+191,Karan7,Computer Science Engineering,66,72,67,98,40,48,77,88,48,Inconsistent Learner,p_karan7,pass_3367
+192,Mitul28,Computer Science Engineering,83,72,44,64,86,30,89,47,36,Practical Learner,p_mitul28,pass_1409
+193,Karan90,Computer Science Engineering,85,73,60,48,40,83,87,86,79,Theoretical Learner,p_karan90,pass_6333
+194,Ajith47,Computer Science Engineering,72,98,44,41,40,84,50,75,36,Inconsistent Learner,p_ajith47,pass_5555
+195,Sneha22,Computer Science Engineering,44,97,64,76,68,40,81,56,93,Inconsistent Learner,p_sneha22,pass_2882
+196,Neha34,Computer Science Engineering,48,43,44,46,76,40,36,46,74,Inconsistent Learner,p_neha34,pass_8669
+197,Balkies57,Computer Science Engineering,74,92,66,74,39,85,37,44,31,Inconsistent Learner,p_balkies57,pass_3468
+198,Pradhik34,Computer Science Engineering,90,90,97,63,41,33,56,89,73,Inconsistent Learner,p_pradhik34,pass_5855
+199,Ajith65,Computer Science Engineering,58,58,61,84,40,96,78,81,49,Inconsistent Learner,p_ajith65,pass_4680
+200,Sabereesh57,Computer Science Engineering,48,50,51,96,61,91,70,47,95,Inconsistent Learner,p_sabereesh57,pass_1709
+201,Balkies72,Computer Science Engineering,63,95,96,49,77,83,62,42,77,Inconsistent Learner,p_balkies72,pass_4153
+202,Kavinaya71,Computer Science Engineering,46,84,92,79,90,34,70,78,85,Inconsistent Learner,p_kavinaya71,pass_5073
+203,Pennesh45,Computer Science Engineering,66,54,79,68,61,57,61,53,91,Inconsistent Learner,p_pennesh45,pass_5477
+204,Balkies16,Computer Science Engineering,67,58,48,59,96,75,70,43,51,Practical Learner,p_balkies16,pass_8681
+205,Amit45,Computer Science Engineering,71,50,84,42,83,71,71,47,34,Practical Learner,p_amit45,pass_9453
+206,Ajay92,Computer Science Engineering,68,94,81,74,99,94,71,49,96,Inconsistent Learner,p_ajay92,pass_9693
+207,Siva53,Computer Science Engineering,72,89,80,89,33,93,67,93,93,Theoretical Learner,p_siva53,pass_7516
+208,Pradhik43,Computer Science Engineering,66,86,79,58,53,57,48,53,38,Inconsistent Learner,p_pradhik43,pass_8022
+209,Sabereesh25,Computer Science Engineering,77,73,53,70,33,48,93,96,64,Inconsistent Learner,p_sabereesh25,pass_1543
+210,Pennesh95,Computer Science Engineering,74,59,97,55,51,67,87,68,68,Inconsistent Learner,p_pennesh95,pass_8534
+211,Kavinaya35,Computer Science Engineering,42,99,67,72,65,51,74,48,53,Inconsistent Learner,p_kavinaya35,pass_9881
+212,Balkies43,Computer Science Engineering,41,42,62,55,53,77,34,48,79,Needs Motivation,p_balkies43,pass_8983
+213,Pooja75,Computer Science Engineering,65,72,66,62,61,45,69,52,48,Inconsistent Learner,p_pooja75,pass_2876
+214,Karan48,Computer Science Engineering,66,95,40,88,74,74,84,33,57,Inconsistent Learner,p_karan48,pass_2641
+215,Rahul67,Computer Science Engineering,43,80,55,64,83,73,81,62,32,Practical Learner,p_rahul67,pass_1300
+216,Rahul33,Computer Science Engineering,66,48,45,81,90,75,48,31,63,Practical Learner,p_rahul33,pass_5266
+217,Balkies81,Computer Science Engineering,65,99,97,83,47,31,98,83,42,Inconsistent Learner,p_balkies81,pass_1126
+218,Mitul89,Computer Science Engineering,65,63,73,40,64,64,81,84,86,Inconsistent Learner,p_mitul89,pass_2533
+219,Vikram19,Computer Science Engineering,44,47,99,74,67,32,52,70,34,Inconsistent Learner,p_vikram19,pass_9734
+220,Pradhik32,Computer Science Engineering,76,79,56,63,38,40,48,97,97,Inconsistent Learner,p_pradhik32,pass_4879
+221,Sneha78,Computer Science Engineering,80,72,94,79,54,49,43,95,94,Inconsistent Learner,p_sneha78,pass_3153
+222,Pennesh1,Computer Science Engineering,41,47,44,88,39,96,57,72,85,Inconsistent Learner,p_pennesh1,pass_6603
+223,Pennesh43,Computer Science Engineering,99,98,83,75,36,76,88,65,56,Inconsistent Learner,p_pennesh43,pass_3982
+224,Pooja20,Computer Science Engineering,91,58,46,88,41,31,65,39,49,Inconsistent Learner,p_pooja20,pass_6215
+225,Pradhik44,Computer Science Engineering,55,87,66,48,82,48,33,60,97,Practical Learner,p_pradhik44,pass_1891
+226,Mitul1,Computer Science Engineering,65,94,61,44,42,40,86,67,63,Inconsistent Learner,p_mitul1,pass_1385
+227,Riya35,Computer Science Engineering,86,75,98,94,57,52,52,99,57,Inconsistent Learner,p_riya35,pass_4622
+228,Karan24,Computer Science Engineering,95,65,52,86,39,94,78,35,70,Inconsistent Learner,p_karan24,pass_8517
+229,Sneha48,Computer Science Engineering,76,74,50,59,81,55,50,94,42,Practical Learner,p_sneha48,pass_2922
+230,Ajith36,Computer Science Engineering,50,45,59,76,64,77,92,53,89,Inconsistent Learner,p_ajith36,pass_5967
+231,Pennesh44,Computer Science Engineering,51,55,78,53,35,38,46,96,40,Needs Motivation,p_pennesh44,pass_3207
+232,Kavinaya92,Computer Science Engineering,67,64,73,79,35,69,43,87,87,Inconsistent Learner,p_kavinaya92,pass_2707
+233,Ajay52,Computer Science Engineering,98,51,52,55,54,48,75,64,39,Inconsistent Learner,p_ajay52,pass_5778
+234,Vijay52,Computer Science Engineering,92,58,66,72,93,40,60,37,93,Practical Learner,p_vijay52,pass_2814
+235,Kavinaya52,Computer Science Engineering,56,45,51,85,96,84,69,93,50,Inconsistent Learner,p_kavinaya52,pass_4735
+236,Ajith69,Computer Science Engineering,75,68,95,74,47,69,67,55,93,Inconsistent Learner,p_ajith69,pass_8236
+237,Pooja82,Computer Science Engineering,48,56,55,77,50,71,35,93,50,Inconsistent Learner,p_pooja82,pass_2476
+238,Amit64,Computer Science Engineering,86,54,60,40,55,38,46,48,91,Inconsistent Learner,p_amit64,pass_4990
+239,Pennesh18,Computer Science Engineering,65,82,43,56,67,58,55,78,61,Inconsistent Learner,p_pennesh18,pass_5133
+240,Ajay90,Computer Science Engineering,72,78,52,89,56,59,86,56,70,Inconsistent Learner,p_ajay90,pass_6519
+241,Mitul29,Computer Science Engineering,95,91,61,56,94,80,86,86,86,Inconsistent Learner,p_mitul29,pass_6788
+242,Ajay22,Computer Science Engineering,74,68,63,85,50,72,80,84,36,Inconsistent Learner,p_ajay22,pass_1774
+243,Neha30,Computer Science Engineering,85,45,77,73,74,58,93,56,90,Inconsistent Learner,p_neha30,pass_9842
+244,Amit53,Computer Science Engineering,84,51,60,46,32,30,64,87,64,Inconsistent Learner,p_amit53,pass_2228
+245,Riya3,Computer Science Engineering,54,75,63,70,68,87,71,98,71,Inconsistent Learner,p_riya3,pass_5358
+246,Vijay55,Computer Science Engineering,73,70,67,88,51,89,94,35,51,Inconsistent Learner,p_vijay55,pass_6415
+247,Pradhik37,Computer Science Engineering,57,80,71,62,45,88,74,97,93,Theoretical Learner,p_pradhik37,pass_3873
+248,Pradhik88,Computer Science Engineering,57,91,55,44,36,92,90,62,74,Inconsistent Learner,p_pradhik88,pass_6849
+249,Rahul3,Computer Science Engineering,53,51,62,83,90,36,30,44,51,Practical Learner,p_rahul3,pass_1744
+250,Mitul77,Computer Science Engineering,90,51,42,74,73,40,51,48,87,Inconsistent Learner,p_mitul77,pass_6773
+251,Pooja25,Computer Science Engineering,58,86,56,87,63,73,51,58,38,Inconsistent Learner,p_pooja25,pass_4968
+252,Neha58,Computer Science Engineering,87,60,93,57,50,44,60,37,87,Inconsistent Learner,p_neha58,pass_1261
+253,Sneha55,Computer Science Engineering,93,98,43,62,88,74,47,66,34,Practical Learner,p_sneha55,pass_5899
+254,Arjun73,Computer Science Engineering,63,49,94,45,77,87,60,40,45,Inconsistent Learner,p_arjun73,pass_1880
+255,Sabereesh48,Computer Science Engineering,82,50,91,80,55,85,50,46,79,Inconsistent Learner,p_sabereesh48,pass_4970
+256,Sneha92,Computer Science Engineering,58,89,76,44,92,85,37,97,38,Practical Learner,p_sneha92,pass_4858
+257,Kavinaya68,Computer Science Engineering,53,44,44,84,85,76,44,92,85,Inconsistent Learner,p_kavinaya68,pass_4981
+258,Sneha96,Computer Science Engineering,45,51,82,61,44,81,52,76,40,Inconsistent Learner,p_sneha96,pass_1391
+259,Pennesh53,Computer Science Engineering,68,91,40,52,85,56,73,72,94,Inconsistent Learner,p_pennesh53,pass_6019
+260,Amit83,Computer Science Engineering,65,54,54,99,66,61,61,53,98,Inconsistent Learner,p_amit83,pass_6240
+261,Pooja23,Computer Science Engineering,80,93,59,96,55,99,36,47,33,Struggling Academically,p_pooja23,pass_9660
+262,Vijay31,Computer Science Engineering,46,51,89,45,58,53,75,71,71,Inconsistent Learner,p_vijay31,pass_8553
+263,Riya81,Computer Science Engineering,80,95,83,66,72,94,59,44,38,Struggling Academically,p_riya81,pass_4668
+264,Siva83,Computer Science Engineering,60,51,68,92,33,79,52,81,90,Inconsistent Learner,p_siva83,pass_9920
+265,Sabereesh86,Computer Science Engineering,90,83,93,93,64,63,91,87,75,Inconsistent Learner,p_sabereesh86,pass_8520
+266,Mitul19,Computer Science Engineering,66,54,55,91,85,93,34,57,81,Practical Learner,p_mitul19,pass_3453
+267,Priya83,Computer Science Engineering,92,58,78,51,78,62,99,92,52,Inconsistent Learner,p_priya83,pass_7260
+268,Kavinaya27,Computer Science Engineering,56,80,89,53,42,58,95,63,45,Inconsistent Learner,p_kavinaya27,pass_5453
+269,Neha59,Computer Science Engineering,88,81,72,77,44,95,53,62,55,Inconsistent Learner,p_neha59,pass_6492
+270,Pennesh78,Computer Science Engineering,89,65,70,52,43,47,61,40,40,Inconsistent Learner,p_pennesh78,pass_1459
+271,Neha98,Computer Science Engineering,73,47,60,84,88,86,50,70,91,Inconsistent Learner,p_neha98,pass_9646
+272,Amit95,Computer Science Engineering,97,84,55,95,58,62,40,44,65,Struggling Academically,p_amit95,pass_5790
+273,Priya11,Computer Science Engineering,91,48,80,74,55,81,74,62,80,Inconsistent Learner,p_priya11,pass_7462
+274,Neha40,Computer Science Engineering,45,76,48,98,77,69,54,72,34,Inconsistent Learner,p_neha40,pass_3985
+275,Vikram51,Computer Science Engineering,68,81,40,47,93,72,38,60,73,Practical Learner,p_vikram51,pass_5365
+276,Vijay54,Computer Science Engineering,91,67,56,55,97,94,37,89,65,Inconsistent Learner,p_vijay54,pass_6498
+277,Kavinaya71,Computer Science Engineering,87,97,49,53,87,94,87,63,55,Inconsistent Learner,p_kavinaya71,pass_1008
+278,Vikram40,Computer Science Engineering,50,58,89,86,99,40,72,58,42,Practical Learner,p_vikram40,pass_1482
+279,Pradhik92,Computer Science Engineering,90,60,67,73,57,98,60,35,80,Inconsistent Learner,p_pradhik92,pass_3165
+280,Arjun7,Computer Science Engineering,41,42,92,71,37,54,68,82,59,Inconsistent Learner,p_arjun7,pass_5046
+281,Karan25,Computer Science Engineering,53,92,86,46,44,87,60,36,74,Inconsistent Learner,p_karan25,pass_2996
+282,Pradhik81,Computer Science Engineering,46,59,75,52,94,70,67,75,53,Practical Learner,p_pradhik81,pass_2153
+283,Karan20,Computer Science Engineering,70,87,79,60,34,44,72,40,53,Inconsistent Learner,p_karan20,pass_5421
+284,Vikram76,Computer Science Engineering,58,46,93,93,36,91,36,85,40,Inconsistent Learner,p_vikram76,pass_4616
+285,Sabereesh30,Computer Science Engineering,81,46,53,85,87,75,86,61,38,Practical Learner,p_sabereesh30,pass_4366
+286,Pradhik46,Computer Science Engineering,91,79,85,43,60,43,58,92,35,Inconsistent Learner,p_pradhik46,pass_1031
+287,Priya61,Computer Science Engineering,61,84,84,54,32,38,77,93,75,Inconsistent Learner,p_priya61,pass_2368
+288,Riya69,Computer Science Engineering,92,62,77,96,43,84,76,70,41,Inconsistent Learner,p_riya69,pass_2333
+289,Vijay66,Computer Science Engineering,90,56,53,71,70,63,90,67,65,Inconsistent Learner,p_vijay66,pass_5327
+290,Amit1,Computer Science Engineering,98,69,66,48,98,89,86,74,97,Inconsistent Learner,p_amit1,pass_5739
+291,Arjun74,Computer Science Engineering,56,51,78,85,39,79,43,75,52,Inconsistent Learner,p_arjun74,pass_7026
+292,Vijay16,Computer Science Engineering,65,46,74,80,83,90,40,42,76,Practical Learner,p_vijay16,pass_6453
+293,Neha59,Computer Science Engineering,43,65,90,85,93,78,81,34,86,Practical Learner,p_neha59,pass_7421
+294,Balkies34,Computer Science Engineering,83,76,64,88,87,67,91,84,67,Inconsistent Learner,p_balkies34,pass_9583
+295,Kavinaya31,Computer Science Engineering,71,99,48,60,72,45,53,55,93,Inconsistent Learner,p_kavinaya31,pass_7025
+296,Ajay65,Computer Science Engineering,88,84,73,93,67,65,53,91,82,Inconsistent Learner,p_ajay65,pass_5741
+297,Mitul86,Computer Science Engineering,41,48,40,74,70,65,90,73,40,Inconsistent Learner,p_mitul86,pass_6766
+298,Pradhik79,Computer Science Engineering,82,91,94,65,38,40,60,55,34,Struggling Academically,p_pradhik79,pass_1909
+299,Arjun90,Computer Science Engineering,78,85,57,60,39,48,65,57,65,Inconsistent Learner,p_arjun90,pass_7893
+300,Amit55,Computer Science Engineering,78,83,53,97,37,69,69,66,42,Inconsistent Learner,p_amit55,pass_6660
+301,Riya95,Computer Science Engineering,84,43,40,65,56,54,53,36,69,Needs Motivation,p_riya95,pass_7439
+302,Karan79,Computer Science Engineering,56,51,83,46,70,95,84,91,82,Inconsistent Learner,p_karan79,pass_8739
+303,Rahul95,Computer Science Engineering,72,78,56,75,40,58,86,92,55,Inconsistent Learner,p_rahul95,pass_2507
+304,Mitul59,Computer Science Engineering,69,45,80,91,89,66,34,61,98,Practical Learner,p_mitul59,pass_5004
+305,Rahul83,Computer Science Engineering,45,57,45,56,35,53,34,62,70,Needs Motivation,p_rahul83,pass_4579
+306,Sneha43,Computer Science Engineering,71,71,48,69,42,73,82,39,46,Inconsistent Learner,p_sneha43,pass_4986
+307,Neha80,Computer Science Engineering,60,40,63,48,49,58,75,58,44,Needs Motivation,p_neha80,pass_8955
+308,Ajay90,Computer Science Engineering,66,93,61,85,66,85,96,62,39,Inconsistent Learner,p_ajay90,pass_7248
+309,Vijay67,Computer Science Engineering,42,47,42,89,86,77,63,35,30,Practical Learner,p_vijay67,pass_1116
+310,Siva57,Computer Science Engineering,92,85,89,78,95,87,96,59,67,Inconsistent Learner,p_siva57,pass_4400
+311,Karan4,Computer Science Engineering,95,79,92,65,73,33,44,55,68,Struggling Academically,p_karan4,pass_6291
+312,Pradhik69,Computer Science Engineering,53,88,50,93,46,70,71,31,73,Inconsistent Learner,p_pradhik69,pass_5675
+313,Ajith9,Computer Science Engineering,93,89,44,42,66,89,54,37,43,Inconsistent Learner,p_ajith9,pass_8212
+314,Pennesh30,Computer Science Engineering,61,66,68,53,50,36,69,76,84,Inconsistent Learner,p_pennesh30,pass_3253
+315,Kavinaya30,Computer Science Engineering,43,94,77,57,41,48,51,63,54,Inconsistent Learner,p_kavinaya30,pass_9400
+316,Pennesh82,Computer Science Engineering,47,73,76,50,97,69,88,66,52,Practical Learner,p_pennesh82,pass_9588
+317,Pooja28,Computer Science Engineering,44,85,73,86,78,34,51,93,34,Inconsistent Learner,p_pooja28,pass_7634
+318,Priya1,Computer Science Engineering,46,95,69,84,64,64,39,33,98,Inconsistent Learner,p_priya1,pass_9648
+319,Karan73,Computer Science Engineering,83,45,65,62,68,68,36,72,71,Inconsistent Learner,p_karan73,pass_6397
+320,Priya24,Computer Science Engineering,91,49,66,54,84,57,89,46,73,Practical Learner,p_priya24,pass_6129
+321,Siva32,Computer Science Engineering,68,78,84,63,74,67,55,52,92,Inconsistent Learner,p_siva32,pass_1841
+322,Karan34,Computer Science Engineering,66,84,48,46,92,52,48,44,79,Practical Learner,p_karan34,pass_9876
+323,Mitul6,Computer Science Engineering,60,57,73,64,42,45,40,43,75,Inconsistent Learner,p_mitul6,pass_4128
+324,Vikram60,Computer Science Engineering,64,90,93,72,95,71,59,80,31,Inconsistent Learner,p_vikram60,pass_4413
+325,Sneha69,Computer Science Engineering,63,42,43,56,55,39,91,40,41,Needs Motivation,p_sneha69,pass_3705
+326,Pooja18,Computer Science Engineering,65,69,92,65,55,88,38,51,81,Inconsistent Learner,p_pooja18,pass_6104
+327,Sabereesh56,Computer Science Engineering,79,72,52,92,76,53,56,65,91,Inconsistent Learner,p_sabereesh56,pass_7660
+328,Pradhik56,Computer Science Engineering,78,78,88,89,87,33,79,74,93,Inconsistent Learner,p_pradhik56,pass_8192
+329,Pradhik54,Computer Science Engineering,54,72,55,50,69,43,74,89,72,Inconsistent Learner,p_pradhik54,pass_7382
+330,Priya49,Computer Science Engineering,63,77,96,49,81,96,38,48,74,Practical Learner,p_priya49,pass_7931
+331,Ajay22,Computer Science Engineering,82,87,79,84,75,92,57,68,65,Inconsistent Learner,p_ajay22,pass_7421
+332,Neha89,Computer Science Engineering,47,41,47,81,42,75,74,56,87,Inconsistent Learner,p_neha89,pass_8465
+333,Ajay44,Computer Science Engineering,89,58,87,52,52,78,53,60,49,Inconsistent Learner,p_ajay44,pass_9172
+334,Rahul85,Computer Science Engineering,42,70,70,51,85,93,97,83,65,Inconsistent Learner,p_rahul85,pass_2713
+335,Sabereesh70,Computer Science Engineering,58,78,96,60,36,60,42,74,70,Inconsistent Learner,p_sabereesh70,pass_2776
+336,Ajay27,Computer Science Engineering,77,68,57,91,59,59,60,57,45,Inconsistent Learner,p_ajay27,pass_6688
+337,Vijay85,Computer Science Engineering,74,44,83,92,90,68,89,87,76,Inconsistent Learner,p_vijay85,pass_8648
+338,Balkies20,Computer Science Engineering,64,75,40,54,98,30,33,81,82,Practical Learner,p_balkies20,pass_2323
+339,Sabereesh58,Computer Science Engineering,52,82,49,56,82,66,61,62,67,Practical Learner,p_sabereesh58,pass_4500
+340,Pooja87,Computer Science Engineering,67,65,83,57,74,67,50,60,34,Inconsistent Learner,p_pooja87,pass_2499
+341,Ajith47,Computer Science Engineering,97,78,79,64,69,31,74,60,97,Inconsistent Learner,p_ajith47,pass_5047
+342,Pooja50,Computer Science Engineering,47,79,99,64,39,49,80,58,36,Inconsistent Learner,p_pooja50,pass_2040
+343,Priya61,Computer Science Engineering,86,89,50,93,64,87,47,43,31,Inconsistent Learner,p_priya61,pass_4187
+344,Karan66,Computer Science Engineering,83,58,92,61,79,86,31,70,71,Inconsistent Learner,p_karan66,pass_8301
+345,Karan97,Computer Science Engineering,82,54,59,65,49,55,60,46,70,Inconsistent Learner,p_karan97,pass_1555
+346,Mitul40,Computer Science Engineering,66,59,78,96,34,36,95,87,65,Inconsistent Learner,p_mitul40,pass_4175
+347,Pennesh27,Computer Science Engineering,51,89,85,94,38,46,73,69,41,Inconsistent Learner,p_pennesh27,pass_4451
+348,Pradhik88,Computer Science Engineering,44,88,44,57,99,88,39,91,82,Inconsistent Learner,p_pradhik88,pass_9610
+349,Vijay29,Computer Science Engineering,91,44,43,97,89,89,58,36,95,Practical Learner,p_vijay29,pass_2208
+350,Ajith62,Computer Science Engineering,72,75,85,58,97,37,62,72,47,Practical Learner,p_ajith62,pass_7816
+351,Balkies4,Computer Science Engineering,66,95,89,52,82,35,30,64,40,Inconsistent Learner,p_balkies4,pass_4768
+352,Arjun36,Computer Science Engineering,62,46,62,64,65,50,64,90,67,Inconsistent Learner,p_arjun36,pass_6223
+353,Arjun30,Computer Science Engineering,72,44,54,74,59,38,83,66,52,Inconsistent Learner,p_arjun30,pass_4745
+354,Balkies31,Computer Science Engineering,99,40,60,40,57,82,46,61,40,Needs Motivation,p_balkies31,pass_5378
+355,Balkies64,Computer Science Engineering,99,68,72,93,40,47,92,96,63,Inconsistent Learner,p_balkies64,pass_7449
+356,Pradhik99,Computer Science Engineering,76,67,66,98,35,66,55,91,83,Inconsistent Learner,p_pradhik99,pass_3588
+357,Riya99,Computer Science Engineering,97,85,90,90,91,69,58,83,30,Inconsistent Learner,p_riya99,pass_3754
+358,Sneha27,Computer Science Engineering,76,40,63,63,34,34,85,72,56,Inconsistent Learner,p_sneha27,pass_8302
+359,Kavinaya74,Computer Science Engineering,87,83,48,67,73,31,96,46,84,Inconsistent Learner,p_kavinaya74,pass_7243
+360,Karan61,Computer Science Engineering,72,73,42,44,84,81,50,36,46,Practical Learner,p_karan61,pass_1562
+361,Vikram40,Computer Science Engineering,55,97,49,69,53,72,38,34,34,Inconsistent Learner,p_vikram40,pass_5058
+362,Pooja53,Computer Science Engineering,42,57,94,65,50,60,39,69,86,Inconsistent Learner,p_pooja53,pass_5575
+363,Priya71,Computer Science Engineering,98,97,95,56,53,49,90,51,92,Inconsistent Learner,p_priya71,pass_2747
+364,Sneha35,Computer Science Engineering,92,88,57,88,31,87,80,61,85,Inconsistent Learner,p_sneha35,pass_4190
+365,Karan78,Computer Science Engineering,43,74,64,90,83,58,88,53,31,Practical Learner,p_karan78,pass_4720
+366,Neha94,Computer Science Engineering,93,55,46,78,92,71,31,60,82,Practical Learner,p_neha94,pass_9594
+367,Ajay83,Computer Science Engineering,97,98,78,92,91,54,92,57,59,Inconsistent Learner,p_ajay83,pass_3801
+368,Amit63,Computer Science Engineering,70,67,43,42,87,35,67,51,72,Practical Learner,p_amit63,pass_5809
+369,Arjun30,Computer Science Engineering,68,42,51,61,85,58,45,54,43,Practical Learner,p_arjun30,pass_4063
+370,Vikram61,Computer Science Engineering,80,47,75,47,53,55,48,96,32,Inconsistent Learner,p_vikram61,pass_6370
+371,Amit87,Computer Science Engineering,63,80,50,43,88,42,40,97,49,Practical Learner,p_amit87,pass_6672
+372,Pooja40,Computer Science Engineering,44,48,93,54,32,68,74,45,76,Inconsistent Learner,p_pooja40,pass_9050
+373,Pennesh64,Computer Science Engineering,86,95,86,45,82,31,43,86,50,Inconsistent Learner,p_pennesh64,pass_3042
+374,Vikram58,Computer Science Engineering,43,87,85,45,37,30,97,45,30,Inconsistent Learner,p_vikram58,pass_5629
+375,Vikram47,Computer Science Engineering,56,87,98,64,55,45,66,80,44,Inconsistent Learner,p_vikram47,pass_4430
+376,Balkies4,Computer Science Engineering,59,57,79,65,62,77,32,66,36,Inconsistent Learner,p_balkies4,pass_2759
+377,Neha55,Computer Science Engineering,92,50,41,85,88,74,55,67,90,Inconsistent Learner,p_neha55,pass_2179
+378,Pradhik2,Computer Science Engineering,56,89,89,49,96,76,95,85,60,Inconsistent Learner,p_pradhik2,pass_7816
+379,Balkies50,Computer Science Engineering,54,99,74,78,86,42,86,38,71,Inconsistent Learner,p_balkies50,pass_3354
+380,Neha40,Computer Science Engineering,45,67,69,60,52,96,89,75,95,Theoretical Learner,p_neha40,pass_1788
+381,Ajay79,Computer Science Engineering,40,64,94,65,63,85,93,35,86,Inconsistent Learner,p_ajay79,pass_2783
+382,Neha52,Computer Science Engineering,50,99,86,92,43,60,34,62,31,Struggling Academically,p_neha52,pass_1646
+383,Riya79,Computer Science Engineering,41,53,93,89,64,50,33,32,90,Inconsistent Learner,p_riya79,pass_8202
+384,Mitul50,Computer Science Engineering,49,57,81,66,38,82,97,36,76,Inconsistent Learner,p_mitul50,pass_1230
+385,Siva75,Computer Science Engineering,77,92,61,53,59,66,31,85,67,Inconsistent Learner,p_siva75,pass_2980
+386,Kavinaya16,Computer Science Engineering,55,79,62,86,34,65,54,37,40,Inconsistent Learner,p_kavinaya16,pass_2186
+387,Pooja22,Computer Science Engineering,57,51,74,78,78,88,32,93,80,Inconsistent Learner,p_pooja22,pass_5470
+388,Neha93,Computer Science Engineering,56,82,88,94,83,97,75,35,49,Inconsistent Learner,p_neha93,pass_1095
+389,Mitul83,Computer Science Engineering,87,76,49,66,93,83,74,55,74,Inconsistent Learner,p_mitul83,pass_9062
+390,Sabereesh19,Computer Science Engineering,69,73,64,41,53,47,91,40,73,Inconsistent Learner,p_sabereesh19,pass_2001
+391,Riya6,Computer Science Engineering,56,81,43,92,48,96,50,65,47,Inconsistent Learner,p_riya6,pass_3460
+392,Mitul98,Computer Science Engineering,42,96,98,96,33,42,87,33,54,Struggling Academically,p_mitul98,pass_1575
+393,Pooja64,Computer Science Engineering,92,82,71,41,61,59,44,69,59,Inconsistent Learner,p_pooja64,pass_5545
+394,Vikram50,Computer Science Engineering,79,71,53,40,45,83,99,38,80,Inconsistent Learner,p_vikram50,pass_2365
+395,Priya65,Computer Science Engineering,99,76,71,60,52,55,56,74,88,Inconsistent Learner,p_priya65,pass_2380
+396,Mitul88,Computer Science Engineering,95,46,68,67,77,51,83,66,66,Inconsistent Learner,p_mitul88,pass_2563
+397,Vikram54,Computer Science Engineering,72,90,89,58,70,85,65,85,79,Inconsistent Learner,p_vikram54,pass_8312
+398,Pradhik90,Computer Science Engineering,99,84,95,72,42,33,59,51,93,Struggling Academically,p_pradhik90,pass_5111
+399,Mitul72,Computer Science Engineering,43,46,40,52,84,96,44,71,52,Practical Learner,p_mitul72,pass_3293
+400,Priya86,Computer Science Engineering,61,43,90,84,39,81,97,63,72,Inconsistent Learner,p_priya86,pass_9324
+401,Balkies66,Computer Science Engineering,56,73,82,84,71,59,61,59,52,Inconsistent Learner,p_balkies66,pass_2364
+402,Amit69,Computer Science Engineering,75,49,41,50,98,40,84,78,83,Inconsistent Learner,p_amit69,pass_9634
+403,Vijay10,Computer Science Engineering,68,66,76,69,66,32,42,78,82,Inconsistent Learner,p_vijay10,pass_8008
+404,Mitul92,Computer Science Engineering,59,60,53,51,63,42,30,95,73,Inconsistent Learner,p_mitul92,pass_8849
+405,Ajay49,Computer Science Engineering,68,53,89,74,68,46,97,33,64,Inconsistent Learner,p_ajay49,pass_9106
+406,Balkies60,Computer Science Engineering,80,56,84,96,32,53,83,37,96,Inconsistent Learner,p_balkies60,pass_9431
+407,Ajay83,Computer Science Engineering,83,96,49,68,99,77,38,33,59,Practical Learner,p_ajay83,pass_8126
+408,Amit23,Computer Science Engineering,55,68,57,93,70,78,74,51,68,Inconsistent Learner,p_amit23,pass_9904
+409,Vikram6,Computer Science Engineering,51,71,55,93,63,71,99,99,85,Inconsistent Learner,p_vikram6,pass_4790
+410,Mitul52,Computer Science Engineering,72,64,92,47,68,71,33,40,49,Inconsistent Learner,p_mitul52,pass_1537
+411,Siva60,Computer Science Engineering,79,51,60,74,79,97,87,65,94,Inconsistent Learner,p_siva60,pass_2058
+412,Ajay56,Computer Science Engineering,59,89,53,76,81,39,88,50,84,Practical Learner,p_ajay56,pass_9552
+413,Sneha94,Computer Science Engineering,72,71,88,98,46,45,91,60,93,Inconsistent Learner,p_sneha94,pass_3102
+414,Arjun76,Computer Science Engineering,76,59,43,83,56,53,46,37,68,Inconsistent Learner,p_arjun76,pass_3833
+415,Mitul45,Computer Science Engineering,88,40,79,44,34,87,65,47,64,Inconsistent Learner,p_mitul45,pass_9767
+416,Riya63,Computer Science Engineering,57,53,83,48,43,59,39,65,60,Inconsistent Learner,p_riya63,pass_5970
+417,Rahul58,Computer Science Engineering,87,49,76,49,91,85,98,30,33,Practical Learner,p_rahul58,pass_9052
+418,Ajay45,Computer Science Engineering,88,81,55,59,77,51,43,99,80,Inconsistent Learner,p_ajay45,pass_3649
+419,Sabereesh67,Computer Science Engineering,42,69,72,96,96,77,87,92,33,Inconsistent Learner,p_sabereesh67,pass_8006
+420,Vikram67,Computer Science Engineering,57,58,78,63,93,56,70,81,93,Inconsistent Learner,p_vikram67,pass_3228
+421,Arjun83,Computer Science Engineering,74,82,86,96,39,44,43,35,60,Struggling Academically,p_arjun83,pass_2205
+422,Siva16,Computer Science Engineering,50,97,90,50,92,73,78,84,87,Inconsistent Learner,p_siva16,pass_5060
+423,Pennesh7,Computer Science Engineering,79,62,98,68,43,84,43,47,46,Inconsistent Learner,p_pennesh7,pass_7431
+424,Vijay56,Computer Science Engineering,96,69,62,52,44,32,91,85,36,Inconsistent Learner,p_vijay56,pass_7262
+425,Ajay16,Computer Science Engineering,97,63,73,92,66,70,87,72,66,Inconsistent Learner,p_ajay16,pass_1620
+426,Ajay53,Computer Science Engineering,52,71,68,90,84,80,94,74,42,Inconsistent Learner,p_ajay53,pass_4428
+427,Amit90,Computer Science Engineering,57,82,56,78,50,58,53,98,76,Inconsistent Learner,p_amit90,pass_4496
+428,Vijay18,Computer Science Engineering,95,89,98,51,59,88,43,97,42,Inconsistent Learner,p_vijay18,pass_4208
+429,Sabereesh9,Computer Science Engineering,49,84,84,44,93,76,70,62,89,Inconsistent Learner,p_sabereesh9,pass_5162
+430,Vijay88,Computer Science Engineering,51,94,67,64,38,73,75,38,37,Inconsistent Learner,p_vijay88,pass_5023
+431,Neha22,Computer Science Engineering,48,48,55,43,79,30,61,75,36,Inconsistent Learner,p_neha22,pass_1047
+432,Arjun39,Computer Science Engineering,86,54,60,87,58,55,33,34,42,Inconsistent Learner,p_arjun39,pass_1613
+433,Ajith54,Computer Science Engineering,59,46,90,56,69,80,59,88,64,Inconsistent Learner,p_ajith54,pass_7511
+434,Mitul7,Computer Science Engineering,60,50,65,61,74,40,31,50,57,Inconsistent Learner,p_mitul7,pass_9488
+435,Karan30,Computer Science Engineering,75,76,84,89,78,83,97,79,30,Inconsistent Learner,p_karan30,pass_1682
+436,Rahul32,Computer Science Engineering,46,49,97,52,86,82,99,56,47,Inconsistent Learner,p_rahul32,pass_2326
+437,Riya13,Computer Science Engineering,60,61,85,95,65,48,40,74,80,Inconsistent Learner,p_riya13,pass_1444
+438,Vijay73,Computer Science Engineering,96,53,97,66,35,75,73,57,96,Inconsistent Learner,p_vijay73,pass_7172
+439,Riya14,Computer Science Engineering,75,75,96,84,75,98,80,57,74,Inconsistent Learner,p_riya14,pass_1450
+440,Sabereesh77,Computer Science Engineering,84,97,69,66,30,63,80,40,36,Inconsistent Learner,p_sabereesh77,pass_8925
+441,Vikram30,Computer Science Engineering,99,72,72,53,95,96,90,76,68,Inconsistent Learner,p_vikram30,pass_9414
+442,Vijay92,Computer Science Engineering,49,48,78,65,97,85,45,52,99,Inconsistent Learner,p_vijay92,pass_4096
+443,Rahul13,Computer Science Engineering,45,72,97,86,94,65,73,54,61,Inconsistent Learner,p_rahul13,pass_4943
+444,Balkies79,Computer Science Engineering,73,61,87,93,74,63,85,54,62,Inconsistent Learner,p_balkies79,pass_8813
+445,Pooja54,Computer Science Engineering,40,59,79,71,48,39,62,59,65,Inconsistent Learner,p_pooja54,pass_3738
+446,Vijay96,Computer Science Engineering,57,87,88,91,36,69,83,48,94,Inconsistent Learner,p_vijay96,pass_5358
+447,Sabereesh27,Computer Science Engineering,66,65,44,90,55,49,74,50,31,Inconsistent Learner,p_sabereesh27,pass_8034
+448,Balkies79,Computer Science Engineering,60,94,82,77,35,75,71,92,89,Theoretical Learner,p_balkies79,pass_1609
+449,Siva3,Computer Science Engineering,88,51,82,43,93,94,84,30,76,Inconsistent Learner,p_siva3,pass_6289
+450,Ajith98,Computer Science Engineering,61,77,99,94,38,86,74,52,42,Inconsistent Learner,p_ajith98,pass_8269
+451,Neha21,Computer Science Engineering,63,80,94,86,51,62,55,85,45,Inconsistent Learner,p_neha21,pass_6320
+452,Neha39,Computer Science Engineering,79,70,40,53,38,95,39,42,41,Inconsistent Learner,p_neha39,pass_9857
+453,Amit94,Computer Science Engineering,77,62,91,60,69,99,33,85,92,Inconsistent Learner,p_amit94,pass_3033
+454,Ajith81,Computer Science Engineering,85,87,94,81,66,96,91,41,56,Inconsistent Learner,p_ajith81,pass_1269
+455,Pradhik30,Computer Science Engineering,97,89,62,81,75,80,77,41,91,Inconsistent Learner,p_pradhik30,pass_6065
+456,Ajith67,Computer Science Engineering,93,96,92,48,43,41,39,64,94,Struggling Academically,p_ajith67,pass_5245
+457,Amit57,Computer Science Engineering,61,88,67,76,71,82,51,66,52,Inconsistent Learner,p_amit57,pass_7989
+458,Amit98,Computer Science Engineering,46,85,59,56,58,35,47,78,44,Inconsistent Learner,p_amit98,pass_7295
+459,Ajay56,Computer Science Engineering,85,69,89,44,95,39,31,35,86,Practical Learner,p_ajay56,pass_8345
+460,Sneha80,Computer Science Engineering,69,51,92,76,76,69,73,53,94,Inconsistent Learner,p_sneha80,pass_3083
+461,Ajith82,Computer Science Engineering,89,99,44,98,61,64,71,61,44,Inconsistent Learner,p_ajith82,pass_8589
+462,Karan56,Computer Science Engineering,92,43,67,74,91,33,97,92,88,Inconsistent Learner,p_karan56,pass_2477
+463,Sabereesh70,Computer Science Engineering,97,56,88,80,90,31,39,48,38,Struggling Academically,p_sabereesh70,pass_4891
+464,Pooja69,Computer Science Engineering,48,84,40,99,42,66,62,53,46,Inconsistent Learner,p_pooja69,pass_7201
+465,Pradhik14,Computer Science Engineering,69,55,83,68,90,74,86,39,95,Inconsistent Learner,p_pradhik14,pass_1878
+466,Vikram64,Computer Science Engineering,63,93,53,90,68,78,99,78,60,Inconsistent Learner,p_vikram64,pass_1372
+467,Karan70,Computer Science Engineering,78,68,90,74,80,38,62,72,78,Inconsistent Learner,p_karan70,pass_4421
+468,Priya83,Computer Science Engineering,53,61,76,86,69,76,67,89,93,Inconsistent Learner,p_priya83,pass_7541
+469,Sneha82,Computer Science Engineering,61,40,80,67,42,95,53,96,37,Inconsistent Learner,p_sneha82,pass_9548
+470,Ajay26,Computer Science Engineering,88,40,85,83,70,87,64,98,42,Inconsistent Learner,p_ajay26,pass_3444
+471,Kavinaya45,Computer Science Engineering,52,71,67,89,80,87,71,71,41,Practical Learner,p_kavinaya45,pass_1896
+472,Balkies48,Computer Science Engineering,72,48,96,80,94,94,48,98,49,Inconsistent Learner,p_balkies48,pass_1024
+473,Vikram1,Computer Science Engineering,71,72,57,56,49,42,83,39,63,Inconsistent Learner,p_vikram1,pass_9663
+474,Priya14,Computer Science Engineering,45,44,79,87,89,85,56,71,40,Practical Learner,p_priya14,pass_2873
+475,Riya22,Computer Science Engineering,57,96,72,71,56,77,98,70,80,Theoretical Learner,p_riya22,pass_8618
+476,Vikram41,Computer Science Engineering,65,90,91,72,61,72,96,52,32,Inconsistent Learner,p_vikram41,pass_3770
+477,Arjun24,Computer Science Engineering,83,70,48,76,48,59,71,71,65,Inconsistent Learner,p_arjun24,pass_8428
+478,Rahul33,Computer Science Engineering,91,61,72,70,95,62,33,85,64,Practical Learner,p_rahul33,pass_5315
+479,Amit93,Computer Science Engineering,89,81,93,73,36,65,95,47,52,Inconsistent Learner,p_amit93,pass_2917
+480,Priya15,Computer Science Engineering,95,78,79,87,37,45,83,54,73,Inconsistent Learner,p_priya15,pass_2672
+481,Amit84,Computer Science Engineering,84,75,58,57,68,75,84,98,38,Inconsistent Learner,p_amit84,pass_8408
+482,Ajay17,Computer Science Engineering,61,68,64,44,78,86,92,50,37,Inconsistent Learner,p_ajay17,pass_2315
+483,Arjun88,Computer Science Engineering,93,84,49,67,90,66,77,67,34,Practical Learner,p_arjun88,pass_3072
+484,Neha45,Computer Science Engineering,83,74,47,69,55,47,86,57,79,Inconsistent Learner,p_neha45,pass_9357
+485,Sabereesh57,Computer Science Engineering,51,53,78,77,85,41,98,97,50,Inconsistent Learner,p_sabereesh57,pass_7393
+486,Siva29,Computer Science Engineering,41,75,87,86,94,65,88,67,92,Inconsistent Learner,p_siva29,pass_1067
+487,Balkies67,Computer Science Engineering,68,72,47,47,97,61,38,65,57,Practical Learner,p_balkies67,pass_9101
+488,Sneha17,Computer Science Engineering,76,49,82,82,39,59,79,73,35,Inconsistent Learner,p_sneha17,pass_9424
+489,Karan54,Computer Science Engineering,57,58,64,79,86,95,39,74,91,Inconsistent Learner,p_karan54,pass_2689
+490,Ajith89,Computer Science Engineering,48,76,55,70,86,59,31,79,74,Practical Learner,p_ajith89,pass_3271
+491,Balkies77,Computer Science Engineering,44,49,90,58,94,64,65,63,41,Practical Learner,p_balkies77,pass_5131
+492,Pennesh77,Computer Science Engineering,55,83,87,67,57,56,39,54,92,Inconsistent Learner,p_pennesh77,pass_1130
+493,Sabereesh59,Computer Science Engineering,64,77,97,60,47,51,32,46,81,Inconsistent Learner,p_sabereesh59,pass_4843
+494,Pennesh34,Computer Science Engineering,50,92,52,64,49,97,50,82,48,Inconsistent Learner,p_pennesh34,pass_7883
+495,Vikram17,Computer Science Engineering,58,83,43,43,55,63,96,69,73,Inconsistent Learner,p_vikram17,pass_2560
+496,Pennesh74,Computer Science Engineering,72,83,78,43,65,41,49,62,52,Inconsistent Learner,p_pennesh74,pass_5334
+497,Ajay62,Computer Science Engineering,46,79,78,63,91,39,82,67,96,Inconsistent Learner,p_ajay62,pass_3628
+498,Pooja93,Computer Science Engineering,95,95,81,61,50,70,39,81,63,Inconsistent Learner,p_pooja93,pass_1897
+499,Kavinaya69,Computer Science Engineering,59,89,54,62,54,81,53,62,55,Inconsistent Learner,p_kavinaya69,pass_2724
+500,Sabereesh90,Computer Science Engineering,45,85,76,87,92,61,57,71,69,Practical Learner,p_sabereesh90,pass_1503
+501,Pooja99,Electronics and Communication Engineering,59,85,71,54,63,60,97,48,84,Inconsistent Learner,p_pooja99,pass_9237
+502,Balkies88,Electronics and Communication Engineering,81,73,70,97,89,59,34,85,88,Inconsistent Learner,p_balkies88,pass_8206
+503,Balkies31,Electronics and Communication Engineering,70,69,99,91,34,41,64,96,33,Struggling Academically,p_balkies31,pass_9050
+504,Ajay69,Electronics and Communication Engineering,78,97,68,75,58,90,41,42,47,Inconsistent Learner,p_ajay69,pass_5058
+505,Pradhik19,Electronics and Communication Engineering,86,83,52,99,74,97,86,47,63,Inconsistent Learner,p_pradhik19,pass_6290
+506,Pennesh34,Electronics and Communication Engineering,49,92,94,96,45,90,90,50,64,Inconsistent Learner,p_pennesh34,pass_1576
+507,Pooja74,Electronics and Communication Engineering,83,96,82,97,45,75,48,91,78,Inconsistent Learner,p_pooja74,pass_2802
+508,Pennesh47,Electronics and Communication Engineering,84,54,64,47,89,72,41,36,43,Practical Learner,p_pennesh47,pass_8107
+509,Arjun2,Electronics and Communication Engineering,88,42,99,52,40,78,99,59,58,Inconsistent Learner,p_arjun2,pass_2316
+510,Pradhik62,Electronics and Communication Engineering,58,82,78,92,99,46,46,50,51,Inconsistent Learner,p_pradhik62,pass_9613
+511,Vijay25,Electronics and Communication Engineering,40,82,78,95,46,90,60,36,98,Inconsistent Learner,p_vijay25,pass_3381
+512,Ajay71,Electronics and Communication Engineering,67,78,60,63,89,69,64,99,84,Inconsistent Learner,p_ajay71,pass_8566
+513,Rahul14,Electronics and Communication Engineering,58,86,56,98,82,72,50,44,32,Practical Learner,p_rahul14,pass_8068
+514,Priya37,Electronics and Communication Engineering,45,50,48,68,70,32,87,78,43,Inconsistent Learner,p_priya37,pass_2294
+515,Sneha89,Electronics and Communication Engineering,62,89,43,98,30,87,64,96,66,Inconsistent Learner,p_sneha89,pass_5412
+516,Sneha19,Electronics and Communication Engineering,56,65,55,60,88,87,35,97,52,Practical Learner,p_sneha19,pass_4177
+517,Arjun25,Electronics and Communication Engineering,75,74,70,74,48,95,31,67,40,Inconsistent Learner,p_arjun25,pass_4599
+518,Sneha88,Electronics and Communication Engineering,74,40,85,96,43,99,84,72,93,Theoretical Learner,p_sneha88,pass_8514
+519,Kavinaya78,Electronics and Communication Engineering,52,74,69,60,81,43,66,82,96,Inconsistent Learner,p_kavinaya78,pass_5810
+520,Pradhik64,Electronics and Communication Engineering,88,91,65,72,35,57,34,66,87,Inconsistent Learner,p_pradhik64,pass_1227
+521,Vijay95,Electronics and Communication Engineering,79,42,65,80,55,84,58,77,42,Inconsistent Learner,p_vijay95,pass_2189
+522,Karan81,Electronics and Communication Engineering,97,54,64,69,69,49,66,69,55,Inconsistent Learner,p_karan81,pass_3731
+523,Ajith22,Electronics and Communication Engineering,53,58,50,71,77,78,80,66,49,Inconsistent Learner,p_ajith22,pass_1171
+524,Neha26,Electronics and Communication Engineering,93,69,76,66,67,53,79,66,75,Inconsistent Learner,p_neha26,pass_2211
+525,Vijay41,Electronics and Communication Engineering,96,91,73,58,87,40,97,40,86,Inconsistent Learner,p_vijay41,pass_5311
+526,Pennesh71,Electronics and Communication Engineering,70,54,71,52,33,41,49,73,63,Inconsistent Learner,p_pennesh71,pass_2609
+527,Balkies66,Electronics and Communication Engineering,56,95,78,58,84,39,70,78,70,Practical Learner,p_balkies66,pass_2203
+528,Pennesh95,Electronics and Communication Engineering,72,74,48,94,37,80,86,77,77,Theoretical Learner,p_pennesh95,pass_6973
+529,Vijay2,Electronics and Communication Engineering,92,83,71,84,95,50,30,40,41,Struggling Academically,p_vijay2,pass_8183
+530,Ajith16,Electronics and Communication Engineering,44,75,41,74,69,89,35,96,95,Inconsistent Learner,p_ajith16,pass_7720
+531,Vijay53,Electronics and Communication Engineering,51,53,70,40,79,98,81,82,89,Inconsistent Learner,p_vijay53,pass_4721
+532,Ajay47,Electronics and Communication Engineering,98,92,87,69,77,48,72,39,61,Struggling Academically,p_ajay47,pass_8733
+533,Amit93,Electronics and Communication Engineering,84,41,55,63,86,44,88,84,51,Practical Learner,p_amit93,pass_5888
+534,Ajith35,Electronics and Communication Engineering,82,62,92,78,96,51,92,48,85,Inconsistent Learner,p_ajith35,pass_9109
+535,Sneha23,Electronics and Communication Engineering,41,87,87,65,63,57,74,48,53,Inconsistent Learner,p_sneha23,pass_9029
+536,Sneha63,Electronics and Communication Engineering,44,78,40,43,84,31,38,98,81,Practical Learner,p_sneha63,pass_9474
+537,Ajith78,Electronics and Communication Engineering,46,91,64,69,43,90,39,65,38,Inconsistent Learner,p_ajith78,pass_3863
+538,Ajith20,Electronics and Communication Engineering,91,81,71,48,34,32,75,34,61,Inconsistent Learner,p_ajith20,pass_6310
+539,Ajay36,Electronics and Communication Engineering,52,91,74,93,98,52,31,44,39,Inconsistent Learner,p_ajay36,pass_7931
+540,Riya13,Electronics and Communication Engineering,79,87,41,99,63,39,89,71,80,Inconsistent Learner,p_riya13,pass_2658
+541,Riya16,Electronics and Communication Engineering,48,91,78,55,73,80,82,49,86,Inconsistent Learner,p_riya16,pass_8540
+542,Neha87,Electronics and Communication Engineering,77,96,64,65,59,35,74,56,44,Inconsistent Learner,p_neha87,pass_9738
+543,Rahul5,Electronics and Communication Engineering,94,49,60,63,64,40,43,98,70,Inconsistent Learner,p_rahul5,pass_3995
+544,Sneha1,Electronics and Communication Engineering,57,87,88,71,43,34,80,56,81,Inconsistent Learner,p_sneha1,pass_9825
+545,Ajith79,Electronics and Communication Engineering,68,68,44,44,46,93,55,89,37,Inconsistent Learner,p_ajith79,pass_2560
+546,Vijay3,Electronics and Communication Engineering,61,73,90,54,47,89,99,64,30,Inconsistent Learner,p_vijay3,pass_3792
+547,Amit65,Electronics and Communication Engineering,81,90,96,93,47,86,99,53,84,Theoretical Learner,p_amit65,pass_2066
+548,Karan74,Electronics and Communication Engineering,91,76,80,55,60,38,35,54,60,Inconsistent Learner,p_karan74,pass_1699
+549,Arjun11,Electronics and Communication Engineering,60,74,58,49,76,97,61,93,53,Inconsistent Learner,p_arjun11,pass_4554
+550,Neha3,Electronics and Communication Engineering,74,49,56,92,54,72,40,32,44,Inconsistent Learner,p_neha3,pass_1783
+551,Pennesh82,Electronics and Communication Engineering,45,53,77,54,73,93,72,99,48,Inconsistent Learner,p_pennesh82,pass_1791
+552,Amit93,Electronics and Communication Engineering,98,97,61,53,86,62,91,30,39,Inconsistent Learner,p_amit93,pass_2760
+553,Pennesh50,Electronics and Communication Engineering,90,96,58,49,34,33,77,91,46,Inconsistent Learner,p_pennesh50,pass_1201
+554,Mitul73,Electronics and Communication Engineering,63,89,94,80,95,54,68,50,50,Struggling Academically,p_mitul73,pass_1096
+555,Rahul49,Electronics and Communication Engineering,59,72,61,91,84,34,80,35,83,Practical Learner,p_rahul49,pass_4347
+556,Sneha28,Electronics and Communication Engineering,53,43,64,62,92,76,95,64,42,Practical Learner,p_sneha28,pass_4084
+557,Pooja5,Electronics and Communication Engineering,46,87,74,51,66,88,94,48,50,Inconsistent Learner,p_pooja5,pass_9327
+558,Arjun48,Electronics and Communication Engineering,80,65,67,43,49,83,40,82,85,Inconsistent Learner,p_arjun48,pass_2254
+559,Arjun24,Electronics and Communication Engineering,65,81,70,59,37,74,54,54,36,Inconsistent Learner,p_arjun24,pass_9454
+560,Pradhik74,Electronics and Communication Engineering,63,74,82,48,89,61,82,80,61,Inconsistent Learner,p_pradhik74,pass_7358
+561,Pooja59,Electronics and Communication Engineering,80,82,71,68,64,54,35,95,98,Inconsistent Learner,p_pooja59,pass_4161
+562,Arjun77,Electronics and Communication Engineering,80,47,93,73,95,71,99,84,80,Inconsistent Learner,p_arjun77,pass_7126
+563,Ajith92,Electronics and Communication Engineering,77,59,67,40,89,80,49,79,86,Inconsistent Learner,p_ajith92,pass_4047
+564,Mitul63,Electronics and Communication Engineering,44,44,88,62,47,67,74,66,78,Inconsistent Learner,p_mitul63,pass_5874
+565,Ajith22,Electronics and Communication Engineering,61,67,58,59,90,32,69,57,90,Practical Learner,p_ajith22,pass_5075
+566,Ajith85,Electronics and Communication Engineering,80,57,88,75,81,61,70,98,31,Inconsistent Learner,p_ajith85,pass_8009
+567,Mitul23,Electronics and Communication Engineering,81,84,50,72,71,34,88,35,52,Inconsistent Learner,p_mitul23,pass_8437
+568,Ajith66,Electronics and Communication Engineering,99,87,99,80,75,40,41,45,80,Struggling Academically,p_ajith66,pass_2644
+569,Priya59,Electronics and Communication Engineering,79,73,60,51,53,85,69,70,46,Inconsistent Learner,p_priya59,pass_9784
+570,Amit93,Electronics and Communication Engineering,50,82,82,66,88,93,76,97,43,Inconsistent Learner,p_amit93,pass_4602
+571,Sabereesh22,Electronics and Communication Engineering,45,73,87,54,43,60,50,53,96,Inconsistent Learner,p_sabereesh22,pass_2908
+572,Pennesh77,Electronics and Communication Engineering,48,98,40,95,52,99,32,62,96,Inconsistent Learner,p_pennesh77,pass_2121
+573,Rahul97,Electronics and Communication Engineering,60,74,97,71,71,46,43,85,96,Inconsistent Learner,p_rahul97,pass_2265
+574,Pooja55,Electronics and Communication Engineering,50,62,78,54,77,50,51,51,72,Inconsistent Learner,p_pooja55,pass_4430
+575,Rahul84,Electronics and Communication Engineering,68,79,82,58,86,54,36,81,63,Practical Learner,p_rahul84,pass_2007
+576,Karan5,Electronics and Communication Engineering,99,55,56,65,62,38,71,41,70,Inconsistent Learner,p_karan5,pass_2331
+577,Sneha97,Electronics and Communication Engineering,52,54,45,43,85,49,42,41,98,Practical Learner,p_sneha97,pass_2146
+578,Pooja37,Electronics and Communication Engineering,68,77,91,53,84,87,32,79,73,Practical Learner,p_pooja37,pass_3158
+579,Karan59,Electronics and Communication Engineering,89,88,79,62,55,41,51,72,84,Inconsistent Learner,p_karan59,pass_5478
+580,Riya21,Electronics and Communication Engineering,51,41,70,75,84,63,75,42,94,Practical Learner,p_riya21,pass_4465
+581,Balkies41,Electronics and Communication Engineering,63,71,93,80,59,98,76,44,79,Inconsistent Learner,p_balkies41,pass_6151
+582,Sabereesh21,Electronics and Communication Engineering,59,50,91,51,84,88,94,44,58,Inconsistent Learner,p_sabereesh21,pass_2324
+583,Sabereesh88,Electronics and Communication Engineering,71,83,99,90,72,66,99,55,97,Inconsistent Learner,p_sabereesh88,pass_6918
+584,Neha95,Electronics and Communication Engineering,61,97,73,88,86,78,99,64,50,Inconsistent Learner,p_neha95,pass_9693
+585,Vikram62,Electronics and Communication Engineering,72,51,87,63,53,96,74,32,54,Inconsistent Learner,p_vikram62,pass_7498
+586,Rahul76,Electronics and Communication Engineering,51,50,57,64,71,88,54,43,35,Inconsistent Learner,p_rahul76,pass_7875
+587,Balkies1,Electronics and Communication Engineering,76,93,89,51,57,98,74,42,82,Inconsistent Learner,p_balkies1,pass_5872
+588,Priya33,Electronics and Communication Engineering,58,47,74,61,68,98,53,31,30,Inconsistent Learner,p_priya33,pass_8393
+589,Vijay40,Electronics and Communication Engineering,80,99,61,70,38,76,98,57,40,Inconsistent Learner,p_vijay40,pass_4755
+590,Sneha77,Electronics and Communication Engineering,63,79,67,96,44,36,78,33,55,Inconsistent Learner,p_sneha77,pass_1774
+591,Sabereesh43,Electronics and Communication Engineering,92,44,59,65,74,84,42,64,93,Inconsistent Learner,p_sabereesh43,pass_2292
+592,Mitul75,Electronics and Communication Engineering,71,40,80,56,71,86,32,87,43,Inconsistent Learner,p_mitul75,pass_1528
+593,Sabereesh21,Electronics and Communication Engineering,61,92,65,41,41,91,48,63,54,Inconsistent Learner,p_sabereesh21,pass_6644
+594,Vijay98,Electronics and Communication Engineering,51,88,99,86,65,77,88,96,65,Inconsistent Learner,p_vijay98,pass_3669
+595,Riya56,Electronics and Communication Engineering,40,62,98,93,69,65,45,85,89,Inconsistent Learner,p_riya56,pass_1799
+596,Arjun53,Electronics and Communication Engineering,80,62,77,49,77,66,92,56,60,Inconsistent Learner,p_arjun53,pass_5550
+597,Pradhik79,Electronics and Communication Engineering,63,55,83,68,57,74,37,57,32,Inconsistent Learner,p_pradhik79,pass_3554
+598,Pradhik93,Electronics and Communication Engineering,91,83,71,56,69,43,34,88,89,Inconsistent Learner,p_pradhik93,pass_5829
+599,Pennesh70,Electronics and Communication Engineering,91,95,93,58,99,40,97,88,57,Inconsistent Learner,p_pennesh70,pass_3722
+600,Pooja62,Electronics and Communication Engineering,53,76,83,95,51,39,51,86,70,Inconsistent Learner,p_pooja62,pass_5541
+601,Balkies29,Electronics and Communication Engineering,77,64,73,63,82,76,51,35,99,Practical Learner,p_balkies29,pass_6008
+602,Pennesh58,Electronics and Communication Engineering,57,59,59,56,93,77,43,66,43,Practical Learner,p_pennesh58,pass_1280
+603,Priya81,Electronics and Communication Engineering,90,56,71,86,30,47,56,67,79,Inconsistent Learner,p_priya81,pass_4273
+604,Rahul37,Electronics and Communication Engineering,53,75,81,74,85,86,85,65,99,Inconsistent Learner,p_rahul37,pass_7505
+605,Vijay80,Electronics and Communication Engineering,71,63,44,64,79,45,59,79,51,Inconsistent Learner,p_vijay80,pass_5249
+606,Vijay68,Electronics and Communication Engineering,96,75,65,84,95,35,66,66,56,Struggling Academically,p_vijay68,pass_2285
+607,Vikram16,Electronics and Communication Engineering,92,45,90,53,93,93,49,44,81,Practical Learner,p_vikram16,pass_4926
+608,Arjun21,Electronics and Communication Engineering,93,47,91,53,54,95,75,54,97,Theoretical Learner,p_arjun21,pass_2355
+609,Riya36,Electronics and Communication Engineering,41,73,48,82,74,57,35,37,54,Inconsistent Learner,p_riya36,pass_5312
+610,Karan58,Electronics and Communication Engineering,75,88,80,60,33,87,73,67,95,Theoretical Learner,p_karan58,pass_3494
+611,Neha95,Electronics and Communication Engineering,82,47,74,99,50,30,74,55,84,Inconsistent Learner,p_neha95,pass_4652
+612,Amit76,Electronics and Communication Engineering,69,40,92,99,92,94,87,38,65,Inconsistent Learner,p_amit76,pass_7505
+613,Siva78,Electronics and Communication Engineering,69,40,91,60,32,38,34,34,86,Inconsistent Learner,p_siva78,pass_3896
+614,Riya65,Electronics and Communication Engineering,94,41,60,68,31,31,87,73,62,Inconsistent Learner,p_riya65,pass_2829
+615,Mitul53,Electronics and Communication Engineering,40,99,71,43,45,62,46,81,46,Inconsistent Learner,p_mitul53,pass_9846
+616,Kavinaya30,Electronics and Communication Engineering,53,69,55,88,95,45,61,31,36,Practical Learner,p_kavinaya30,pass_1864
+617,Arjun27,Electronics and Communication Engineering,73,70,56,68,33,80,34,77,49,Inconsistent Learner,p_arjun27,pass_5838
+618,Vijay77,Electronics and Communication Engineering,87,47,40,54,93,60,68,78,77,Inconsistent Learner,p_vijay77,pass_7179
+619,Amit62,Electronics and Communication Engineering,48,58,67,98,75,78,84,79,94,Inconsistent Learner,p_amit62,pass_2809
+620,Rahul6,Electronics and Communication Engineering,73,42,55,47,46,67,54,56,96,Inconsistent Learner,p_rahul6,pass_4263
+621,Karan12,Electronics and Communication Engineering,62,47,95,99,82,58,35,79,35,Inconsistent Learner,p_karan12,pass_6186
+622,Ajith61,Electronics and Communication Engineering,58,91,45,71,96,35,46,67,42,Practical Learner,p_ajith61,pass_6334
+623,Priya48,Electronics and Communication Engineering,81,44,87,88,77,92,85,50,42,Inconsistent Learner,p_priya48,pass_4687
+624,Ajith78,Electronics and Communication Engineering,54,80,61,49,99,72,60,78,90,Inconsistent Learner,p_ajith78,pass_7160
+625,Amit15,Electronics and Communication Engineering,86,54,51,97,94,81,90,45,64,Inconsistent Learner,p_amit15,pass_2869
+626,Sabereesh82,Electronics and Communication Engineering,61,51,42,67,31,59,82,99,95,Theoretical Learner,p_sabereesh82,pass_8021
+627,Ajith97,Electronics and Communication Engineering,63,75,69,61,70,84,44,93,81,Inconsistent Learner,p_ajith97,pass_4891
+628,Ajay45,Electronics and Communication Engineering,91,93,66,63,87,88,80,39,31,Inconsistent Learner,p_ajay45,pass_2979
+629,Pennesh53,Electronics and Communication Engineering,62,77,68,82,54,37,86,89,56,Inconsistent Learner,p_pennesh53,pass_6465
+630,Mitul78,Electronics and Communication Engineering,85,73,97,67,55,64,51,85,51,Inconsistent Learner,p_mitul78,pass_9776
+631,Vikram37,Electronics and Communication Engineering,96,79,70,83,61,30,31,61,56,Struggling Academically,p_vikram37,pass_8324
+632,Ajith49,Electronics and Communication Engineering,84,62,58,48,53,80,72,38,87,Inconsistent Learner,p_ajith49,pass_7375
+633,Karan34,Electronics and Communication Engineering,66,74,45,81,82,75,33,33,87,Practical Learner,p_karan34,pass_4840
+634,Arjun47,Electronics and Communication Engineering,77,41,65,73,65,55,80,59,84,Inconsistent Learner,p_arjun47,pass_5367
+635,Amit27,Electronics and Communication Engineering,63,44,73,59,78,94,76,86,47,Inconsistent Learner,p_amit27,pass_4939
+636,Amit56,Electronics and Communication Engineering,99,71,45,87,34,75,51,90,89,Inconsistent Learner,p_amit56,pass_6479
+637,Karan58,Electronics and Communication Engineering,94,41,70,87,52,94,54,99,73,Theoretical Learner,p_karan58,pass_4388
+638,Sabereesh34,Electronics and Communication Engineering,42,66,56,48,85,63,44,42,85,Practical Learner,p_sabereesh34,pass_3640
+639,Rahul40,Electronics and Communication Engineering,53,66,85,72,65,84,96,34,74,Inconsistent Learner,p_rahul40,pass_3915
+640,Ajith93,Electronics and Communication Engineering,53,77,93,52,48,51,31,42,88,Inconsistent Learner,p_ajith93,pass_1860
+641,Vikram72,Electronics and Communication Engineering,77,77,79,68,35,99,50,61,90,Inconsistent Learner,p_vikram72,pass_5946
+642,Pooja27,Electronics and Communication Engineering,41,92,72,43,47,77,45,92,54,Inconsistent Learner,p_pooja27,pass_6501
+643,Balkies1,Electronics and Communication Engineering,61,48,46,87,67,57,81,41,34,Inconsistent Learner,p_balkies1,pass_7742
+644,Ajay70,Electronics and Communication Engineering,69,61,81,95,41,69,43,82,48,Inconsistent Learner,p_ajay70,pass_3619
+645,Vikram27,Electronics and Communication Engineering,84,68,50,42,60,46,30,32,92,Inconsistent Learner,p_vikram27,pass_8355
+646,Neha1,Electronics and Communication Engineering,54,99,49,44,58,93,45,79,76,Inconsistent Learner,p_neha1,pass_6480
+647,Rahul17,Electronics and Communication Engineering,73,89,58,42,67,56,96,33,56,Inconsistent Learner,p_rahul17,pass_8074
+648,Sabereesh32,Electronics and Communication Engineering,75,40,54,91,40,80,51,30,55,Inconsistent Learner,p_sabereesh32,pass_5631
+649,Balkies73,Electronics and Communication Engineering,98,55,56,80,36,41,95,57,77,Inconsistent Learner,p_balkies73,pass_5329
+650,Pradhik52,Electronics and Communication Engineering,98,73,88,41,36,77,84,81,68,Inconsistent Learner,p_pradhik52,pass_3515
+651,Kavinaya38,Electronics and Communication Engineering,87,46,54,47,31,48,51,66,43,Needs Motivation,p_kavinaya38,pass_7728
+652,Pooja30,Electronics and Communication Engineering,75,60,81,90,36,38,80,47,95,Inconsistent Learner,p_pooja30,pass_8404
+653,Ajay17,Electronics and Communication Engineering,46,62,76,49,41,44,73,78,51,Inconsistent Learner,p_ajay17,pass_8201
+654,Pradhik78,Electronics and Communication Engineering,41,47,94,90,39,67,94,78,61,Inconsistent Learner,p_pradhik78,pass_4004
+655,Riya59,Electronics and Communication Engineering,93,63,63,85,98,56,87,91,88,Inconsistent Learner,p_riya59,pass_9825
+656,Pradhik90,Electronics and Communication Engineering,97,60,92,95,58,57,34,85,77,Inconsistent Learner,p_pradhik90,pass_1480
+657,Sneha75,Electronics and Communication Engineering,53,66,46,41,77,96,30,36,95,Inconsistent Learner,p_sneha75,pass_3925
+658,Neha22,Electronics and Communication Engineering,64,66,49,93,95,44,77,92,60,Practical Learner,p_neha22,pass_6371
+659,Siva89,Electronics and Communication Engineering,60,42,52,65,66,40,39,50,34,Inconsistent Learner,p_siva89,pass_7612
+660,Karan75,Electronics and Communication Engineering,71,60,56,64,32,57,43,70,44,Inconsistent Learner,p_karan75,pass_1746
+661,Pooja44,Electronics and Communication Engineering,58,78,51,44,91,75,42,81,81,Practical Learner,p_pooja44,pass_6710
+662,Karan52,Electronics and Communication Engineering,75,94,90,70,41,49,59,61,71,Inconsistent Learner,p_karan52,pass_3136
+663,Ajith88,Electronics and Communication Engineering,41,82,46,69,80,79,79,77,42,Practical Learner,p_ajith88,pass_5805
+664,Neha65,Electronics and Communication Engineering,41,53,71,44,31,81,34,37,41,Needs Motivation,p_neha65,pass_3319
+665,Sneha87,Electronics and Communication Engineering,73,71,42,90,49,91,60,95,46,Inconsistent Learner,p_sneha87,pass_5305
+666,Riya94,Electronics and Communication Engineering,49,63,62,86,47,68,43,94,67,Inconsistent Learner,p_riya94,pass_9489
+667,Kavinaya70,Electronics and Communication Engineering,52,92,56,72,65,65,82,94,50,Inconsistent Learner,p_kavinaya70,pass_9163
+668,Arjun54,Electronics and Communication Engineering,78,82,58,98,32,36,47,42,47,Inconsistent Learner,p_arjun54,pass_3639
+669,Karan64,Electronics and Communication Engineering,97,85,94,42,55,91,63,87,37,Inconsistent Learner,p_karan64,pass_3109
+670,Rahul53,Electronics and Communication Engineering,86,65,82,53,92,71,42,43,90,Practical Learner,p_rahul53,pass_5487
+671,Ajay40,Electronics and Communication Engineering,54,55,67,75,48,83,91,33,55,Inconsistent Learner,p_ajay40,pass_9079
+672,Neha14,Electronics and Communication Engineering,98,64,90,90,88,39,62,37,41,Struggling Academically,p_neha14,pass_2160
+673,Ajith61,Electronics and Communication Engineering,43,85,40,62,92,79,90,59,54,Inconsistent Learner,p_ajith61,pass_2653
+674,Vikram78,Electronics and Communication Engineering,92,89,87,92,89,32,75,37,30,Struggling Academically,p_vikram78,pass_3870
+675,Priya93,Electronics and Communication Engineering,96,96,71,45,77,91,53,79,64,Inconsistent Learner,p_priya93,pass_6754
+676,Neha49,Electronics and Communication Engineering,87,73,83,54,33,56,39,48,63,Inconsistent Learner,p_neha49,pass_5059
+677,Rahul36,Electronics and Communication Engineering,58,95,80,74,79,79,59,99,57,Inconsistent Learner,p_rahul36,pass_5615
+678,Sabereesh44,Electronics and Communication Engineering,66,70,84,71,48,56,83,53,81,Inconsistent Learner,p_sabereesh44,pass_6444
+679,Sneha46,Electronics and Communication Engineering,60,92,81,95,41,93,83,40,44,Inconsistent Learner,p_sneha46,pass_4658
+680,Neha65,Electronics and Communication Engineering,85,78,67,57,40,35,68,74,31,Inconsistent Learner,p_neha65,pass_9804
+681,Balkies90,Electronics and Communication Engineering,45,43,60,65,33,67,48,64,49,Needs Motivation,p_balkies90,pass_4597
+682,Vijay69,Electronics and Communication Engineering,65,46,72,51,67,51,85,96,36,Inconsistent Learner,p_vijay69,pass_1668
+683,Riya35,Electronics and Communication Engineering,46,84,95,96,89,67,88,57,86,Inconsistent Learner,p_riya35,pass_7660
+684,Karan22,Electronics and Communication Engineering,47,44,76,64,89,83,61,88,53,Inconsistent Learner,p_karan22,pass_4499
+685,Arjun81,Electronics and Communication Engineering,50,78,68,43,60,96,31,65,75,Inconsistent Learner,p_arjun81,pass_8591
+686,Vikram23,Electronics and Communication Engineering,70,91,96,86,45,41,86,86,30,Inconsistent Learner,p_vikram23,pass_7905
+687,Balkies36,Electronics and Communication Engineering,75,45,99,91,91,39,63,74,81,Inconsistent Learner,p_balkies36,pass_2284
+688,Amit54,Electronics and Communication Engineering,90,96,93,96,88,63,48,65,96,Inconsistent Learner,p_amit54,pass_8696
+689,Neha16,Electronics and Communication Engineering,73,96,44,91,52,88,97,55,71,Inconsistent Learner,p_neha16,pass_3130
+690,Vijay56,Electronics and Communication Engineering,60,90,55,81,35,92,70,83,82,Theoretical Learner,p_vijay56,pass_2882
+691,Sneha60,Electronics and Communication Engineering,58,74,52,83,81,66,85,73,67,Inconsistent Learner,p_sneha60,pass_4228
+692,Balkies39,Electronics and Communication Engineering,44,84,75,66,43,73,74,82,49,Inconsistent Learner,p_balkies39,pass_6134
+693,Karan57,Electronics and Communication Engineering,97,75,52,77,53,64,95,85,74,Inconsistent Learner,p_karan57,pass_3057
+694,Pradhik97,Electronics and Communication Engineering,45,71,53,51,97,86,79,96,85,Inconsistent Learner,p_pradhik97,pass_4992
+695,Pennesh86,Electronics and Communication Engineering,68,41,77,96,44,67,87,81,51,Inconsistent Learner,p_pennesh86,pass_5660
+696,Kavinaya3,Electronics and Communication Engineering,48,78,57,55,39,48,43,74,40,Needs Motivation,p_kavinaya3,pass_4250
+697,Siva77,Electronics and Communication Engineering,87,44,58,48,83,77,64,92,69,Inconsistent Learner,p_siva77,pass_6918
+698,Riya3,Electronics and Communication Engineering,81,68,83,67,93,74,38,32,96,Practical Learner,p_riya3,pass_9547
+699,Priya34,Electronics and Communication Engineering,46,91,50,76,88,36,70,49,65,Practical Learner,p_priya34,pass_7215
+700,Rahul86,Electronics and Communication Engineering,74,62,78,87,99,70,58,72,52,Inconsistent Learner,p_rahul86,pass_2061
+701,Pradhik96,Electronics and Communication Engineering,86,84,63,54,39,68,50,98,57,Inconsistent Learner,p_pradhik96,pass_8025
+702,Amit33,Electronics and Communication Engineering,57,62,56,63,55,96,73,78,54,Inconsistent Learner,p_amit33,pass_8469
+703,Vijay1,Electronics and Communication Engineering,58,91,91,79,38,69,72,37,60,Inconsistent Learner,p_vijay1,pass_6618
+704,Pennesh13,Electronics and Communication Engineering,57,90,81,95,84,90,42,53,53,Struggling Academically,p_pennesh13,pass_2178
+705,Neha23,Electronics and Communication Engineering,86,64,78,43,78,97,74,93,34,Inconsistent Learner,p_neha23,pass_2350
+706,Siva24,Electronics and Communication Engineering,75,91,67,59,31,77,34,75,77,Inconsistent Learner,p_siva24,pass_3634
+707,Vijay3,Electronics and Communication Engineering,70,92,77,47,84,78,59,57,76,Practical Learner,p_vijay3,pass_8108
+708,Vijay57,Electronics and Communication Engineering,64,82,65,51,67,78,90,64,98,Inconsistent Learner,p_vijay57,pass_5932
+709,Balkies84,Electronics and Communication Engineering,86,67,79,85,51,32,33,30,66,Inconsistent Learner,p_balkies84,pass_1549
+710,Sabereesh4,Electronics and Communication Engineering,61,95,81,57,66,48,54,55,96,Inconsistent Learner,p_sabereesh4,pass_8014
+711,Vijay55,Electronics and Communication Engineering,43,63,88,58,38,62,53,64,71,Inconsistent Learner,p_vijay55,pass_1098
+712,Vijay42,Electronics and Communication Engineering,69,49,85,85,59,98,66,37,74,Inconsistent Learner,p_vijay42,pass_8819
+713,Riya21,Electronics and Communication Engineering,98,80,62,50,79,55,75,68,80,Inconsistent Learner,p_riya21,pass_6339
+714,Arjun1,Electronics and Communication Engineering,55,92,71,61,89,43,57,61,45,Practical Learner,p_arjun1,pass_5322
+715,Pennesh35,Electronics and Communication Engineering,99,98,74,75,90,58,53,66,80,Inconsistent Learner,p_pennesh35,pass_1417
+716,Siva41,Electronics and Communication Engineering,80,42,92,60,63,50,31,31,40,Inconsistent Learner,p_siva41,pass_5223
+717,Ajay44,Electronics and Communication Engineering,50,41,42,42,49,55,72,96,64,Inconsistent Learner,p_ajay44,pass_3008
+718,Vijay87,Electronics and Communication Engineering,70,59,98,51,67,48,59,80,86,Inconsistent Learner,p_vijay87,pass_4013
+719,Rahul35,Electronics and Communication Engineering,87,54,92,82,37,91,46,71,64,Inconsistent Learner,p_rahul35,pass_4332
+720,Sneha19,Electronics and Communication Engineering,47,52,93,42,92,42,85,51,87,Practical Learner,p_sneha19,pass_9196
+721,Vijay48,Electronics and Communication Engineering,59,65,94,46,43,38,42,34,66,Inconsistent Learner,p_vijay48,pass_8734
+722,Vikram68,Electronics and Communication Engineering,56,59,53,70,36,40,90,38,36,Needs Motivation,p_vikram68,pass_7208
+723,Riya63,Electronics and Communication Engineering,43,42,92,97,69,96,45,53,90,Inconsistent Learner,p_riya63,pass_6666
+724,Mitul7,Electronics and Communication Engineering,80,69,54,67,80,90,68,75,43,Practical Learner,p_mitul7,pass_4659
+725,Riya29,Electronics and Communication Engineering,71,69,42,56,67,52,69,76,71,Inconsistent Learner,p_riya29,pass_2514
+726,Pradhik11,Electronics and Communication Engineering,69,49,78,71,73,52,58,84,39,Inconsistent Learner,p_pradhik11,pass_2909
+727,Rahul69,Electronics and Communication Engineering,77,84,64,85,93,79,36,46,73,Inconsistent Learner,p_rahul69,pass_7814
+728,Kavinaya3,Electronics and Communication Engineering,90,62,62,85,63,50,91,31,88,Inconsistent Learner,p_kavinaya3,pass_3111
+729,Kavinaya60,Electronics and Communication Engineering,42,56,89,53,42,74,73,53,95,Inconsistent Learner,p_kavinaya60,pass_6766
+730,Vijay21,Electronics and Communication Engineering,44,48,58,83,62,69,80,87,36,Inconsistent Learner,p_vijay21,pass_8856
+731,Arjun68,Electronics and Communication Engineering,49,56,54,77,59,84,78,95,34,Inconsistent Learner,p_arjun68,pass_9103
+732,Sabereesh59,Electronics and Communication Engineering,89,55,74,89,53,44,88,65,32,Inconsistent Learner,p_sabereesh59,pass_3683
+733,Siva8,Electronics and Communication Engineering,61,60,57,57,61,46,94,44,74,Inconsistent Learner,p_siva8,pass_7559
+734,Pooja5,Electronics and Communication Engineering,52,86,58,62,41,82,67,90,45,Inconsistent Learner,p_pooja5,pass_5961
+735,Mitul82,Electronics and Communication Engineering,52,76,91,98,49,98,91,35,97,Theoretical Learner,p_mitul82,pass_1684
+736,Ajay51,Electronics and Communication Engineering,71,92,73,84,87,62,46,89,61,Inconsistent Learner,p_ajay51,pass_7081
+737,Vijay7,Electronics and Communication Engineering,55,65,61,41,65,97,34,87,64,Inconsistent Learner,p_vijay7,pass_7486
+738,Siva58,Electronics and Communication Engineering,65,87,96,62,81,73,97,73,80,Inconsistent Learner,p_siva58,pass_4526
+739,Siva85,Electronics and Communication Engineering,87,74,57,43,82,83,50,70,40,Practical Learner,p_siva85,pass_7406
+740,Kavinaya91,Electronics and Communication Engineering,87,42,74,47,37,54,93,98,33,Inconsistent Learner,p_kavinaya91,pass_8533
+741,Priya12,Electronics and Communication Engineering,60,76,91,87,36,70,81,46,45,Inconsistent Learner,p_priya12,pass_7332
+742,Rahul88,Electronics and Communication Engineering,40,46,93,46,73,63,58,53,97,Inconsistent Learner,p_rahul88,pass_7465
+743,Balkies1,Electronics and Communication Engineering,66,65,67,52,72,90,97,90,61,Inconsistent Learner,p_balkies1,pass_8399
+744,Arjun80,Electronics and Communication Engineering,95,92,80,56,63,71,98,30,80,Inconsistent Learner,p_arjun80,pass_1812
+745,Siva35,Electronics and Communication Engineering,41,99,54,70,61,95,36,44,54,Inconsistent Learner,p_siva35,pass_7153
+746,Sabereesh53,Electronics and Communication Engineering,82,84,41,95,87,75,37,91,53,Inconsistent Learner,p_sabereesh53,pass_2499
+747,Neha46,Electronics and Communication Engineering,97,44,99,62,91,90,52,80,93,Inconsistent Learner,p_neha46,pass_8836
+748,Vijay93,Electronics and Communication Engineering,61,44,42,52,35,89,42,79,65,Inconsistent Learner,p_vijay93,pass_1367
+749,Mitul98,Electronics and Communication Engineering,49,53,64,66,30,40,36,62,98,Needs Motivation,p_mitul98,pass_6851
+750,Amit9,Electronics and Communication Engineering,58,73,69,62,66,65,37,52,39,Inconsistent Learner,p_amit9,pass_2296
+751,Neha52,Mechanical and Mechatronics Engineering,81,73,56,78,54,48,36,37,96,Inconsistent Learner,p_neha52,pass_6800
+752,Rahul85,Mechanical and Mechatronics Engineering,60,61,40,68,71,74,94,76,67,Inconsistent Learner,p_rahul85,pass_2351
+753,Balkies17,Mechanical and Mechatronics Engineering,97,84,64,95,92,33,69,39,42,Struggling Academically,p_balkies17,pass_8719
+754,Arjun73,Mechanical and Mechatronics Engineering,50,58,74,64,83,35,33,66,53,Practical Learner,p_arjun73,pass_4573
+755,Balkies71,Mechanical and Mechatronics Engineering,67,63,69,77,65,99,50,86,55,Inconsistent Learner,p_balkies71,pass_6877
+756,Siva52,Mechanical and Mechatronics Engineering,48,80,75,87,87,94,59,96,40,Inconsistent Learner,p_siva52,pass_6667
+757,Siva33,Mechanical and Mechatronics Engineering,86,90,69,83,58,62,87,85,38,Inconsistent Learner,p_siva33,pass_7578
+758,Riya24,Mechanical and Mechatronics Engineering,86,67,66,75,73,93,52,41,91,Inconsistent Learner,p_riya24,pass_6290
+759,Ajay4,Mechanical and Mechatronics Engineering,73,78,73,59,62,68,78,69,46,Inconsistent Learner,p_ajay4,pass_6652
+760,Vikram40,Mechanical and Mechatronics Engineering,73,78,43,53,90,40,83,46,89,Practical Learner,p_vikram40,pass_9202
+761,Karan66,Mechanical and Mechatronics Engineering,57,53,74,99,81,60,50,35,90,Practical Learner,p_karan66,pass_6305
+762,Siva19,Mechanical and Mechatronics Engineering,59,65,74,41,97,63,77,94,93,Inconsistent Learner,p_siva19,pass_4256
+763,Karan48,Mechanical and Mechatronics Engineering,40,79,51,61,82,56,67,72,78,Practical Learner,p_karan48,pass_2887
+764,Kavinaya33,Mechanical and Mechatronics Engineering,85,72,57,57,77,43,47,80,41,Inconsistent Learner,p_kavinaya33,pass_7987
+765,Vijay73,Mechanical and Mechatronics Engineering,56,81,76,71,98,66,84,96,39,Inconsistent Learner,p_vijay73,pass_1322
+766,Sneha80,Mechanical and Mechatronics Engineering,78,79,71,68,50,53,71,54,44,Inconsistent Learner,p_sneha80,pass_5112
+767,Amit99,Mechanical and Mechatronics Engineering,96,55,65,61,60,55,43,42,85,Inconsistent Learner,p_amit99,pass_5040
+768,Pooja88,Mechanical and Mechatronics Engineering,72,49,82,78,77,32,85,93,51,Inconsistent Learner,p_pooja88,pass_8980
+769,Siva26,Mechanical and Mechatronics Engineering,90,68,71,81,84,76,81,45,31,Inconsistent Learner,p_siva26,pass_7653
+770,Rahul9,Mechanical and Mechatronics Engineering,74,70,74,92,45,41,73,62,37,Inconsistent Learner,p_rahul9,pass_2799
+771,Ajith92,Mechanical and Mechatronics Engineering,51,89,47,58,68,46,79,78,58,Inconsistent Learner,p_ajith92,pass_9017
+772,Vijay61,Mechanical and Mechatronics Engineering,45,57,62,53,34,64,32,90,75,Inconsistent Learner,p_vijay61,pass_5116
+773,Karan76,Mechanical and Mechatronics Engineering,57,55,51,64,60,50,30,94,77,Inconsistent Learner,p_karan76,pass_9513
+774,Ajay49,Mechanical and Mechatronics Engineering,42,87,73,93,38,52,87,93,85,Inconsistent Learner,p_ajay49,pass_9758
+775,Balkies76,Mechanical and Mechatronics Engineering,95,63,93,44,59,97,85,35,96,Inconsistent Learner,p_balkies76,pass_8226
+776,Sabereesh61,Mechanical and Mechatronics Engineering,51,54,50,69,87,68,89,69,37,Practical Learner,p_sabereesh61,pass_9185
+777,Mitul66,Mechanical and Mechatronics Engineering,83,49,43,46,75,72,87,55,41,Inconsistent Learner,p_mitul66,pass_4405
+778,Pradhik80,Mechanical and Mechatronics Engineering,74,73,46,62,68,56,77,41,94,Inconsistent Learner,p_pradhik80,pass_9771
+779,Pooja97,Mechanical and Mechatronics Engineering,76,88,77,77,35,81,31,47,55,Inconsistent Learner,p_pooja97,pass_2829
+780,Mitul61,Mechanical and Mechatronics Engineering,84,84,71,76,77,33,64,43,45,Inconsistent Learner,p_mitul61,pass_4480
+781,Vijay23,Mechanical and Mechatronics Engineering,82,85,89,91,42,91,37,90,99,Inconsistent Learner,p_vijay23,pass_9548
+782,Balkies51,Mechanical and Mechatronics Engineering,41,66,67,72,63,46,32,96,94,Inconsistent Learner,p_balkies51,pass_6372
+783,Karan26,Mechanical and Mechatronics Engineering,59,40,99,40,57,59,98,48,55,Inconsistent Learner,p_karan26,pass_1219
+784,Siva75,Mechanical and Mechatronics Engineering,71,69,62,90,72,45,81,46,49,Inconsistent Learner,p_siva75,pass_4841
+785,Riya67,Mechanical and Mechatronics Engineering,82,95,79,54,81,95,99,52,99,Inconsistent Learner,p_riya67,pass_6455
+786,Amit1,Mechanical and Mechatronics Engineering,83,46,77,44,78,62,36,68,86,Inconsistent Learner,p_amit1,pass_7002
+787,Siva8,Mechanical and Mechatronics Engineering,59,83,80,90,31,31,43,50,73,Inconsistent Learner,p_siva8,pass_5850
+788,Arjun50,Mechanical and Mechatronics Engineering,46,63,95,74,46,45,30,94,57,Inconsistent Learner,p_arjun50,pass_6506
+789,Sabereesh3,Mechanical and Mechatronics Engineering,77,85,82,41,43,43,54,71,35,Inconsistent Learner,p_sabereesh3,pass_6039
+790,Pennesh19,Mechanical and Mechatronics Engineering,74,56,74,43,47,68,97,93,45,Inconsistent Learner,p_pennesh19,pass_7260
+791,Ajith73,Mechanical and Mechatronics Engineering,45,93,64,52,88,75,74,30,48,Practical Learner,p_ajith73,pass_1227
+792,Mitul13,Mechanical and Mechatronics Engineering,86,74,91,88,89,44,55,70,76,Inconsistent Learner,p_mitul13,pass_5298
+793,Sneha41,Mechanical and Mechatronics Engineering,74,41,70,46,74,30,32,54,82,Inconsistent Learner,p_sneha41,pass_8678
+794,Mitul16,Mechanical and Mechatronics Engineering,78,57,53,96,72,53,46,87,85,Inconsistent Learner,p_mitul16,pass_5828
+795,Rahul34,Mechanical and Mechatronics Engineering,54,68,46,78,64,49,60,64,82,Inconsistent Learner,p_rahul34,pass_7154
+796,Arjun16,Mechanical and Mechatronics Engineering,78,75,68,90,43,70,49,94,84,Inconsistent Learner,p_arjun16,pass_8375
+797,Kavinaya59,Mechanical and Mechatronics Engineering,89,41,88,49,59,43,34,77,57,Inconsistent Learner,p_kavinaya59,pass_8142
+798,Balkies95,Mechanical and Mechatronics Engineering,77,47,67,76,42,72,86,84,31,Inconsistent Learner,p_balkies95,pass_4195
+799,Ajay83,Mechanical and Mechatronics Engineering,86,98,87,72,91,70,73,73,36,Inconsistent Learner,p_ajay83,pass_9063
+800,Ajay59,Mechanical and Mechatronics Engineering,60,94,74,44,72,53,51,61,52,Inconsistent Learner,p_ajay59,pass_8108
+801,Vikram71,Mechanical and Mechatronics Engineering,47,74,81,46,33,59,90,47,42,Inconsistent Learner,p_vikram71,pass_5586
+802,Arjun48,Mechanical and Mechatronics Engineering,72,47,49,56,95,61,50,84,43,Practical Learner,p_arjun48,pass_6533
+803,Pradhik64,Mechanical and Mechatronics Engineering,66,55,95,73,42,30,50,77,76,Inconsistent Learner,p_pradhik64,pass_1461
+804,Mitul66,Mechanical and Mechatronics Engineering,51,98,82,80,37,87,51,51,57,Inconsistent Learner,p_mitul66,pass_6870
+805,Riya89,Mechanical and Mechatronics Engineering,40,72,74,53,56,62,64,55,54,Needs Motivation,p_riya89,pass_6876
+806,Balkies54,Mechanical and Mechatronics Engineering,96,90,98,78,60,55,91,68,89,Inconsistent Learner,p_balkies54,pass_2339
+807,Neha53,Mechanical and Mechatronics Engineering,73,81,68,73,62,92,39,69,79,Inconsistent Learner,p_neha53,pass_3950
+808,Pooja73,Mechanical and Mechatronics Engineering,90,98,89,84,59,75,45,79,73,Inconsistent Learner,p_pooja73,pass_2281
+809,Sneha69,Mechanical and Mechatronics Engineering,61,66,61,44,90,74,55,34,62,Practical Learner,p_sneha69,pass_7907
+810,Neha46,Mechanical and Mechatronics Engineering,82,50,54,82,45,98,55,71,81,Inconsistent Learner,p_neha46,pass_2185
+811,Pennesh6,Mechanical and Mechatronics Engineering,40,70,41,48,59,68,42,97,89,Inconsistent Learner,p_pennesh6,pass_3340
+812,Pennesh94,Mechanical and Mechatronics Engineering,40,93,95,42,50,51,83,46,44,Inconsistent Learner,p_pennesh94,pass_9907
+813,Pradhik69,Mechanical and Mechatronics Engineering,50,94,73,57,86,66,45,33,98,Practical Learner,p_pradhik69,pass_1965
+814,Mitul1,Mechanical and Mechatronics Engineering,69,62,74,85,35,88,69,70,50,Inconsistent Learner,p_mitul1,pass_9976
+815,Priya10,Mechanical and Mechatronics Engineering,81,73,96,91,35,79,78,32,41,Struggling Academically,p_priya10,pass_5728
+816,Karan16,Mechanical and Mechatronics Engineering,62,92,59,80,43,39,30,42,87,Inconsistent Learner,p_karan16,pass_9084
+817,Vijay19,Mechanical and Mechatronics Engineering,63,94,52,65,63,95,71,52,56,Inconsistent Learner,p_vijay19,pass_4201
+818,Ajith23,Mechanical and Mechatronics Engineering,50,48,93,80,90,30,35,71,67,Practical Learner,p_ajith23,pass_1909
+819,Amit34,Mechanical and Mechatronics Engineering,91,74,84,93,32,83,79,81,97,Theoretical Learner,p_amit34,pass_5313
+820,Neha31,Mechanical and Mechatronics Engineering,69,84,55,96,72,45,93,75,95,Inconsistent Learner,p_neha31,pass_5970
+821,Balkies21,Mechanical and Mechatronics Engineering,96,92,51,60,90,79,69,88,65,Inconsistent Learner,p_balkies21,pass_8048
+822,Siva83,Mechanical and Mechatronics Engineering,85,70,94,65,37,67,85,98,72,Theoretical Learner,p_siva83,pass_9211
+823,Pooja81,Mechanical and Mechatronics Engineering,58,52,94,65,87,86,81,59,64,Inconsistent Learner,p_pooja81,pass_8783
+824,Balkies9,Mechanical and Mechatronics Engineering,47,62,56,73,69,30,41,99,95,Inconsistent Learner,p_balkies9,pass_9229
+825,Ajay85,Mechanical and Mechatronics Engineering,49,62,41,82,45,40,39,54,36,Needs Motivation,p_ajay85,pass_6535
+826,Pradhik33,Mechanical and Mechatronics Engineering,66,61,88,95,93,54,58,58,82,Inconsistent Learner,p_pradhik33,pass_2754
+827,Balkies47,Mechanical and Mechatronics Engineering,92,67,42,81,67,49,99,62,93,Inconsistent Learner,p_balkies47,pass_3290
+828,Priya27,Mechanical and Mechatronics Engineering,98,74,58,42,56,84,32,72,76,Inconsistent Learner,p_priya27,pass_3566
+829,Riya35,Mechanical and Mechatronics Engineering,81,64,62,74,38,47,84,93,92,Inconsistent Learner,p_riya35,pass_2681
+830,Mitul49,Mechanical and Mechatronics Engineering,83,72,87,59,34,86,59,31,97,Inconsistent Learner,p_mitul49,pass_1757
+831,Balkies47,Mechanical and Mechatronics Engineering,74,63,83,83,57,82,61,64,96,Inconsistent Learner,p_balkies47,pass_4627
+832,Ajith46,Mechanical and Mechatronics Engineering,87,87,57,92,80,73,81,90,71,Inconsistent Learner,p_ajith46,pass_3296
+833,Pooja9,Mechanical and Mechatronics Engineering,75,66,42,69,71,70,45,40,55,Inconsistent Learner,p_pooja9,pass_3471
+834,Rahul82,Mechanical and Mechatronics Engineering,71,85,63,47,94,74,80,38,43,Practical Learner,p_rahul82,pass_1245
+835,Balkies75,Mechanical and Mechatronics Engineering,90,41,40,57,30,43,66,43,72,Needs Motivation,p_balkies75,pass_4606
+836,Vikram35,Mechanical and Mechatronics Engineering,66,51,91,57,45,44,92,69,53,Inconsistent Learner,p_vikram35,pass_3164
+837,Riya86,Mechanical and Mechatronics Engineering,69,62,47,76,97,34,47,99,55,Practical Learner,p_riya86,pass_4918
+838,Sneha88,Mechanical and Mechatronics Engineering,95,94,48,47,48,43,39,55,36,Inconsistent Learner,p_sneha88,pass_7522
+839,Siva80,Mechanical and Mechatronics Engineering,42,81,95,98,86,56,96,75,73,Inconsistent Learner,p_siva80,pass_2676
+840,Riya2,Mechanical and Mechatronics Engineering,63,84,48,85,62,76,59,43,56,Inconsistent Learner,p_riya2,pass_1174
+841,Vikram71,Mechanical and Mechatronics Engineering,78,55,55,98,88,72,97,87,58,Inconsistent Learner,p_vikram71,pass_5555
+842,Mitul4,Mechanical and Mechatronics Engineering,57,63,75,76,90,89,76,37,47,Practical Learner,p_mitul4,pass_8455
+843,Vikram40,Mechanical and Mechatronics Engineering,77,91,91,72,38,60,44,47,35,Struggling Academically,p_vikram40,pass_6660
+844,Amit49,Mechanical and Mechatronics Engineering,90,62,93,92,68,39,86,36,69,Struggling Academically,p_amit49,pass_6098
+845,Riya27,Mechanical and Mechatronics Engineering,99,90,42,90,39,87,78,61,78,Inconsistent Learner,p_riya27,pass_7330
+846,Pradhik60,Mechanical and Mechatronics Engineering,44,54,96,98,41,96,38,95,69,Inconsistent Learner,p_pradhik60,pass_5041
+847,Arjun23,Mechanical and Mechatronics Engineering,88,94,40,74,77,34,75,81,46,Inconsistent Learner,p_arjun23,pass_9715
+848,Riya82,Mechanical and Mechatronics Engineering,58,45,76,73,51,33,96,52,64,Inconsistent Learner,p_riya82,pass_3351
+849,Rahul38,Mechanical and Mechatronics Engineering,43,56,72,88,81,42,72,37,43,Practical Learner,p_rahul38,pass_9418
+850,Vikram44,Mechanical and Mechatronics Engineering,64,70,51,47,70,36,62,81,93,Inconsistent Learner,p_vikram44,pass_6850
+851,Karan24,Biomedical Engineering,68,54,67,66,58,64,32,62,74,Inconsistent Learner,p_karan24,pass_3914
+852,Riya4,Biomedical Engineering,78,82,97,99,37,72,61,78,74,Inconsistent Learner,p_riya4,pass_7730
+853,Siva72,Biomedical Engineering,68,56,75,87,76,97,38,59,80,Inconsistent Learner,p_siva72,pass_3514
+854,Amit88,Biomedical Engineering,76,49,91,70,47,56,56,92,33,Inconsistent Learner,p_amit88,pass_8165
+855,Pennesh80,Biomedical Engineering,66,72,69,70,47,30,36,40,35,Inconsistent Learner,p_pennesh80,pass_8259
+856,Pradhik51,Biomedical Engineering,88,68,92,51,50,60,56,73,87,Inconsistent Learner,p_pradhik51,pass_7671
+857,Neha73,Biomedical Engineering,71,53,71,41,97,43,63,90,85,Inconsistent Learner,p_neha73,pass_8113
+858,Ajay87,Biomedical Engineering,51,60,74,97,37,63,63,37,46,Inconsistent Learner,p_ajay87,pass_2552
+859,Rahul67,Biomedical Engineering,79,55,58,60,38,73,60,96,38,Inconsistent Learner,p_rahul67,pass_7925
+860,Karan25,Biomedical Engineering,75,60,65,68,40,34,39,47,51,Inconsistent Learner,p_karan25,pass_7342
+861,Riya28,Biomedical Engineering,94,86,89,57,55,38,84,44,37,Struggling Academically,p_riya28,pass_8250
+862,Mitul96,Biomedical Engineering,96,98,81,64,82,36,93,92,73,Inconsistent Learner,p_mitul96,pass_6680
+863,Sneha15,Biomedical Engineering,58,87,78,54,32,90,78,36,68,Inconsistent Learner,p_sneha15,pass_1992
+864,Vijay32,Biomedical Engineering,49,80,53,93,85,84,74,40,76,Practical Learner,p_vijay32,pass_6061
+865,Amit90,Biomedical Engineering,68,61,65,79,46,99,70,83,35,Inconsistent Learner,p_amit90,pass_2117
+866,Pooja30,Biomedical Engineering,67,80,78,78,88,51,47,64,79,Inconsistent Learner,p_pooja30,pass_1443
+867,Rahul14,Biomedical Engineering,92,82,52,48,69,96,57,78,43,Inconsistent Learner,p_rahul14,pass_1913
+868,Pradhik79,Biomedical Engineering,63,86,86,72,79,83,47,77,85,Inconsistent Learner,p_pradhik79,pass_3935
+869,Balkies77,Biomedical Engineering,87,63,47,83,70,86,58,77,96,Inconsistent Learner,p_balkies77,pass_6807
+870,Riya98,Biomedical Engineering,53,70,82,45,49,39,47,99,30,Inconsistent Learner,p_riya98,pass_6327
+871,Mitul76,Biomedical Engineering,61,68,93,63,96,97,54,40,98,Inconsistent Learner,p_mitul76,pass_5902
+872,Balkies49,Biomedical Engineering,67,50,88,49,93,76,31,64,49,Practical Learner,p_balkies49,pass_6830
+873,Vijay96,Biomedical Engineering,51,59,46,71,81,96,34,98,74,Inconsistent Learner,p_vijay96,pass_7149
+874,Karan77,Biomedical Engineering,67,57,78,60,69,36,56,66,86,Inconsistent Learner,p_karan77,pass_9002
+875,Pooja17,Biomedical Engineering,84,83,82,82,78,51,32,82,32,Struggling Academically,p_pooja17,pass_1246
+876,Rahul75,Biomedical Engineering,76,54,50,95,53,32,43,93,74,Inconsistent Learner,p_rahul75,pass_4193
+877,Sneha28,Biomedical Engineering,86,92,66,72,61,76,43,36,48,Inconsistent Learner,p_sneha28,pass_1076
+878,Sabereesh72,Biomedical Engineering,49,83,70,40,62,41,97,75,35,Inconsistent Learner,p_sabereesh72,pass_5082
+879,Arjun58,Biomedical Engineering,50,97,76,70,65,81,83,54,50,Inconsistent Learner,p_arjun58,pass_8464
+880,Amit55,Biomedical Engineering,42,61,62,71,51,75,73,32,43,Needs Motivation,p_amit55,pass_1211
+881,Ajay90,Biomedical Engineering,80,87,94,87,40,38,96,44,40,Struggling Academically,p_ajay90,pass_3818
+882,Ajay47,Biomedical Engineering,92,94,85,60,75,31,88,31,74,Struggling Academically,p_ajay47,pass_3241
+883,Pennesh14,Biomedical Engineering,71,67,42,77,73,71,48,62,71,Inconsistent Learner,p_pennesh14,pass_4792
+884,Neha8,Biomedical Engineering,54,61,42,83,40,71,34,98,46,Inconsistent Learner,p_neha8,pass_7980
+885,Riya84,Biomedical Engineering,74,96,75,48,90,70,67,88,39,Practical Learner,p_riya84,pass_5214
+886,Amit82,Biomedical Engineering,94,53,65,80,58,70,62,37,51,Inconsistent Learner,p_amit82,pass_7884
+887,Pennesh90,Biomedical Engineering,43,62,89,42,85,50,78,43,73,Practical Learner,p_pennesh90,pass_4240
+888,Kavinaya15,Biomedical Engineering,90,72,82,78,65,44,33,43,95,Struggling Academically,p_kavinaya15,pass_7102
+889,Balkies75,Biomedical Engineering,54,49,98,45,43,35,79,52,78,Inconsistent Learner,p_balkies75,pass_2567
+890,Vijay76,Biomedical Engineering,69,66,97,93,39,63,40,30,71,Struggling Academically,p_vijay76,pass_7120
+891,Sabereesh76,Biomedical Engineering,48,55,42,84,76,43,59,82,37,Inconsistent Learner,p_sabereesh76,pass_4657
+892,Pradhik47,Biomedical Engineering,41,66,57,60,76,41,72,48,60,Inconsistent Learner,p_pradhik47,pass_3691
+893,Arjun2,Biomedical Engineering,56,59,87,40,42,46,84,48,78,Inconsistent Learner,p_arjun2,pass_3407
+894,Pennesh83,Biomedical Engineering,45,76,86,41,83,63,89,48,58,Practical Learner,p_pennesh83,pass_5093
+895,Mitul3,Biomedical Engineering,60,96,41,98,38,47,30,86,68,Inconsistent Learner,p_mitul3,pass_7261
+896,Riya98,Biomedical Engineering,43,92,85,43,65,42,93,70,71,Inconsistent Learner,p_riya98,pass_3117
+897,Amit57,Biomedical Engineering,49,61,60,68,36,33,88,98,44,Inconsistent Learner,p_amit57,pass_2834
+898,Vijay76,Biomedical Engineering,58,88,96,79,58,66,64,34,58,Struggling Academically,p_vijay76,pass_4295
+899,Pradhik28,Biomedical Engineering,74,80,97,70,91,80,94,30,92,Inconsistent Learner,p_pradhik28,pass_4577
+900,Karan10,Biomedical Engineering,46,75,55,48,42,33,62,74,96,Inconsistent Learner,p_karan10,pass_2346
+901,John Doe,Computer Science Engineering,85,90,78,88,92,75,82,70,80,Inconsistent Learner,p_johndoe,pass_4357
