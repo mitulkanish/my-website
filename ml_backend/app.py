@@ -65,6 +65,19 @@ def startup_db():
                         ai_response TEXT NOT NULL,
                         timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
                     )''')
+    conn.execute('''CREATE TABLE IF NOT EXISTS Complaints (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        sender_id TEXT NOT NULL,
+                        sender_name TEXT NOT NULL,
+                        sender_role TEXT NOT NULL,
+                        receiver_id TEXT NOT NULL,
+                        receiver_role TEXT NOT NULL,
+                        student_id TEXT NOT NULL,
+                        student_name TEXT NOT NULL,
+                        subject TEXT NOT NULL,
+                        message TEXT NOT NULL,
+                        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )''')
     conn.commit()
     conn.close()
 
@@ -139,6 +152,17 @@ class UpdateStudentRequest(BaseModel):
     ct_score: int | None = None
     de_score: int | None = None
     cpp_score: int | None = None
+
+class ComplaintRequest(BaseModel):
+    sender_id: str
+    sender_name: str
+    sender_role: str
+    receiver_id: str
+    receiver_role: str
+    student_id: str
+    student_name: str
+    subject: str
+    message: str
 
 
 @app.post("/attendance/secure_start")
@@ -831,13 +855,51 @@ async def extract_pdf_questions(file: UploadFile = File(...)):
                 "answer": answer_idx
             })
             
-        return {
-            "success": True, 
-            "questions": questions, 
-            "title": file.filename.replace('.pdf', '')
-        }
+        return {"success": True, "questions": questions}
     except Exception as e:
         return {"success": False, "error": str(e)}
+
+@app.post("/complaints")
+def create_complaint(request: ComplaintRequest):
+    conn = get_db()
+    try:
+        conn.execute("""
+            INSERT INTO Complaints (sender_id, sender_name, sender_role, receiver_id, receiver_role, student_id, student_name, subject, message)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (request.sender_id, request.sender_name, request.sender_role, request.receiver_id, request.receiver_role, request.student_id, request.student_name, request.subject, request.message))
+        conn.commit()
+        return {"success": True, "message": "Complaint/Question submitted successfully."}
+    except Exception as e:
+        return {"success": False, "error": str(e)}
+    finally:
+        conn.close()
+
+@app.get("/complaints")
+def get_complaints(user_id: str, role: str):
+    conn = get_db()
+    try:
+        # If admin, see all complaints
+        if role == 'admin':
+            query = "SELECT * FROM Complaints ORDER BY timestamp DESC"
+            params = []
+        # If teacher, see complaints they sent or received
+        elif role == 'teacher':
+            query = "SELECT * FROM Complaints WHERE sender_id = ? OR receiver_id = ? ORDER BY timestamp DESC"
+            params = [user_id, user_id]
+        # If parent, see complaints sent to them or questions they sent
+        elif role == 'parent':
+            query = "SELECT * FROM Complaints WHERE receiver_id = ? OR sender_id = ? ORDER BY timestamp DESC"
+            params = [user_id, user_id]
+        else:
+            return {"success": False, "error": "Unauthorized role."}
+            
+        records = conn.execute(query, params).fetchall()
+        complaints = [dict(r) for r in records]
+        return {"success": True, "complaints": complaints}
+    except Exception as e:
+        return {"success": False, "error": str(e)}
+    finally:
+        conn.close()
 
 @app.get("/")
 def read_root():

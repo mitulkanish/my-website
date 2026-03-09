@@ -12,7 +12,8 @@ import {
   UserCircle,
   Camera,
   Table,
-  Mic
+  Mic,
+  MessageSquare
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
@@ -31,6 +32,7 @@ const Sidebar = () => {
     { path: isAdminRole ? '/admin/tests-quizzes' : '/tests-quizzes', label: isAdminRole ? 'Class Tests & Quizzes' : 'Tests & Quizzes', icon: <CheckSquare size={20} /> },
     { path: isAdminRole ? '/admin/projects' : '/projects', label: isAdminRole ? 'Class Skill Projects' : 'Skill Projects', icon: <Lightbulb size={20} /> },
     { path: isAdminRole ? '/admin/predictions' : '/predictions', label: isAdminRole ? 'Class Intelligence' : 'Success Intelligence', icon: <BrainCircuit size={20} /> },
+    ...(isAdminRole ? [{ path: '/complaints', label: 'Complaints & Questions', icon: <MessageSquare size={20} /> }] : []),
   ];
 
   return (
@@ -225,7 +227,7 @@ export const Header = () => {
 
 const Layout = () => {
   const { user } = useAuth();
-  
+
   return (
     <div className="app-layout">
       {user?.role !== 'parent' && <Sidebar />}

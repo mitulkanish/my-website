@@ -8,7 +8,8 @@ import {
     AlertTriangle,
     CheckCircle2,
     BarChart3,
-    Star
+    Star,
+    MessageSquare
 } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Link } from 'react-router-dom';
@@ -177,6 +178,15 @@ const AdminDashboard = () => {
                     trend="Attention Needed"
                     type="negative"
                 />
+                <Link to="/complaints" style={{ textDecoration: 'none', color: 'inherit', display: 'block', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseOver={e => e.currentTarget.style.transform = 'translateY(-4px)'} onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}>
+                    <StatCard
+                        title="Complaints & Questions"
+                        value="Communication"
+                        icon={<MessageSquare color="var(--primary)" />}
+                        trend="Open Channel"
+                        type="neutral"
+                    />
+                </Link>
             </div>
 
             <div className="grid-cols-1-2" style={{ marginBottom: '2rem' }}>

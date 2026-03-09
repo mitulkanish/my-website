@@ -28,6 +28,7 @@ import AdminStudentVoice from './pages/AdminStudentVoice';
 // Webcam Attendance Views
 import TeacherAttendanceScanner from './pages/TeacherAttendanceScanner';
 import AttendanceSpreadsheet from './pages/AttendanceSpreadsheet';
+import Complaints from './pages/Complaints';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -47,7 +48,7 @@ const HomeDashboard = () => {
   if (user?.role === 'admin' || user?.role === 'teacher' || user?.role === 'coordinator') {
     return <AdminDashboard />;
   }
-  
+
   if (user?.role === 'parent') {
     return <ParentDashboard />;
   }
@@ -83,7 +84,8 @@ function AppRoutes() {
         <Route path="admin/prediction/:id" element={<AdminPredictionDetail />} />
         <Route path="admin/student-voice" element={<AdminStudentVoice />} />
 
-        {/* Webcam Attendance Routes */}
+        {/* Shared and Webcam Attendance Routes */}
+        <Route path="complaints" element={<Complaints />} />
         <Route path="teacher/scanner" element={<TeacherAttendanceScanner />} />
         <Route path="admin/daily-attendance" element={<AttendanceSpreadsheet />} />
       </Route>
